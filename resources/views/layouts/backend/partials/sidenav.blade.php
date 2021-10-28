@@ -23,29 +23,18 @@
                             </div>
                         </div> -->
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        {{-- <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-                            aria-selected="true"><span class="oval"><img
-                                    src="{{ asset('assets/img/Layer-1281.png') }}"
-                                    class="img-fluid"></span>Dashboard</button> --}}
-                        <a href="{{ route('admin.dashboard') }}" class="nav-link"><span
+                        <a href="{{ route('admin.dashboard') }}" class="nav-link "><span
                                 class="oval"><img src="{{ asset('assets/img/Layer-1281.png') }}"
                                     class="img-fluid"></span>Dashboard</a>
-                        {{-- <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
-                            aria-selected="false"><span class="oval"><img
-                                    src="{{ asset('assets/img/Layer-953.png') }}"
-                                    class="img-fluid"></span>Profile
-                            Setting</button> --}}
-
+                        {{-- <a href="{{ route('admin.dashboard') }}" class="nav-link"><span
+                                class="oval"><img src="{{ asset('assets/img/Layer-1281.png') }}"
+                                    class="img-fluid"></span>Dashboard</a> --}}
                         <a href="{{ route('admin.profile') }}" class="nav-link"><span
                                 class="oval"><img src="{{ asset('assets/img/Layer-953.png') }}"
-                                    class="img-fluid"></span>Profile Setting</a>
+                                    class="img-fluid"></span>Profile
+                            Setting</a>
 
-                        {{-- <button class="nav-link" id="v-pills-post-ad-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-post-ad" type="button" role="tab" aria-controls="v-pills-post-ad"
-                            aria-selected="false"><span class="oval"><img
-                                    src="{{ asset('assets/img/Layer-1301.png') }}" class="img-fluid"></span></button> --}}
+
                         <a href="{{ route('admin.addpost.index') }}" class="nav-link"><span
                                 class="oval"><img src="{{ asset('assets/img/Layer-1301.png') }}"
                                     class="img-fluid"></span>Post
@@ -60,11 +49,10 @@
                         <a href="{{ route('admin.subcategory.index') }}" class="nav-link"><span
                                 class="oval"><img src="{{ asset('assets/img/Layer-1301.png') }}"
                                     class="img-fluid"></span>Add SubCategory</a>
-                        <button class="nav-link" id="v-pills-my-listing-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-my-listing" type="button" role="tab"
-                            aria-controls="v-pills-my-listing" aria-selected="false"><span class="oval"><img
-                                    src="{{ asset('assets/img/Layer-1315.png') }}" class="img-fluid"></span>My
-                            Listing</button>
+                        <a href="{{ route('admin.listings.index') }}" class="nav-link"><span
+                                class="oval"><img src="{{ asset('assets/img/Layer-1315.png') }}"
+                                    class="img-fluid"></span>My
+                            Listing</a>
                         <button class="nav-link" id="v-pills-offers-tab" data-bs-toggle="pill"
                             data-bs-target="#v-pills-offers" type="button" role="tab" aria-controls="v-pills-offers"
                             aria-selected="false"><span class="oval"><img

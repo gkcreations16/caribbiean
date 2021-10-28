@@ -34,32 +34,27 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($posts as $postitems)
-                            {{ dd($postitems->image) }}
-                            {{-- $allImages = explode('|', $images);
-                            print_r($allImages); --}}
+                        @foreach ($posts as $postitem)
                             <tr>
                                 <td style="width:20%" class="add-img-td">
                                     <div class="sub-prper">
-                                        {{-- <img class="thumbnail  img-fluid" src="img/Layer-112.jpg"
-                                            alt="img"> --}}
-                                        {{-- @foreach ($allImages as $image)
-                                            <img src="storage/post_images/{{ $image->image }}" height="50px" width="30%">
-                                        @endforeach --}}
+                                        <?php foreach (json_decode($postitem->image)  as $postimage) {?>
+                                        <img src=" {{ asset('/image/' . $postimage) }}" height="50px" width="30%">
+                                        <?php } ?>
                                     </div>
                                 </td>
                                 <td style="width:40%" class="ads-details-td">
                                     <div class="ads-detail">
-                                        <h4 title="Sony Xperia TX ">{{ $postitems->title }}</h4>
+                                        <h4 title="Sony Xperia TX ">{{ $postitem->title }}</h4>
                                         <p><span><i class="fa fa-calendar pe-2" aria-hidden="true"></i>
-                                            </span>{{ $postitems->created_at }} </p>
+                                            </span>{{ $postitem->created_at }} </p>
                                         <p><span><i class="fa fa-map-marker pe-2" aria-hidden="true"></i>
-                                            </span>{{ $postitems->address }}</p>
+                                            </span>{{ $postitem->address }}</p>
                                     </div>
                                 </td>
                                 <td style="width:10%" class="price-td">
                                     <div>
-                                        <p>${{ $postitems->price }}
+                                        <p>${{ $postitem->price }}
                                     </div>
                                 </td>
                                 <td style="width:14%;" class="active-status">
@@ -77,6 +72,7 @@
                                 </td>
                             </tr>
                         @endforeach
+
                         {{-- <tr>
                             <td style="width:20%" class="add-img-td">
                                 <div class="sub-prper"><img class="thumbnail  img-fluid" src="img/Layer-112.jpg"
@@ -207,24 +203,7 @@
         </div>
     </div>
     </div>
-    <script>
-        function openCity(evt, cityName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
 
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
-    </script>
     @push('footer')
         <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
         <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>

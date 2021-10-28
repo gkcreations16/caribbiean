@@ -14,6 +14,7 @@ use Illuminate\Support\Str;
 
 class ListingController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -46,18 +47,30 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        $destinationPath = 'public/post_images/';
-        $images = array();
-        if ($files = $request->file('image')) {
-            foreach ($files as $file) {
-                $filename = $file->getClientOriginalName();
-                // $image_url = $destinationPath . $filename;
-                $file->move($destinationPath, $filename);
-                $images[] = $filename;
+        // $destinationPath = 'public/post_images/';
+        // // $destinationPath = Storage::disk('public')->makeDirectory('post_images');
+        // $images = array();
+        // if ($files = $request->file('image')) {
+        //     foreach ($files as $file) {
+        //         $filename = $file->getClientOriginalName();
+        //         // $image_url = $destinationPath . $filename;
+        //         $file->move($destinationPath, $filename);
+        //         $images[] = $filename;
+        //     }
+        // }
+        //implode images with pipe symbol
+        // $allImages = implode(",", $images);
+
+
+        if ($request->file('image')) {
+            foreach ($request->file('image') as $image) {
+                $name = $image->getClientOriginalName();
+                $image->move(public_path() . '/image/', $name);
+                $data[] = $name;
             }
         }
-        //implode images with pipe symbol
-        $allImages = implode(",", $images);
+
+
         $post = new Post;
         $post->title = $request->title;
         $post->category = $request->category;
@@ -85,7 +98,7 @@ class ListingController extends Controller
         $post->wifi = $request->wifi;
         $post->telephone = $request->telephone;
         $post->price = $request->price;
-        $post->image = $allImages;
+        $post->image = json_encode($data);
         $post->save();
         Toastr::success('Post created successfully');
         return redirect()->back();

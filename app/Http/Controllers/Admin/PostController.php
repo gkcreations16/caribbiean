@@ -45,18 +45,13 @@ class postController extends Controller
      */
     public function store(Request $request)
     {
-        $destinationPath = 'public/post_images/';
-        $images = array();
-        if ($files = $request->file('image')) {
-            foreach ($files as $file) {
-                $filename = $file->getClientOriginalName();
-                // $image_url = $destinationPath . $filename;
-                $file->move($destinationPath, $filename);
-                $images[] = $filename;
+        if ($request->hasfile('image')) {
+            foreach ($request->file('image') as $image) {
+                $name = $image->getClientOriginalName();
+                $image->move(public_path() . '/image/', $name);
+                $data[] = $name;
             }
         }
-        //implode images with pipe symbol
-        $allImages = implode(",", $images);
         $post = new Post;
         $post->title = $request->title;
         $post->category = $request->category;
@@ -84,7 +79,7 @@ class postController extends Controller
         $post->wifi = $request->wifi;
         $post->telephone = $request->telephone;
         $post->price = $request->price;
-        $post->image = $allImages;
+        $post->image = json_encode($data);
         $post->save();
         Toastr::success('Post created successfully');
         return redirect()->back();
