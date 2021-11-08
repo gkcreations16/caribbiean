@@ -62,7 +62,7 @@ class ListingController extends Controller
         // $allImages = implode(",", $images);
 
 
-        if ($request->file('image')) {
+        if ($request->hasfile('image')) {
             foreach ($request->file('image') as $image) {
                 $name = $image->getClientOriginalName();
                 $image->move(public_path() . '/image/', $name);

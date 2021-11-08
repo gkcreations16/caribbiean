@@ -24,7 +24,6 @@ class postController extends Controller
         $category = Category::all();
         $subcategory = SubCategory::all();
         return view('admin.post.addpost', ['categorys' => $category, 'subcategorys' => $subcategory, 'posts' => $posts]);
-        // return view('admin.post.addpost', compact('category,subcategory'));
     }
 
     /**

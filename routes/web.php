@@ -31,7 +31,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     Route::put('profile', 'DashboardController@updateprofile')->name('profile.update');
     Route::put('profile/password', 'DashboardController@changePassword')->name('profile.password');
-
+    ///pages
+    Route::resource('page', 'HomePageController')->except(['create', 'show', 'edit']);
 
     Route::resource('user', 'UserController')->except(['create', 'show', 'edit', 'store']);
     Route::resource('category', 'CategoryController')->except(['create', 'show', 'edit']);

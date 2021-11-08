@@ -55,7 +55,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="post-ad-user-form-iner">
                         <div class="headings-user-form-page">
                             <h5>Location</h5>
@@ -66,9 +65,9 @@
                                 <label>City</label>
                                 <select class="form-select" aria-label="Default select example" name="city">
                                     <option selected="">Select </option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option value="Ludhiana">Ludhiana</option>
+                                    <option value="Moga">Moga</option>
+                                    <option value="Khanna">Khanna</option>
                                 </select>
                             </div>
                             <div class="col-sm-6 col-12">
@@ -79,9 +78,9 @@
                                 <label>State</label>
                                 <select class="form-select" aria-label="Default select example" name="state">
                                     <option selected="">Select </option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Mumbai">Mumbai</option>
+                                    <option value="Punjab">Punjab</option>
                                 </select>
                             </div>
                             <div class="col-sm-6 col-12">
@@ -357,7 +356,7 @@
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary btn-md"
                             onclick="event.preventDefault();
-                                                                                     document.getElementById('createPost').submit();">SUBMIT
+                                                                                             document.getElementById('createPost').submit();">SUBMIT
                             LISTING
                         </button>
                         {{-- <a href="#" class="btn btn-primary">SUBMIT LISTING</a> --}}
