@@ -49,7 +49,7 @@
                         <a href="{{ route('admin.subcategory.index') }}" class="nav-link"><span
                                 class="oval"><img src="{{ asset('assets/img/Layer-1301.png') }}"
                                     class="img-fluid"></span>Add SubCategory</a>
-                        <a href="{{ route('admin.listings.index') }}" class="nav-link"><span
+                        <a href="{{ route('admin.addpost.index') }}" class="nav-link"><span
                                 class="oval"><img src="{{ asset('assets/img/Layer-1315.png') }}"
                                     class="img-fluid"></span>My
                             Listing</a>

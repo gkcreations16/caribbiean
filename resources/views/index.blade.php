@@ -3,7 +3,6 @@
     <!----------------------banner-content-end------------------------>
     {{-- {{ asset('assets/img/Layer-7.jpg') }} --}}
     @foreach ($Homepagedata as $pagedata)
-
         <div class="banner-content" style="background-image:url('{{ asset('assets/img/Layer-7.jpg') }}');">
             <div class="container">
                 <div class="col-lg-9 mx-auto text-center">
@@ -48,7 +47,6 @@
             </div>
         </div>
         <!----------------------banner-content-end------------------------>
-
         <!--------------------------Styles-start--------------------------->
         <div class="all-styles-wrap top-space">
             <div class="container">
@@ -95,11 +93,9 @@
             </div>
         </div>
         <!--------------------------styles-end----------------------------->
-
         <!------------------------sec1-start------------------------>
         <!-- <section class="sec-1 top-space bottom-space">
-                                     
-                                            <!-hhh-----------------------sec1-end------------------------>
+                                                                                                                                                                                                                                                                           <!-hhh-----------------------sec1-end------------------------>
 
         <!------------------------sec1-new-start------------------------>
         <section class="sec-1 top-space bottom-space">
@@ -114,7 +110,6 @@
                 <div class="new-style-categories-slide-wrap">
                     <div id="new-style-categories-slide">
                         @foreach ($categorys as $category)
-
                             <div class="new-style-categories">
                                 <a href="#">
                                     <div class="card border-0 text-white">
@@ -124,7 +119,7 @@
                                         </div>
                                         <div class="card-img-overlay">
                                             <div class="type-icon">
-                                                <img src="{{ asset('assets/img/Layer-29-copy-31.png') }}"
+                                                <img src="{{ asset('storage/cat_icon/' . $category->iconimage) }}"
                                                     class="img-fluid">
                                             </div>
                                             <h5 class="card-title">{{ $category->name }}</h5>
@@ -149,7 +144,6 @@
                 </div>
         </section>
         <!------------------------sec1-new-end------------------------>
-
         <!------------------------sec2-start------------------------>
         <section class="sec-2  bottom-space">
             <div class="container-fluid">
@@ -160,7 +154,6 @@
                                 <h2>FEATURED LISTING</h2>
                             </div>
                             <div class="left-side-bar d-flex justify-content-center">
-
                                 <div class="scroll-function">
                                     <div class="under-category">
                                         <h6>Catgory <span><i class="fas fa-chevron-down"></i></span></h6>
@@ -174,7 +167,6 @@
                                                 {{ $category->name }}
                                             </button>
                                         @endforeach
-
                                     </div>
                                 </div>
                             </div>
@@ -193,18 +185,20 @@
                                 </div>
                             </div>
                             <div class="tab-content" id="v-pills-tabContent">
-                                @foreach ($posts as $post)
-                                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                                        aria-labelledby="v-pills-home-tab">
-                                        <div class="listing-slide-wrap">
-                                            <div class="listing-slider">
+                                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                    aria-labelledby="v-pills-home-tab">
+                                    <div class="listing-slide-wrap">
+                                        <div class="listing-slider">
+                                            @foreach ($posts as $post)
                                                 <div class="card border-0 ">
                                                     <div class="listinslide-img">
-                                                        <img src="{{ asset('assets/img/Layer-46.png') }}"
+                                                        <?php foreach (json_decode($post->image)  as $postimage) {?>
+                                                        <img src=" {{ asset('/image/' . $postimage) }}"
                                                             class="img-fluid" class="card-img-top" alt="...">
+                                                        <?php } ?>
                                                         <div class="which-name">
                                                             <h5><span><i class="fas fa-utensils"></i></span>
-                                                                {{ $post->title }}
+                                                                {{ $post->category }}
                                                             </h5>
                                                         </div>
                                                         <div class="item-price">
@@ -214,15 +208,17 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-body">
-                                                        <h5 class="card-title">Favorite Place Food </h5>
+                                                        <h5 class="card-title">{{ $post->title }}</h5>
                                                         <div class="listing-inner-info">
                                                             <ul class="info-list mt-3">
-                                                                <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                    Avenue, New York</li>
+                                                                <li><span class="fas fa-map-marker-alt"></span>
+                                                                    {{ $post->address }}</li>
                                                                 <li><span class="fas fa-phone"></span><a
-                                                                        href="tel:0000000000">000-000-0000</a></li>
-                                                                <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                    Posted</li>
+                                                                        href="tel:0000000000">{{ $post->telephone }}</a>
+                                                                </li>
+                                                                <li><span class="fas fa-calendar-minus"></span>
+                                                                    {{ date('d M Y - H:i:s', $post->created_at->timestamp) }}
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                         <div class="rating d-flex justify-content-between">
@@ -242,796 +238,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-
-                                                {{-- <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
-                                                {{-- <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-46.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                    <div class="item-price">
-                                                        <p>
-                                                            $99.00
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
-                                                {{-- <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
-                                                {{-- <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
-                                            </div>
+                                            @endforeach
                                         </div>
                                     </div>
-                                @endforeach
-
-                                {{-- <div class="tab-pane fade" id="v-pills-fitness" role="tabpanel"
-                                    aria-labelledby="v-pills-fitness-tab">
-                                    <div class="listing-slide-wrap">
-                                        <div class="listing-slider">
-                                            <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                {{-- <div class="tab-pane fade" id="v-pills-school" role="tabpanel"
-                                    aria-labelledby="v-pills-school-tab">
-                                    <div class="listing-slide-wrap">
-                                        <div class="listing-slider">
-                                            <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="img/Layer-38-copy-3.png" class="img-fluid"
-                                                        class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                {{-- <div class="tab-pane fade" id="v-pills-college" role="tabpanel"
-                                    aria-labelledby="v-pills-college-tab">
-                                    <div class="listing-slide-wrap">
-                                        <div class="listing-slider">
-                                            <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card border-0 ">
-                                                <div class="listinslide-img">
-                                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}"
-                                                        class="img-fluid" class="card-img-top" alt="...">
-                                                    <div class="which-name">
-                                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                                            Restaurant
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Favorite Place Food </h5>
-                                                    <div class="listing-inner-info">
-                                                        <ul class="info-list mt-3">
-                                                            <li><span class="fas fa-map-marker-alt"></span> New York
-                                                                Avenue, New York</li>
-                                                            <li><span class="fas fa-phone"></span><a
-                                                                    href="tel:0000000000">000-000-0000</a></li>
-                                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago
-                                                                Posted</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="rating d-flex justify-content-between">
-                                                        <div>
-                                                            <ul>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                                <li><i class="fas fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="save">
-                                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                {{-- <div class="tab-pane fade" id="v-pills-hospital" role="tabpanel"
-                                    aria-labelledby="v-pills-hospital-tab">
-                                    5
                                 </div>
-                                <div class="tab-pane fade" id="v-pills-mobile" role="tabpanel"
-                                    aria-labelledby="v-pills-mobile-tab">
-                                    6
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-job" role="tabpanel"
-                                    aria-labelledby="v-pills-job-tab">
-                                    7
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-job2" role="tabpanel"
-                                    aria-labelledby="v-pills-job2-tab">
-                                    8
-                                </div> --}}
                                 <div class="col-12">
                                     <div class="major-button mx-auto text-center">
                                         <a href="listing.html" class="btn btn-primary">VIEW ALL</a>
@@ -1044,7 +254,6 @@
             </div>
         </section>
         <!-- ----------------------sec2-end---------------------- -->
-
         <!-- ----------------------mobile-respose popular-ads-start---------------------- -->
         <section class="mobile-respose top-space  bottom-space d-md-none">
             <div class="container-fluid">
@@ -1363,7 +572,6 @@
             </div>
         </section>
         <!-- ----------------------mobile-respose popular-ads-end---------------------- -->
-
         <!------------------------sec3-start------------------------>
         <section class="sec-3  bottom-space">
             <div class="small-head-wrap">
@@ -1427,7 +635,6 @@
             </div>
         </section>
         <!------------------------sec3-start------------------------>
-
         <!------------------------sec4-start------------------------>
         <section class="sec-4 top-space bottom-space">
             <div class="small-head-wrap">
@@ -1439,357 +646,60 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class=" col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="listing-slide-wrap">
-                            <div class="card border-0 ">
-                                <div class="listinslide-img">
-                                    <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}" class="img-fluid"
-                                        class="card-img-top" alt="...">
-                                    <div class="which-name">
-                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                            Restaurant
-                                        </h5>
+                    @foreach ($posts as $post)
+                        <div class=" col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="listing-slide-wrap">
+                                <div class="card border-0 ">
+                                    <div class="listinslide-img">
+                                        <?php foreach (json_decode($post->image)  as $postimage) {?>
+                                        <img src=" {{ asset('/image/' . $postimage) }}" class="img-fluid"
+                                            class="card-img-top" alt="...">
+                                        <?php } ?>
+                                        <div class="which-name">
+                                            <h5><span><i class="fas fa-utensils"></i></span>
+                                                {{ $post->category }}
+                                            </h5>
+                                        </div>
+                                        <div class="item-price">
+                                            <p>
+                                                ${{ $post->price }}.00
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Favorite Place Food </h5>
-                                    <div class="listing-inner-info">
-                                        <ul class="info-list mt-3">
-                                            <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                            <li><span class="fas fa-phone"></span><a
-                                                    href="tel:0000000000">000-000-0000</a>
-                                            </li>
-                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                        </ul>
-                                    </div>
-                                    <div class="rating d-flex justify-content-between">
-                                        <div>
-                                            <ul>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $post->title }}</h5>
+                                        <div class="listing-inner-info">
+                                            <ul class="info-list mt-3">
+                                                <li><span class="fas fa-map-marker-alt"></span> {{ $post->address }}
+                                                </li>
+                                                <li><span class="fas fa-phone"></span><a
+                                                        href="tel:0000000000">{{ $post->telephone }}</a>
+                                                </li>
+                                                <li><span class="fas fa-calendar-minus"></span>
+                                                    {{ date('d M Y - H:i:s', $post->created_at->timestamp) }}</li>
                                             </ul>
                                         </div>
-                                        <div class="save">
-                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                            </span>
+                                        <div class="rating d-flex justify-content-between">
+                                            <div>
+                                                <ul>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <div class="save">
+                                                <span><i class="fa fa-bookmark" aria-hidden="true"></i>
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
-                    </div>
-                    <div class="  col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="listing-slide-wrap">
-                            <div class="card border-0 ">
-                                <div class="listinslide-img">
-                                    <img src="{{ asset('assets/img/Layer-46.png') }}" class="img-fluid"
-                                        class="card-img-top" alt="...">
-                                    <div class="which-name">
-                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                            Restaurant
-                                        </h5>
-                                    </div>
-                                    <div class="item-price">
-                                        <p>
-                                            $99.00
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Favorite Place Food </h5>
-                                    <div class="listing-inner-info">
-                                        <ul class="info-list mt-3">
-                                            <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                            <li><span class="fas fa-phone"></span><a
-                                                    href="tel:0000000000">000-000-0000</a>
-                                            </li>
-                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                        </ul>
-                                    </div>
-                                    <div class="rating d-flex justify-content-between">
-                                        <div>
-                                            <ul>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                        <div class="save">
-                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="  col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="listing-slide-wrap">
-                            <div class="card border-0 ">
-                                <div class="listinslide-img">
-                                    <img src="{{ asset('assets/img/Layer-48.png') }}" class="img-fluid"
-                                        class="card-img-top" alt="...">
-                                    <div class="which-name">
-                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                            Restaurant
-                                        </h5>
-                                    </div>
-                                    <div class="item-price">
-                                        <p>
-                                            $99.00
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Favorite Place Food </h5>
-                                    <div class="listing-inner-info">
-                                        <ul class="info-list mt-3">
-                                            <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                            <li><span class="fas fa-phone"></span><a
-                                                    href="tel:0000000000">000-000-0000</a>
-                                            </li>
-                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                        </ul>
-                                    </div>
-                                    <div class="rating d-flex justify-content-between">
-                                        <div>
-                                            <ul>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                        <div class="save">
-                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="  col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="listing-slide-wrap">
-                            <div class="card border-0 ">
-                                <div class="listinslide-img">
-                                    <img src="{{ asset('assets/img/Layer-49.png') }}" class="img-fluid"
-                                        class="card-img-top" alt="...">
-                                    <div class="which-name">
-                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                            Restaurant
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Favorite Place Food </h5>
-                                    <div class="listing-inner-info">
-                                        <ul class="info-list mt-3">
-                                            <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                            <li><span class="fas fa-phone"></span><a
-                                                    href="tel:0000000000">000-000-0000</a>
-                                            </li>
-                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                        </ul>
-                                    </div>
-                                    <div class="rating d-flex justify-content-between">
-                                        <div>
-                                            <ul>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                        <div class="save">
-                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="  col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="listing-slide-wrap">
-                            <div class="card border-0 ">
-                                <div class="listinslide-img">
-                                    <img src="{{ asset('assets/img/Layer-51.png') }}" class="img-fluid"
-                                        class="card-img-top" alt="...">
-                                    <div class="which-name">
-                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                            Restaurant
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Favorite Place Food </h5>
-                                    <div class="listing-inner-info">
-                                        <ul class="info-list mt-3">
-                                            <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                            <li><span class="fas fa-phone"></span><a
-                                                    href="tel:0000000000">000-000-0000</a>
-                                            </li>
-                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                        </ul>
-                                    </div>
-                                    <div class="rating d-flex justify-content-between">
-                                        <div>
-                                            <ul>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                        <div class="save">
-                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="  col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="listing-slide-wrap">
-                            <div class="card border-0 ">
-                                <div class="listinslide-img">
-                                    <img src="{{ asset('assets/img/Layer-52.png') }}" class="img-fluid"
-                                        class="card-img-top" alt="...">
-                                    <div class="which-name">
-                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                            Restaurant
-                                        </h5>
-                                    </div>
-                                    <div class="item-price">
-                                        <p>
-                                            $99.00
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Favorite Place Food </h5>
-                                    <div class="listing-inner-info">
-                                        <ul class="info-list mt-3">
-                                            <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                            <li><span class="fas fa-phone"></span><a
-                                                    href="tel:0000000000">000-000-0000</a>
-                                            </li>
-                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                        </ul>
-                                    </div>
-                                    <div class="rating d-flex justify-content-between">
-                                        <div>
-                                            <ul>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                        <div class="save">
-                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="  col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="listing-slide-wrap">
-                            <div class="card border-0 ">
-                                <div class="listinslide-img">
-                                    <img src="{{ asset('assets/img/Layer-53.png') }}" class="img-fluid"
-                                        class="card-img-top" alt="...">
-                                    <div class="which-name">
-                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                            Restaurant
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Favorite Place Food </h5>
-                                    <div class="listing-inner-info">
-                                        <ul class="info-list mt-3">
-                                            <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                            <li><span class="fas fa-phone"></span><a
-                                                    href="tel:0000000000">000-000-0000</a>
-                                            </li>
-                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                        </ul>
-                                    </div>
-                                    <div class="rating d-flex justify-content-between">
-                                        <div>
-                                            <ul>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                        <div class="save">
-                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="  col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="listing-slide-wrap">
-                            <div class="card border-0 ">
-                                <div class="listinslide-img">
-                                    <img src="{{ asset('assets/img/Layer-50.png') }}" class="img-fluid"
-                                        class="card-img-top" alt="...">
-                                    <div class="which-name">
-                                        <h5><span><i class="fas fa-utensils"></i></span>
-                                            Restaurant
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Favorite Place Food </h5>
-                                    <div class="listing-inner-info">
-                                        <ul class="info-list mt-3">
-                                            <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                            <li><span class="fas fa-phone"></span><a
-                                                    href="tel:0000000000">000-000-0000</a>
-                                            </li>
-                                            <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                        </ul>
-                                    </div>
-                                    <div class="rating d-flex justify-content-between">
-                                        <div>
-                                            <ul>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                        <div class="save">
-                                            <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                     <div class="col-12">
                         <div class="major-button mx-auto text-center">
                             <a href="busniess-listing.html" class="btn btn-primary">VIEW ALL</a>
@@ -1800,7 +710,6 @@
 
         </section>
         <!------------------------sec4-start------------------------>
-
         <!------------------------sec5-start------------------------>
         <section class="sec-5 bottom-space">
             <div class="container-fluid pl-0 pr-0">
@@ -1843,7 +752,5 @@
             </div>
         </section>
     @endforeach
-
     <!------------------------sec5-end------------------------>
-
 @endsection

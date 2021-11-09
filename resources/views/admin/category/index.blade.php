@@ -131,6 +131,7 @@
                                                     class="form-control">
                                             </div>
                                         </div>
+                                        <br>
                                         <div class="row form-group">
                                             <div class="col col-md-3">
                                                 <label class="form-control-label">Discription</label>
@@ -140,7 +141,7 @@
                                                     class="form-control" row="2"></Textarea>
                                             </div>
                                         </div>
-
+                                        <br>
                                         <div class="row form-group">
                                             <div class="col col-md-3">
                                                 <label class="form-control-label">Category Image</label>
@@ -148,10 +149,18 @@
                                             <div class="col-12 col-md-9">
                                                 <input type="file" id="image" name="image" class="form-control">
                                             </div>
+                                        </div><br>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label class="form-control-label">Icon Image</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <input type="file" id="icon-image" name="iconimage" class="form-control">
+                                            </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-md"
                                             onclick="event.preventDefault();
-                                                                                                                                                                                                                                 document.getElementById('createcategory').submit();">
+                                                                                                                                                                                                                                                                                                         document.getElementById('createcategory').submit();">
                                             <i class="fa fa-dot-circle-o"></i> Submit
                                         </button>
                                     </form>
@@ -207,8 +216,17 @@
                                                         <p class="form-control-static">{{ $category->description }}</p>
                                                     </div>
                                                 </div>
+                                                <div class="row form-group">
+                                                    <div class="col col-md-3"><label class=" form-control-label">
+                                                            icon Image</label>
+                                                    </div>
+                                                    <div class="col-12 col-md-9">
+                                                        <img src="{{ asset('storage/cat_icon/' . $category->iconimage) }}"
+                                                            alt="{{ $category->iconimage }}"
+                                                            style="width:100px; height:50px;" />
+                                                    </div>
+                                                </div>
                                             </div>
-
                                             <div class="col col-md-6">
                                                 <img src="{{ asset('storage/category/' . $category->image) }}"
                                                     alt="{{ $category->image }}" style="width:300px; height:200px;" />
@@ -259,7 +277,7 @@
                                                         row="2">{{ $category->description }}</Textarea>
                                                 </div>
                                             </div>
-
+                                            <br>
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label class="form-control-label">Category Image</label>
@@ -267,10 +285,19 @@
                                                 <div class="col-12 col-md-9">
                                                     <input type="file" id="image" name="image" class="form-control">
                                                 </div>
+                                            </div><br>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class="form-control-label">Icon Image</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="file" id="icon-image" name="iconimage"
+                                                        class="form-control">
+                                                </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary btn-md"
                                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                    document.getElementById('editcategory-{{ $category->id }}').submit();">
+                                                                                                                                                                                                                                                                                                                                                            document.getElementById('editcategory-{{ $category->id }}').submit();">
                                                 <i class="fa fa-dot-circle-o"></i> Submit
                                             </button>
                                         </form>
@@ -300,7 +327,7 @@
                                             data-dismiss="modal">Cancel</button>
                                         <button type="button" class="btn btn-danger"
                                             onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                document.getElementById('deletecategory-{{ $category->id }}').submit();">Confirm</button>
+                                                                                                                                                                                                                                                                                                                                                        document.getElementById('deletecategory-{{ $category->id }}').submit();">Confirm</button>
                                         <form action="{{ route('admin.category.destroy', $category->id) }}"
                                             style="display: none" id="deletecategory-{{ $category->id }}" method="POST">
                                             @csrf

@@ -47,7 +47,8 @@
                                     <div class="ads-detail">
                                         <h4 title="Sony Xperia TX ">{{ $postitem->title }}</h4>
                                         <p><span><i class="fa fa-calendar pe-2" aria-hidden="true"></i>
-                                            </span>{{ $postitem->created_at }} </p>
+                                            </span> {{ date('d M Y - H:i:s', $postitem->created_at->timestamp) }}
+                                        </p>
                                         <p><span><i class="fa fa-map-marker pe-2" aria-hidden="true"></i>
                                             </span>{{ $postitem->address }}</p>
                                     </div>
@@ -62,7 +63,8 @@
                                 </td>
                                 <td style="width: 16%;" class="action-td">
                                     <div class="editser-optins">
-                                        <p><a href="" class="edits-in"> <i class="fas fa-pen"></i> Edit </a> </p>
+                                        <p><a href="{{ $postitem->id }}" class="edits-in"> <i
+                                                    class="fas fa-pen"></i> Edit </a> </p>
                                         <p><a href="" class="edits-in"> <i class="fa fa-eye pe-1"
                                                     aria-hidden="true"></i>
                                                 View </a></p>

@@ -38,7 +38,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('category', 'CategoryController')->except(['create', 'show', 'edit']);
     Route::resource('subcategory', 'SubCategoryController')->except(['create', 'show', 'edit']);
     Route::resource('addpost', 'PostController')->except(['create', 'show', 'edit']);
-    Route::resource('listings', 'ListingController')->except(['create', 'show', 'edit']);
+    // Route::resource('listings', 'ListingController')->except(['create', 'show', 'edit']);
 });
 
 //user///////////////////////////////////////////////////////

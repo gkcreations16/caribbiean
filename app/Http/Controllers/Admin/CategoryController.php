@@ -43,7 +43,8 @@ class CategoryController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255|unique:categories',
             'description' => 'sometimes|max:755',
-            'image' => 'required|image|mimes:jpg,png,jpeg'
+            'image' => 'required|image|mimes:jpg,png,jpeg',
+            'iconimage' => 'required|image|mimes:jpg,png,jpeg'
         ]);
         //image
         $image = $request->image;
@@ -54,12 +55,22 @@ class CategoryController extends Controller
         //store image
         $image->storeAs('category', $imagename, 'public');
 
+
+        //image
+        $iconimage = $request->iconimage;
+        $iconimagename = Str::slug($request->name, '-') . uniqid() . '.' . $iconimage->getClientOriginalExtension();
+        if (!Storage::disk('public')->exists('cat_icon')) {
+            Storage::disk('public')->makeDirectory('cat_icon');
+        }
+        //store image
+        $iconimage->storeAs('cat_icon', $iconimagename, 'public');
         //
         $category = new Category();
         $category->name = $request->name;
         $category->slug = Str::slug($request->name, '-');
         $category->description = $request->description;
         $category->image = $imagename;
+        $category->iconimage = $iconimagename;
         $category->save();
         Toastr::success('Category created successfully');
         return redirect()->back();
@@ -96,18 +107,21 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request->name);
         if ($request->name == Category::findOrFail($id)->name) {
 
             $this->validate($request, [
-                'name' => 'required|max:255',
+                // 'name' => 'required|max:255',
                 'description' => 'sometimes|max:755',
-                'image' => 'sometimes|image|mimes:jpg,png,jpeg'
+                'image' => 'sometimes|image|mimes:jpg,png,jpeg',
+                'iconimage' => 'required|image|mimes:jpg,png,jpeg'
             ]);
         } else {
             $this->validate($request, [
-                'name' => 'required|max:255|unique:categories',
+                // 'name' => 'required|max:255|unique:categories',
                 'description' => 'sometimes|max:755',
-                'image' => 'sometimes|image|mimes:jpg,png,jpeg'
+                'image' => 'sometimes|image|mimes:jpg,png,jpeg',
+                'iconimage' => 'required|image|mimes:jpg,png,jpeg'
             ]);
         }
 
@@ -130,10 +144,29 @@ class CategoryController extends Controller
             $imagename = $category->image;
         }
 
+        if ($request->iconimage != null) {
+            //image
+            $iconimage = $request->iconimage;
+            $iconimagename = Str::slug($request->name, '-') . uniqid() . '.' . $iconimage->getClientOriginalExtension();
+            if (!Storage::disk('public')->exists('cat_icon')) {
+                Storage::disk('public')->makeDirectory('cat_icon');
+            }
+            //delete image
+            if (Storage::disk('public')->exists('cat_icon/' . $category->iconimage)) {
+                Storage::disk('public')->delete('cat_icon/' . $category->iconimage);
+            }
+            //store image
+            $iconimage->storeAs('cat_icon', $iconimagename, 'public');
+            //
+        } else {
+            $iconimagename = $category->iconimage;
+        }
+
         $category->name = $request->name;
         $category->slug = Str::slug($request->name, '-');
         $category->description = $request->description;
         $category->image = $imagename;
+        $category->iconimage = $iconimagename;
         $category->save();
         Toastr::success('Category created successfully');
         return redirect()->back();
@@ -150,6 +183,7 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $category->delete();
         Storage::disk('public')->delete('category/' . $category->image);
+        Storage::disk('public')->delete('cat_icon/' . $category->iconimage);
         Toastr::success('Category Deleted successfully');
         return redirect()->back();
     }
