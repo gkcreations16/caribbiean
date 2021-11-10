@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\SubCategory;
+use App\Category;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class SubCategoryController extends Controller
@@ -19,7 +19,8 @@ class SubCategoryController extends Controller
     public function index()
     {
         $subcategories = SubCategory::all();
-        return view('admin.subcategory.index', compact('subcategories'));
+        $category = Category::all();
+        return view('admin.subcategory.index', ['categorys' => $category, 'subcategories' => $subcategories]);
     }
 
     /**
@@ -40,25 +41,15 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
         $this->validate($request, [
-            'name' => 'required|max:255',
-            'image' => 'required|image|mimes:jpg,png,jpeg'
+            'name' => 'required|max:255'
+            // 'image' => 'required|image|mimes:jpg,png,jpeg'
         ]);
-        //image
-        $image = $request->image;
-        $imagename = Str::slug($request->name, '-') . uniqid() . '.' . $image->getClientOriginalExtension();
-        if (!Storage::disk('public')->exists('subcategory')) {
-            Storage::disk('public')->makeDirectory('subcategory');
-        }
-        //store image
-        $image->storeAs('subcategory', $imagename, 'public');
-
         //
         $subcategory = new SubCategory();
         $subcategory->name = $request->name;
         $subcategory->slug = Str::slug($request->name, '-');
-        $subcategory->image = $imagename;
+        $subcategory->category = $request->category;
         $subcategory->save();
         Toastr::success('Category created successfully');
         return redirect()->back();
@@ -98,42 +89,22 @@ class SubCategoryController extends Controller
     public function update(Request $request, $id)
     {
         if ($request->name == SubCategory::findOrFail($id)->name) {
-
             $this->validate($request, [
-                'name' => 'required|max:255',
-                'image' => 'sometimes|image|mimes:jpg,png,jpeg'
+                'name' => 'required|max:255'
+                // 'image' => 'sometimes|image|mimes:jpg,png,jpeg'
             ]);
         } else {
             $this->validate($request, [
-                'name' => 'required|max:255|unique:categories',
-                'image' => 'sometimes|image|mimes:jpg,png,jpeg'
+                'name' => 'required|max:255|unique:categories'
+                // 'image' => 'sometimes|image|mimes:jpg,png,jpeg'
             ]);
         }
-
-        $category = SubCategory::findOrFail($id);
-        if ($request->image != null) {
-            //image
-            $image = $request->image;
-            $imagename = Str::slug($request->name, '-') . uniqid() . '.' . $image->getClientOriginalExtension();
-            if (!Storage::disk('public')->exists('subcategory')) {
-                Storage::disk('public')->makeDirectory('category');
-            }
-            //delete image
-            if (Storage::disk('public')->exists('subcategory/' . $category->image)) {
-                Storage::disk('public')->delete('subcategory/' . $category->image);
-            }
-            //store image
-            $image->storeAs('subcategory', $imagename, 'public');
-            //
-        } else {
-            $imagename = $category->image;
-        }
-
-        $category->name = $request->name;
-        $category->slug = Str::slug($request->name, '-');
-        $category->image = $imagename;
-        $category->save();
-        Toastr::success('SubCategory created successfully');
+        $subcategory = SubCategory::findOrFail($id);
+        $subcategory->name = $request->name;
+        $subcategory->slug = Str::slug($request->name, '-');
+        $subcategory->category = $request->category;
+        $subcategory->save();
+        Toastr::success('SubCategory Updated  successfully');
         return redirect()->back();
     }
 
@@ -147,7 +118,7 @@ class SubCategoryController extends Controller
     {
         $category = SubCategory::findOrFail($id);
         $category->delete();
-        Storage::disk('public')->delete('subcategory/' . $category->image);
+        // Storage::disk('public')->delete('subcategory/' . $category->image);
         Toastr::success('SubCategory Deleted successfully');
         return redirect()->back();
     }

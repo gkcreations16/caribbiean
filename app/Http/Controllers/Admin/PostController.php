@@ -8,6 +8,7 @@ use App\SubCategory;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -20,11 +21,26 @@ class postController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(2);
+
+        //     $categorysData = DB::select("SELECT
+        //     *
+        // FROM
+        //     `categories`
+        //     LEFT JOIN `sub_categories` ON `categories`.`name` = `sub_categories`.`category`
+        //     WHERE sub_categories.category = categories.name");
+
+        $posts = Post::paginate(4);
         $category = Category::all();
         $subcategory = SubCategory::all();
         return view('admin.post.addpost', ['categorys' => $category, 'subcategorys' => $subcategory, 'posts' => $posts]);
     }
+
+    public function GetSubCatAgainstMainCat($id)
+    {
+
+        echo json_encode(DB::table('sub_categories')->where('category', $id)->get());
+    }
+
 
     /**
      * Show the form for creating a new resource.

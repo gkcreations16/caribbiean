@@ -17,7 +17,7 @@ class CreateSubCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->unique();
             $table->string('slug')->unique();
-            $table->string('image');
+            $table->string('category');
             $table->timestamps();
         });
     }

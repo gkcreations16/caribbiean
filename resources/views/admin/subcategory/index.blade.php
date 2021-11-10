@@ -85,7 +85,6 @@
                                                             data-target="#viewModal-{{ $sub_category->id }}">
                                                             <i class="fa fa-eye pe-1"></i>
                                                         </button>
-
                                                         <button type="button" class="btn btn-secondary btnstyle mb-1"
                                                             data-toggle="modal"
                                                             data-target="#editModal-{{ $sub_category->id }}">
@@ -124,24 +123,32 @@
                                         @csrf
                                         <div class="row form-group">
                                             <div class="col col-md-3">
-                                                <label class="form-control-label">Name</label>
+                                                <label class="form-control-label">Category</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <select class="form-select" aria-label="Default select example"
+                                                    name="category" placeholder="Please select">
+                                                    <option>Please select</option>
+                                                    @foreach ($categorys as $category)
+                                                        <option selected value="{{ $category->name }}">
+                                                            {{ $category->name }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div><br>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label class="form-control-label">Sub Category Name</label>
                                             </div>
                                             <div class="col-12 col-md-9">
                                                 <input type="text" id="name" name="name" placeholder="Sub Cetegory"
                                                     class="form-control">
                                             </div>
                                         </div>
-                                        <div class="row form-group">
-                                            <div class="col col-md-3">
-                                                <label class="form-control-label">Sub Category Image</label>
-                                            </div>
-                                            <div class="col-12 col-md-9">
-                                                <input type="file" id="image" name="image" class="form-control">
-                                            </div>
-                                        </div>
                                         <button type="submit" class="btn btn-primary btn-md"
                                             onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                 document.getElementById('createcategory').submit();">
+                                                                                                                                                                                                                                                                                                                                                                         document.getElementById('createcategory').submit();">
                                             <i class="fa fa-dot-circle-o"></i> Submit
                                         </button>
                                     </form>
@@ -166,37 +173,23 @@
                                         <div class="row">
                                             <div class="col col-md-6">
                                                 <div class="row form-group">
-                                                    <div class="col col-md-3"><label
-                                                            class=" form-control-label">Name</label>
+                                                    <div class="col col-md-5"><label
+                                                            class=" form-control-label">Category</label>
                                                     </div>
-                                                    <div class="col-12 col-md-9">
+                                                    <div class="col-12 col-md-7">
+                                                        <p class="form-control-static">{{ $sub_category->category }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                    <div class="col col-md-5"><label class=" form-control-label">Sub
+                                                            Category </label>
+                                                    </div>
+                                                    <div class="col-12 col-md-7">
                                                         <p class="form-control-static">{{ $sub_category->name }}</p>
                                                     </div>
                                                 </div>
-                                                <div class="row form-group">
-                                                    <div class="col col-md-3"><label class=" form-control-label">Created
-                                                            At</label>
-                                                    </div>
-                                                    <div class="col-12 col-md-9">
-                                                        <p class="form-control-static">{{ $sub_category->created_at }}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="row form-group">
-                                                    <div class="col col-md-3"><label class=" form-control-label">Updated
-                                                            At</label>
-                                                    </div>
-                                                    <div class="col-12 col-md-9">
-                                                        <p class="form-control-static">{{ $sub_category->updated_at }}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                            <div class="col col-md-6">
-                                                <img src="{{ asset('storage/subcategory/' . $sub_category->image) }}"
-                                                    alt="{{ $sub_category->image }}"
-                                                    style="width:300px; height:200px;" />
                                             </div>
                                         </div>
                                     </div>
@@ -224,9 +217,27 @@
                                             enctype="multipart/form-data" class="form-horizontal">
                                             @csrf
                                             @method('PUT')
+                                            <?php $options = $sub_category->category; ?>
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label class="form-control-label">Name</label>
+                                                    <label class="form-control-label">Category</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <select class="form-select" aria-label="Default select example"
+                                                        name="category" placeholder="Please select">
+                                                        <option>Please select</option>
+                                                        @foreach ($categorys as $value)
+                                                            <option value="{{ $value->name }}"
+                                                                {{ $value->name == $options ? 'selected' : '' }}>
+                                                                {{ $value->name }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div><br>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class="form-control-label">Sub Category </label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <input type="text" id="name" name="name"
@@ -234,17 +245,9 @@
                                                         class="form-control">
                                                 </div>
                                             </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label class="form-control-label">Sub Category Image</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="file" id="image" name="image" class="form-control">
-                                                </div>
-                                            </div>
                                             <button type="submit" class="btn btn-primary btn-md"
                                                 onclick="event.preventDefault();
-                                                             document.getElementById('editcategory-{{ $sub_category->id }}').submit();">
+                                                                                                                                                                     document.getElementById('editcategory-{{ $sub_category->id }}').submit();">
                                                 <i class="fa fa-dot-circle-o"></i> Submit
                                             </button>
                                         </form>
@@ -273,7 +276,7 @@
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                         <button type="button" class="btn btn-danger"
                                             onclick="event.preventDefault();
-                                             document.getElementById('deletecategory-{{ $sub_category->id }}').submit();">Confirm</button>
+                                                                                                                                                     document.getElementById('deletecategory-{{ $sub_category->id }}').submit();">Confirm</button>
                                         <form action="{{ route('admin.subcategory.destroy', $sub_category->id) }}"
                                             style="display: none" id="deletecategory-{{ $sub_category->id }}"
                                             method="POST">
@@ -285,8 +288,6 @@
                             </div>
                         </div>
                     @endforeach
-
-
                     <!-- .content -->
                 </div>
 

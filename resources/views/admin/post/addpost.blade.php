@@ -131,7 +131,7 @@
                         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="mediumModalLabel">Add New Posts</h5>
+                                    <h5 class="modal-title" id="mediumModalLabel">Adds Post</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                     </button>
@@ -154,8 +154,8 @@
                                                 </div>
                                                 <div class=" col-sm-6 col-12">
                                                     <label>Type / Category</label>
-                                                    <select class="form-select" aria-label="Default select example"
-                                                        name="category" placeholder="Please select">
+                                                    <select class="form-select category" aria-label="Default select example"
+                                                        name="category" id="" placeholder="Please select">
                                                         @foreach ($categorys as $category)
                                                             <option selected value="{{ $category->name }}">
                                                                 {{ $category->name }}
@@ -163,15 +163,16 @@
                                                         @endforeach
                                                     </select>
                                                 </div>
+                                                {{-- <div class="col-sm-6 col-12">
+                                                    <label>Sub Category <label>
+                                                            <select class="form-select formselect subcategory "
+                                                                aria-label="Default select example"
+                                                                placeholder="Select Sub Category">
+                                                            </select>
+                                                </div> --}}
                                                 <div class="col-sm-6 col-12">
                                                     <label>Sub Category</label>
-                                                    <select class="form-select" aria-label="Default select example"
-                                                        name="subcategory" placeholder="Please select">
-                                                        @foreach ($subcategorys as $subcategory)
-                                                            <option selected value="{{ $subcategory->name }}">
-                                                                {{ $subcategory->name }}
-                                                            </option>
-                                                        @endforeach
+                                                    <select class="form-select subcategory" placeholder="Please select">
                                                     </select>
                                                 </div>
                                             </div>
@@ -410,7 +411,7 @@
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-primary btn-md"
                                                 onclick="event.preventDefault();
-                                                                                                                                                                                            document.getElementById('createPost').submit();">SAVE
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    document.getElementById('createPost').submit();">SAVE
                                             </button>
                                         </div>
                                     </form>
@@ -450,26 +451,27 @@
                                         <input type="text" class="form-control" value="{{ $postitem->title }}"
                                             name="title" placeholder="Post Title" aria-label="Post Title">
                                     </div>
+                                    <?php $options = $postitem->category;
+                                    $options2 = $postitem->name; ?>
                                     <div class=" col-sm-6 col-12">
                                         <label>Type / Category</label>
-                                        <select class="form-select" aria-label="Default select example"
-                                            value="{{ $postitem->category }}" name="category"
-                                            placeholder="Please select">
-                                            @foreach ($categorys as $category)
-                                                <option selected value="{{ $category->name }}">{{ $category->name }}
+                                        <select class="form-select category" aria-label="Default select example"
+                                            name="category" placeholder="Please select">
+                                            <option>Please select</option>
+                                            @foreach ($categorys as $value)
+                                                <option value="{{ $value->name }}"
+                                                    {{ $value->name == $options ? 'selected' : '' }}>
+                                                    {{ $value->name }}
                                                 </option>
                                             @endforeach
                                         </select>
                                     </div>
+
                                     <div class="col-sm-6 col-12">
                                         <label>Sub Category</label>
-                                        <select class="form-select" aria-label="Default select example"
+                                        <select class="form-select subcategory" aria-label="Default select example"
                                             name="subcategory" placeholder="Please select">
-                                            @foreach ($subcategorys as $subcategory)
-                                                <option selected value="{{ $subcategory->name }}">
-                                                    {{ $subcategory->name }}
-                                                </option>
-                                            @endforeach
+                                            <option>{{ $options2 }}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -701,7 +703,7 @@
                             </div>
                             <button type="submit" class="btn btn-primary btn-md"
                                 onclick="event.preventDefault();
-                                                                                                                                                         document.getElementById('editcategory-{{ $postitem->id }}').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                 document.getElementById('editcategory-{{ $postitem->id }}').submit();">
                                 <i class="fa fa-dot-circle-o"></i> Submit
                             </button>
                         </form>
@@ -721,14 +723,14 @@
                     </div>
                     <div class="modal-body">
                         <p>
-                            The sub category will be deleted !!
+                            The Post will be deleted !!
                         </p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         <button type="button" class="btn btn-danger"
                             onclick="event.preventDefault();
-                                                        document.getElementById('deletecategory-{{ $postitem->id }}').submit();">Confirm</button>
+                                                                                                                 document.getElementById('deletecategory-{{ $postitem->id }}').submit();">Confirm</button>
                         <form action="{{ route('admin.addpost.destroy', $postitem->id) }}" style="display: none"
                             id="deletecategory-{{ $postitem->id }}" method="POST">
                             @csrf
@@ -746,6 +748,34 @@
     </div>
     </div>
     </div>
+
+    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.category').on('change', function() {
+                let id = $(this).val();
+                $('.subcategory').empty();
+                $('.subcategory').append(`<option value="0" disabled selected>Processing...</option>`);
+                $.ajax({
+                    type: 'GET',
+                    url: 'GetSubCatAgainstMainCat/' + id,
+                    success: function(response) {
+                        var response = JSON.parse(response);
+                        console.log(response);
+                        $('.subcategory').empty();
+                        $('.subcategory').append(
+                            `<option value="0" disabled selected>Select Sub Category*</option>`
+                        );
+                        response.forEach(element => {
+                            $('.subcategory').append(
+                                `<option value="${element['id']}">${element['name']}</option>`
+                            );
+                        });
+                    }
+                });
+            });
+        });
+    </script>
     @push('footer')
         <script src="{{ asset('backend/vendors/datatables.net/js/jquery.dataTables.min.js') }}"></script>
         <script src="{{ asset('backend/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
