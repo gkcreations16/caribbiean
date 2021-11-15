@@ -14,14 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
-
+///inner front pages
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('category', 'HomeController@categorypage')->name('category');
+Route::get('navbar2', 'HomeController@navbarfront')->name('navbar2');
+Route::get('listing', 'HomeController@listingpage')->name('listing');
+
+
 
 //admin///////////////////////////////////////////////////////
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
@@ -31,9 +31,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     Route::put('profile', 'DashboardController@updateprofile')->name('profile.update');
     Route::put('profile/password', 'DashboardController@changePassword')->name('profile.password');
-    ///pages
+    ///inner pages
     Route::resource('page', 'HomePageController')->except(['create', 'show', 'edit']);
-
     Route::resource('user', 'UserController')->except(['create', 'show', 'edit', 'store']);
     Route::resource('category', 'CategoryController')->except(['create', 'show', 'edit']);
     Route::resource('subcategory', 'SubCategoryController')->except(['create', 'show', 'edit']);

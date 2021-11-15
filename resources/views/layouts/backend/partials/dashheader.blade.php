@@ -6,7 +6,6 @@
                 <div class="navbar-menus">
                     <nav class="navbar">
                         <a class="navbar-brand d-md-block d-none" href="{{ route('home') }}">
-
                             <div class="header-logo d-md-block d-none"> <img
                                     src=" {{ asset('assets/img/Layer-141-copy.png') }}" class="img-fluid"></div>
                         </a>
@@ -35,14 +34,9 @@
                                         <li><a class="dropdown-item" href="#"><span><img
                                                         src="{{ asset('assets/img/Layer-1411.png') }}"
                                                         class="img-fluid"></span>Reviews</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><span><img
-                                                        src="{{ asset('assets/img/Layer-919.png') }}"
-                                                        class="img-fluid"></span>Logout</a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                class="d-none">
-                                                @csrf
-                                            </form>
+                                        <li data-toggle="modal" data-target="#modalTC"><a class="dropdown-item"
+                                                href="#"><span><img src="{{ asset('assets/img/Layer-919.png') }}"
+                                                        class="img-fluid">Logout</a></li>
                                         </li>
                                     </ul>
                                 </div>
@@ -80,6 +74,29 @@
                 </div>
             </div>
         </section>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modalTC" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times; </button>
+                <h4 class="modal-title">LogOut</h4>
+            </div>
+            <div class="modal-body">
+                <p>Want To log In Again<a href="{{ route('logout') }}">Login </a></p>
+            </div>
+            <div class="modal-footer">
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"
+                    id="logout_pop">Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 <!------------------------header-end------------------------>

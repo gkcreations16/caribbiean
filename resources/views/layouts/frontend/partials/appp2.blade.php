@@ -29,7 +29,7 @@
 
 <body id="my-btn">
     <!------------------------header-start------------------------>
-    @include('layouts.frontend.partials.navbar')
+    @include('layouts.frontend.partials.navbar2')
     <!------------------------header-end------------------------>
 
     @yield('content')
@@ -59,7 +59,8 @@
                     <div class=" col-lg-3 col-md-12 col-sm-12 col-12">
                         <div class="footer-mains">
                             <div class="footer-logo">
-                                <a href="index.html"><img src="img/footernewlog.png" class="img-fluid"></a>
+                                <a href="{{ route('home') }}"><img src="{{ asset('assets/img/footernewlog.png') }}"
+                                        class="img-fluid"></a>
                             </div>
                             <p>Lorem ipsum dolor sit amet,
                                 consetetur adipisicing elit, sed do eiusmod tempor quam voluptatem.
@@ -75,7 +76,8 @@
                                         <div class="col-md-11 col-sm-11 col-11">
                                             <div class="card-body">
                                                 <p class="card-title">Dummy Avenue, 3rd Floor dummy 10011
-                                                    212.913.9058</p>
+                                                    212.913.9058
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -110,7 +112,8 @@
                                 </div>
                                 <div class="footer-headers">
                                     <h4>Our Location</h4>
-                                    <img src="img/Rounded-Rectangle-3-copy-7.png" class="img-fluid">
+                                    <img src="{{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
+                                        class="img-fluid">
                                 </div>
                                 <div class="footer-map">
                                     <iframe
@@ -127,7 +130,8 @@
                                 <div class="col-md-4 col-sm-6">
                                     <div class="footer-headers">
                                         <h4>Quick Links</h4>
-                                        <img src="img/Rounded-Rectangle-3-copy-7.png" class="img-fluid">
+                                        <img src="{{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
+                                            class="img-fluid">
                                     </div>
                                     <div class="menus-list">
                                         <ul>
@@ -142,7 +146,8 @@
 
                                     <div class="footer-headers">
                                         <h4>More Links</h4>
-                                        <img src="img/Rounded-Rectangle-3-copy-7.png" class="img-fluid">
+                                        <img src="{{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
+                                            class="img-fluid">
                                     </div>
                                     <div class="menus-list">
                                         <ul>
@@ -157,7 +162,8 @@
                                 <div class="col-md-4 col-sm-6">
                                     <div class="footer-headers">
                                         <h4>Top Ads</h4>
-                                        <img src="img/Rounded-Rectangle-3-copy-7.png" class="img-fluid">
+                                        <img src="{{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
+                                            class="img-fluid">
                                     </div>
                                     <div class="menus-list">
                                         <ul>
@@ -181,7 +187,8 @@
                                 <div class="col-md-4 col-sm-6">
                                     <div class="footer-headers">
                                         <h4>Newsletter</h4>
-                                        <img src="img/Rounded-Rectangle-3-copy-7.png" class="img-fluid">
+                                        <img src="{{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
+                                            class="img-fluid">
                                     </div>
                                     <div class="menus-list">
                                         <p>To get the latest news and
@@ -197,7 +204,8 @@
                                                             placeholder="You E-mail">
                                                     </div>
                                                     <div class="col-6">
-                                                        <span><img src="img/Layer-59.png" class="img-fluid"></span>
+                                                        <span><img src="{{ asset('assets/img/Layer-59.png') }}"
+                                                                class="img-fluid"></span>
                                                     </div>
                                                 </div>
                                             </form>
@@ -205,7 +213,8 @@
                                     </div>
                                     <div class="footer-headers">
                                         <h4>Facebook Updates</h4>
-                                        <img src="img/Rounded-Rectangle-3-copy-7.png" class="img-fluid">
+                                        <img src="{{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
+                                            class="img-fluid">
                                     </div>
                                     <div class="facebok-frame">
                                         <iframe
@@ -242,6 +251,7 @@
             </div>
         </footer>
         <!------------------------footer-end-start------------------------>
+    </div>
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

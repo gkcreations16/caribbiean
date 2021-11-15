@@ -18,16 +18,16 @@
                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
                          <ul class="navbar-nav me-auto mb-2 mb-lg-0  mx-auto">
                              <li class="nav-item active">
-                                 <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                                 <a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a>
                              </li>
                              <li class="nav-item">
-                                 <a class="nav-link" href="category.html">Categories</a>
+                                 <a class="nav-link" href="{{ route('category') }}">Categories</a>
+                             </li>
+                             <li class="    nav-item">
+                                 <a class="nav-link" href="{{ route('listing') }}">Featured Listing</a>
                              </li>
                              <li class="nav-item">
-                                 <a class="nav-link" href="listing.html">Featured Listing</a>
-                             </li>
-                             <li class="nav-item">
-                                 <a class="nav-link" href="busniess-listing.html">Business Listing</a>
+                                 <a class="nav-link" href="#">Business Listing</a>
                              </li>
                              <li class="nav-item">
                                  <a class="nav-link" href="#">Contact Us</a>
