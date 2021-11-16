@@ -7,6 +7,7 @@ use App\Home;
 use App\Category;
 use App\SubCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -46,5 +47,26 @@ class HomeController extends Controller
         $subcategory = SubCategory::all();
         return view('category', ['categorys' => $category, 'subcategorys' => $subcategory]);
         // return view('listing');
+    }
+    public function searchProduct(Request $request)
+    {
+        $select_cate = $request->select_cat;
+        $search = $request->searchonproduct;
+        $subcategory = SubCategory::all();
+        $category = Category::all();
+        $posts = Post::paginate(8);
+
+
+
+        // $allcategory = array();
+        // foreach ($category as $cat) {
+        //     $allcategory[] = $cat->name;
+        // }
+
+        //$data = DB::table('categories')->select('categories.name', 'posts.category', 'posts.title')->join('posts', 'posts.category', '=', 'categories.name')->get();
+
+        $serch_input = DB::table('posts')->where('title', 'like', '%' . $search . '%')->get();
+
+        return view('listing', ['categorys' => $category, 'subcategorys' => $subcategory,  'posts' => $posts, 'serch_input' => $serch_input]);
     }
 }

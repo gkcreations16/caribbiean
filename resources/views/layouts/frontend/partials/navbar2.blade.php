@@ -15,26 +15,53 @@
                      </a>
                      <div class="serach-cover">
                          <div class="s003">
-                             <form>
+                             <form method="post" action="{{ url('/product/search') }}">
+                                 @csrf
+
                                  <div class="inner-form  d-flex justify-content-between align-items-center">
-                                     <div class="input-field first-wrap">
-                                         <div class="input-select">
-                                             <div class="select-category text-start">
-                                                 <select class="form-select" aria-label="Default select example">
-                                                     <option selected="">Select Category</option>
-                                                     @foreach ($categorys as $category)
-                                                         <option value="{{ $category->name }}">{{ $category->name }}
-                                                         </option>
-                                                     @endforeach
-                                                 </select>
+                                     @if (isset($data))
+                                         <div class="input-field first-wrap">
+                                             <div class="input-select">
+                                                 <div class="select-category text-start">
+                                                     <select class="form-select" aria-label="Default select example"
+                                                         name="select_cat">
+                                                         <option selected="">Select Category</option>
+                                                         @foreach ($categorys as $category)
+                                                             <option value="{{ $category->name }}">
+                                                                 {{ $category->name }}
+                                                             </option>
+                                                         @endforeach
+                                                     </select>
+                                                 </div>
                                              </div>
                                          </div>
-                                     </div>
+
+                                     @else
+                                         <div class="input-field first-wrap">
+                                             <div class="input-select">
+                                                 <div class="select-category text-start">
+                                                     <select class="form-select" aria-label="Default select example"
+                                                         name="select_cat">
+                                                         <option selected="">Select Category</option>
+                                                         @foreach ($categorys as $category)
+                                                             <option value="{{ $category->name }}">
+                                                                 {{ $category->name }}
+                                                             </option>
+                                                         @endforeach
+                                                     </select>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     @endif
+                                     {{-- <form method="post" action="{{ url('/product/search') }}"> --}}
                                      <div class="input-field second-wrap">
-                                         <input id="search" type="text" placeholder="Enter Keywords">
-                                         <button class="search-button btn btn-primary"> <span class="d-sm-block d-none">
+                                         <input id="search" type="text" name="searchonproduct"
+                                             placeholder="Enter Keywords" required="true">
+                                         <button type="submit" class="search-button btn btn-primary"> <span
+                                                 class="d-sm-block d-none">
                                                  Search</span> <span class="d-sm-none d-block"><i
                                                      class="fas fa-search"></i></span></button>
+
                                      </div>
                                  </div>
                              </form>
@@ -75,7 +102,8 @@
                          <div id="sidebarMenu">
                              <ul class="sidebarMenuInner navbar-nav me-auto mb-2 mb-lg-0  mx-auto">
                                  <li class="nav-item">
-                                     <a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a>
+                                     <a class="nav-link" aria-current="page"
+                                         href="{{ route('home') }}">Home</a>
                                  </li>
                                  <li class="nav-item">
                                      <a class="nav-link" href="{{ route('category') }}">Category</a>
