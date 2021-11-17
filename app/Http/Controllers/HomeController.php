@@ -51,22 +51,13 @@ class HomeController extends Controller
     public function searchProduct(Request $request)
     {
         $select_cate = $request->select_cat;
-        $search = $request->searchonproduct;
+        $search_field_data = $request->searchonproduct;
         $subcategory = SubCategory::all();
         $category = Category::all();
         $posts = Post::paginate(8);
-
-
-
-        // $allcategory = array();
-        // foreach ($category as $cat) {
-        //     $allcategory[] = $cat->name;
-        // }
-
         //$data = DB::table('categories')->select('categories.name', 'posts.category', 'posts.title')->join('posts', 'posts.category', '=', 'categories.name')->get();
+        $serch_input = DB::table('posts')->where('title', 'like', '%' . $search_field_data . '%')->get();
 
-        $serch_input = DB::table('posts')->where('title', 'like', '%' . $search . '%')->get();
-
-        return view('listing', ['categorys' => $category, 'subcategorys' => $subcategory,  'posts' => $posts, 'serch_input' => $serch_input]);
+        return view('listing', ['categorys' => $category, 'select_cate' => $select_cate, 'subcategorys' => $subcategory, 'search_field_data' => $search_field_data,  'posts' => $posts, 'serch_input' => $serch_input]);
     }
 }

@@ -18,23 +18,29 @@
                         </div>
                         <div class="serach-cover">
                             <div class="s003">
-                                <form>
+                                <form method="post" action="{{ url('/product/search') }}">
+                                    @csrf
                                     <div class="inner-form  d-flex justify-content-between align-items-center">
                                         <div class="input-field first-wrap">
                                             <div class="input-select">
                                                 <div class="select-category text-start">
-                                                    <select class="form-select" aria-label="Default select example">
+                                                    <select class="form-select" name="select_cat"
+                                                        aria-label="Default select example">
                                                         <option selected>Select Category</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
+                                                        @foreach ($categorys as $category)
+                                                            <option value="{{ $category->name }}">
+                                                                {{ $category->name }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="input-field second-wrap">
-                                            <input id="search" type="text" placeholder="Enter Keywords" />
-                                            <button class="search-button btn btn-primary"> <span class="d-sm-block d-none">
+                                            <input id="search" name="searchonproduct" type="text"
+                                                placeholder="Enter Keywords" />
+                                            <button type="submit" class="search-button btn btn-primary"> <span
+                                                    class="d-sm-block d-none">
                                                     Search</span> <span class="d-sm-none d-block"><i
                                                         class="fas fa-search"></i></span></button>
                                         </div>
@@ -95,7 +101,7 @@
         <!--------------------------styles-end----------------------------->
         <!------------------------sec1-start------------------------>
         <!-- <section class="sec-1 top-space bottom-space">
-                                                                                                                                                                                                                                                                           <!-hhh-----------------------sec1-end------------------------>
+                                                                                                                                                                                                                                                                                               <!-hhh-----------------------sec1-end------------------------>
 
         <!------------------------sec1-new-start------------------------>
         <section class="sec-1 top-space bottom-space">

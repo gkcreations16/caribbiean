@@ -17,7 +17,6 @@
                          <div class="s003">
                              <form method="post" action="{{ url('/product/search') }}">
                                  @csrf
-
                                  <div class="inner-form  d-flex justify-content-between align-items-center">
                                      @if (isset($data))
                                          <div class="input-field first-wrap">

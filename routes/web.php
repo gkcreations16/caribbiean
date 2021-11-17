@@ -14,14 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-///inner front pages
+/// front pages
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('category', 'HomeController@categorypage')->name('category');
 Route::get('navbar2', 'HomeController@navbarfront')->name('navbar2');
 Route::get('listing', 'HomeController@listingpage')->name('listing');
 Route::post('/product/search', 'HomeController@searchProduct');
-
+/// end front pages
 
 
 

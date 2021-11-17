@@ -156,6 +156,7 @@
                                                     <label>Type / Category</label>
                                                     <select class="form-select category" aria-label="Default select example"
                                                         name="category" id="" placeholder="Please select">
+                                                        <option value="0" disabled="true" selected="true">-Select-</option>
                                                         @foreach ($categorys as $category)
                                                             <option selected value="{{ $category->name }}">
                                                                 {{ $category->name }}
@@ -173,6 +174,7 @@
                                                 <div class="col-sm-6 col-12">
                                                     <label>Sub Category</label>
                                                     <select class="form-select subcategory" placeholder="Please select">
+                                                        <option value="0" disabled="true" selected="true">Select</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -411,7 +413,7 @@
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-primary btn-md"
                                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    document.getElementById('createPost').submit();">SAVE
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            document.getElementById('createPost').submit();">SAVE
                                             </button>
                                         </div>
                                     </form>
@@ -469,10 +471,21 @@
 
                                     <div class="col-sm-6 col-12">
                                         <label>Sub Category</label>
-                                        <select class="form-select subcategory" aria-label="Default select example"
-                                            name="subcategory" placeholder="Please select">
-                                            <option>{{ $options2 }}</option>
-                                        </select>
+                                        @if (isset($posts))
+                                            <select class="form-select subcategory" aria-label="Default select example"
+                                                name="subcategory" placeholder="Please select">
+                                                <option value="0" disabled="true" selected="true">{{ $options2 }}
+                                                </option>
+                                            </select>
+                                        @else
+                                            <select class="form-select subcategory" aria-label="Default select example"
+                                                name="subcategory" placeholder="Please select">
+                                                <option value="0" disabled="true" selected="true"></option>
+                                            </select>
+                                        @endif
+
+
+
                                     </div>
                                 </div>
                             </div>
@@ -703,7 +716,7 @@
                             </div>
                             <button type="submit" class="btn btn-primary btn-md"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                 document.getElementById('editcategory-{{ $postitem->id }}').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                         document.getElementById('editcategory-{{ $postitem->id }}').submit();">
                                 <i class="fa fa-dot-circle-o"></i> Submit
                             </button>
                         </form>
@@ -730,7 +743,7 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         <button type="button" class="btn btn-danger"
                             onclick="event.preventDefault();
-                                                                                                                 document.getElementById('deletecategory-{{ $postitem->id }}').submit();">Confirm</button>
+                                                                                                                                                                         document.getElementById('deletecategory-{{ $postitem->id }}').submit();">Confirm</button>
                         <form action="{{ route('admin.addpost.destroy', $postitem->id) }}" style="display: none"
                             id="deletecategory-{{ $postitem->id }}" method="POST">
                             @csrf
@@ -764,7 +777,7 @@
                         console.log(response);
                         $('.subcategory').empty();
                         $('.subcategory').append(
-                            `<option value="0" disabled selected>Select Sub Category*</option>`
+                            `<option value="0" disabled selected>Select </option>`
                         );
                         response.forEach(element => {
                             $('.subcategory').append(
