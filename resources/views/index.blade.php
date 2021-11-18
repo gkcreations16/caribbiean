@@ -101,7 +101,7 @@
         <!--------------------------styles-end----------------------------->
         <!------------------------sec1-start------------------------>
         <!-- <section class="sec-1 top-space bottom-space">
-                                                                                                                                                                                                                                                                                               <!-hhh-----------------------sec1-end------------------------>
+                                                                                                                                                                                                                                                                                                                           <!-hhh-----------------------sec1-end------------------------>
 
         <!------------------------sec1-new-start------------------------>
         <section class="sec-1 top-space bottom-space">
@@ -117,7 +117,7 @@
                     <div id="new-style-categories-slide">
                         @foreach ($categorys as $category)
                             <div class="new-style-categories">
-                                <a href="#">
+                                <a href="{{ route('categorydetail', $category->id) }}">
                                     <div class="card border-0 text-white">
                                         <div class="new-style-img">
                                             <img src="{{ asset('storage/category/' . $category->image) }}"
@@ -197,22 +197,24 @@
                                         <div class="listing-slider">
                                             @foreach ($posts as $post)
                                                 <div class="card border-0 ">
-                                                    <div class="listinslide-img">
-                                                        <?php foreach (json_decode($post->image)  as $postimage) {?>
-                                                        <img src=" {{ asset('/image/' . $postimage) }}"
-                                                            class="img-fluid" class="card-img-top" alt="...">
-                                                        <?php } ?>
-                                                        <div class="which-name">
-                                                            <h5><span><i class="fas fa-utensils"></i></span>
-                                                                {{ $post->category }}
-                                                            </h5>
+                                                    <a href="{{ route('details', $post->id) }}">
+                                                        <div class="listinslide-img">
+                                                            <?php foreach (json_decode($post->image)  as $postimage) {?>
+                                                            <img src=" {{ asset('/image/' . $postimage) }}"
+                                                                class="img-fluid" class="card-img-top" alt="...">
+                                                            <?php } ?>
+                                                            <div class="which-name">
+                                                                <h5><span><i class="fas fa-utensils"></i></span>
+                                                                    {{ $post->category }}
+                                                                </h5>
+                                                            </div>
+                                                            <div class="item-price">
+                                                                <p>
+                                                                    ${{ $post->price }}.00
+                                                                </p>
+                                                            </div>
                                                         </div>
-                                                        <div class="item-price">
-                                                            <p>
-                                                                ${{ $post->price }}.00
-                                                            </p>
-                                                        </div>
-                                                    </div>
+                                                    </a>
                                                     <div class="card-body">
                                                         <h5 class="card-title">{{ $post->title }}</h5>
                                                         <div class="listing-inner-info">

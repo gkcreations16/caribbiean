@@ -41,6 +41,7 @@ class HomeController extends Controller
         $subcategory = SubCategory::all();
         return view('listing', ['categorys' => $category, 'posts' => $posts, 'subcategorys' => $subcategory]);
     }
+
     public function navbarfront()
     {
         $category = Category::paginate(8);
@@ -48,6 +49,27 @@ class HomeController extends Controller
         return view('category', ['categorys' => $category, 'subcategorys' => $subcategory]);
         // return view('listing');
     }
+
+    public function postdetails(Request $request, $id)
+    {
+        $postdetail = Post::findOrFail($id);
+        $category = Category::all();
+        $subcategory = SubCategory::all();
+        return view('postdetail', ['categorys' => $category, 'subcategorys' => $subcategory, 'postdetail' => $postdetail]);
+        // return view('listing');
+    }
+
+    public function categorydetails(Request $request, $id)
+    {
+        $categorybase = Category::findOrFail($id);
+        // dd($categorybase);
+        $category = Category::all();
+        $posts = Post::paginate(8);
+        $subcategory = SubCategory::all();
+        return view('listing', ['categorys' => $category, 'categorybase' => $categorybase, 'subcategorys' => $subcategory, 'posts' => $posts]);
+        // return view('listing');
+    }
+
     public function searchProduct(Request $request)
     {
         $select_cate = $request->select_cat;

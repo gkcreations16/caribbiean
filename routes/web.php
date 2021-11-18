@@ -21,6 +21,10 @@ Route::get('category', 'HomeController@categorypage')->name('category');
 Route::get('navbar2', 'HomeController@navbarfront')->name('navbar2');
 Route::get('listing', 'HomeController@listingpage')->name('listing');
 Route::post('/product/search', 'HomeController@searchProduct');
+Route::get('GetAdvanceSerchData/{id}', 'AdvanceSearchController@GetAdvanceSerchData');
+Route::get('details/{id}', 'HomeController@postdetails')->name('details');
+Route::get('categorydetail/{id}', 'HomeController@categorydetails')->name('categorydetail');
+
 /// end front pages
 
 
