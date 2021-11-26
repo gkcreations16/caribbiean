@@ -19,6 +19,28 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+
+        // $results = DB::table('posts')
+        //     ->join('categories', 'posts.category', '=', 'categories.name')
+        //     ->select('posts.*', 'categories.name')
+        //     ->get();
+
+        // $results = DB::table('categories')
+        //     ->join('posts', 'categories.name', '=', 'posts.category')
+        //     ->select('categories.*', 'posts.category')
+        //     ->get();
+
+
+
+        // dd($results);
+
+
+
+
+
+
+
         $posts = Post::all();
         $Homepagecontant = Home::all();
         $category = Category::all();
@@ -28,7 +50,6 @@ class HomeController extends Controller
     }
     public function categorypage()
     {
-
         $category = Category::paginate(8);
         $subcategory = SubCategory::all();
         return view('category', ['categorys' => $category, 'subcategorys' => $subcategory]);
@@ -81,5 +102,14 @@ class HomeController extends Controller
         $serch_input = DB::table('posts')->where('title', 'like', '%' . $search_field_data . '%')->get();
 
         return view('listing', ['categorys' => $category, 'select_cate' => $select_cate, 'subcategorys' => $subcategory, 'search_field_data' => $search_field_data,  'posts' => $posts, 'serch_input' => $serch_input]);
+    }
+
+    public function categorychooselist(Request $request, $id)
+    {
+        $categorywise = Category::findOrFail($id);
+        $Homepagecontant = Home::all();
+        $category = Category::all();
+        $posts = Post::paginate(8);
+        return view('index', ['categorys' => $category, 'categorywise' => $categorywise, 'Homepagedata' => $Homepagecontant, 'posts' => $posts]);
     }
 }

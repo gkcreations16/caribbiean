@@ -9,15 +9,14 @@
 @section('content')
     <style>
         button.btn.btn-secondary.btnstyle.mb-1 {
-            float: right;
-            margin-right: 15px;
-            margin-top: 13px;
-            height: 34px;
-            width: 22px;
+
+
+            margin-top: 3px;
+
         }
 
     </style>
-    <div class="col-md-9 col-sm-10 col-10 pe-0">
+    <div class="col-lg-9 col-md-12 col-sm-12 col-12 pe-0">
         <div class="dasboard-content-side">
             <div class="content mt-3">
                 <div class="animated fadeIn">
@@ -38,13 +37,13 @@
                             <div class="card">
                                 <div class="col-md-12">
                                     @foreach ($Homepagedata as $key => $data)
-                                        <button type="button" class="btn btn-secondary btnstyle mb-1" data-toggle="modal"
+                                        <button type="button" class="tablinks  btn btn-primery" data-toggle="modal"
                                             data-target="#editModal-{{ $data->id }}">
-                                            <i class="fas fa-pen"></i>
+                                            Add Here
                                         </button>
                                     @endforeach
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body" style="display: none">
                                     <form action="{{ route('admin.page.store') }}" method="post" id="createcategory"
                                         enctype="multipart/form-data" class="form-horizontal">
                                         @csrf
@@ -240,10 +239,10 @@
                         </div>
                     </div>
                     @foreach ($Homepagedata as $data)
-                        <div class="modal fade" id="editModal-{{ $data->id }}" tabindex="-1" role="dialog"
+                        <div class="hom-mode modal fade" id="editModal-{{ $data->id }}" tabindex="-1" role="dialog"
                             aria-labelledby="mediumModalLabel" data-backdrop="static" aria-hidden="true"
                             style="display: none;">
-                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="mediumModalLabel">Update Home Page</h5>
@@ -441,7 +440,7 @@
                                             </div>
                                             <button type="submit" class="btn btn-primary btn-md"
                                                 onclick="event.preventDefault();
-                                                                                                             document.getElementById('editcategory-{{ $data->id }}').submit();">
+                                                                                                                                                                                                                                                                                         document.getElementById('editcategory-{{ $data->id }}').submit();">
                                                 <i class="fa fa-dot-circle-o"></i> Submit
                                             </button>
                                         </form>

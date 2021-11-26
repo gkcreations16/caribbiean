@@ -44,7 +44,7 @@
                             <h3>Add New Listing <span>And Build Your Business</span> With Us</h3>
                             <p>Lorem ipsum dolor sit amet, consetetur adipisicing elit, sed do eiusmod tempor quam
                                 voluptatem.</p>
-                            <a href="dashboard.html" class="btn btn-primary">PLACE AN AD</a>
+                            <a href="{{ route('login') }}" class="btn btn-primary">PLACE AN AD</a>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,8 @@
                     <div class=" col-lg-3 col-md-12 col-sm-12 col-12">
                         <div class="footer-mains">
                             <div class="footer-logo">
-                                <a href="index.html"><img src="img/footernewlog.png" class="img-fluid"></a>
+                                <a href="index.html"><img src="{{ asset('assets/img/footernewlog.png') }}"
+                                        class="img-fluid"></a>
                             </div>
                             <p>Lorem ipsum dolor sit amet,
                                 consetetur adipisicing elit, sed do eiusmod tempor quam voluptatem.
@@ -110,7 +111,8 @@
                                 </div>
                                 <div class="footer-headers">
                                     <h4>Our Location</h4>
-                                    <img src="img/Rounded-Rectangle-3-copy-7.png" class="img-fluid">
+                                    <img src="{{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
+                                        class="img-fluid">
                                 </div>
                                 <div class="footer-map">
                                     <iframe
@@ -127,7 +129,8 @@
                                 <div class="col-md-4 col-sm-6">
                                     <div class="footer-headers">
                                         <h4>Quick Links</h4>
-                                        <img src="img/Rounded-Rectangle-3-copy-7.png" class="img-fluid">
+                                        <img src="{{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
+                                            class="img-fluid">
                                     </div>
                                     <div class="menus-list">
                                         <ul>
@@ -135,14 +138,15 @@
                                             <li><a href="{{ route('category') }}">Category</a></li>
                                             <li><a href="{{ route('listing') }}">Listing</a></li>
                                             <li><a href="#">Search</a></li>
-                                            <li><a href="dashboard.html">Post Add</a></li>
+                                            <li><a href="{{ route('login') }}">Post Add</a></li>
                                             <li><a href="#">Terms & Conditions</a></li>
                                         </ul>
                                     </div>
 
                                     <div class="footer-headers">
                                         <h4>More Links</h4>
-                                        <img src="img/Rounded-Rectangle-3-copy-7.png" class="img-fluid">
+                                        <img src="{{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
+                                            class="img-fluid">
                                     </div>
                                     <div class="menus-list">
                                         <ul>
@@ -157,7 +161,8 @@
                                 <div class="col-md-4 col-sm-6">
                                     <div class="footer-headers">
                                         <h4>Top Ads</h4>
-                                        <img src="img/Rounded-Rectangle-3-copy-7.png" class="img-fluid">
+                                        <img src="{{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
+                                            class="img-fluid">
                                     </div>
                                     <div class="menus-list">
                                         <ul>
@@ -181,7 +186,8 @@
                                 <div class="col-md-4 col-sm-6">
                                     <div class="footer-headers">
                                         <h4>Newsletter</h4>
-                                        <img src="img/Rounded-Rectangle-3-copy-7.png" class="img-fluid">
+                                        <img src="{{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
+                                            class="img-fluid">
                                     </div>
                                     <div class="menus-list">
                                         <p>To get the latest news and
@@ -197,7 +203,8 @@
                                                             placeholder="You E-mail">
                                                     </div>
                                                     <div class="col-6">
-                                                        <span><img src="img/Layer-59.png" class="img-fluid"></span>
+                                                        <span><img src="{{ asset('assets/img/Layer-59.png') }}"
+                                                                class="img-fluid"></span>
                                                     </div>
                                                 </div>
                                             </form>
@@ -205,7 +212,8 @@
                                     </div>
                                     <div class="footer-headers">
                                         <h4>Facebook Updates</h4>
-                                        <img src="img/Rounded-Rectangle-3-copy-7.png" class="img-fluid">
+                                        <img src="{{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
+                                            class="img-fluid">
                                     </div>
                                     <div class="facebok-frame">
                                         <iframe
@@ -251,8 +259,6 @@
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src=" {{ asset('assets/js/custome.js') }}"></script>
-
-
 </body>
 
 </html>

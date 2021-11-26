@@ -1,142 +1,147 @@
 @media (max-width: 1370px) {
-
-.footer-social-icon ul li a span {
-    margin-right: 4px;
-}
-.navbar-menus ul li {
-    padding: 0 15px;
-}
-h1 {
-    font-size: 53px;
-}
-.banner-content .input-field input {
-    width: 77%;
-}
-.home-list {
-    height: 360px;
-}
-.all-styles {
-    bottom: -1%;
-}
-.home-list h4 {
-    font-size: 25px;
-}
-.listing-slide-wrap .card .card-body h5 {
-    font-size: 20px;
-}
-.listing-slide-wrap .card .card-body .listing-inner-info ul li {
-    font-size: 12px;
-}
-.listing-slide-wrap .card .card-body .listing-inner-info ul li a {
-    font-size: 12px;
-}
-.see-work .card .card-body h5 {
-    font-size: 23px;
-}
-.find-what-you-want .card .card-img-overlay {
-    padding: 20px 70px;
-}
-.best-place-to-post {
-    padding: 60px 100px;
-}
-.foot-contact p{
-    padding-left: 10px;
-}
-.footer-social-icon ul li a span {
-    background-color: #fff;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-}
-.listing-map-header {
-    height: 199px;
-}
-.input-field input {
-    width: 68%;
-}
-.header-drop {
-    width: 50px;
-    right: -17px;
-    height: 50px!important;
-}
-.sidebarIconToggle {
-    top: 18px;
-    right: 15px;
-}
-.listing-map-inner .btn {
-    padding: 10px 31px;
-}
-.listing-slide-wrap-2 .card .which-name {
-    top: 19px;
-    left: 8px;
-}
-.listing-slide-wrap-2 .card .card-body .listing-inner-info ul li {
-    font-size: 13px;
-}
-.rating-foodie .btn-primary-2 {
-    padding: 14px 13px;
-    font-size: 14px;
-}
-.listing-detail-contact-info .card .card-body{
-    margin-left: 10px;
-}
-.login-other-ways a.btn-primary {
-    padding: 14px 21px;
-    font-size: 14px;
-}
-.wordbest-market .card .card-img-overlay h1 {
-    font-size: 52px;
-}
-.signup-page .login-inputer .form-control {
-    margin-bottom: 4px;
-}
-.signup-page .welcome p {
-    margin-bottom: 10px;
-    font-size: 26px;
-}
-.signup-page .orBlock {
-    margin: 14px 0;
-}
-.signup-page .login-inputer .form-control {
-    padding: 10px 10px 10px 60px;
-}
-.login-sig-detailer.card .card-img-overlay {
-    padding: 0 20px;
-}
-.ads-detail p {
-    font-size: 14px;
-}
-.all-in-one-categories p {
-    font-size: 16px;
-    margin-bottom: 0px;
-}
-.header-categories .all-in-one-categories ul li a {
-    font-size: 14px;
-}
-.header-categories .all-in-one-categories ul li {
-    line-height: 38px;
-}
-.business-directory-left .pagination .page-link {
-    width: 40px;
-    height: 40px;
-}
-.current-status, .loading {
-    font-size: 25px;
-}
-.dasboard-listing-map-header .signin .btn {
-    padding: 8px 26px;
-     height: 100%;
-}
-.signup-page .login-other-ways a.btn-primary {
-    padding: 10px 17px;
-}
-.client-img-review {
-    width: 174px;
+    .footer-social-icon ul li a span {
+        margin-right: 4px;
     }
-
+    .navbar-menus ul li {
+        padding: 0 15px;
+    }
+    h1 {
+        font-size: 53px;
+    }
+    .banner-content .input-field input {
+        width: 77%;
+    }
+    .home-list {
+        height: 360px;
+    }
+    .all-styles {
+        bottom: -1%;
+    }
+    .home-list h4 {
+        font-size: 25px;
+    }
+    .listing-slide-wrap .card .card-body a h5 {
+        font-size: 20px;
+        color: #000;
+    }
+    .listing-slide-wrap .card .card-body .listing-inner-info ul li {
+        font-size: 12px;
+    }
+    .listing-slide-wrap .card .card-body .listing-inner-info ul li a {
+        font-size: 12px;
+    }
+    .see-work .card .card-body h5 {
+        font-size: 23px;
+    }
+    .find-what-you-want .card .card-img-overlay {
+        padding: 20px 70px;
+    }
+    .best-place-to-post {
+        padding: 60px 100px;
+    }
+    .foot-contact p {
+        padding-left: 10px;
+    }
+    .footer-social-icon ul li a span {
+        background-color: #fff;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+    }
+    .listing-map-header {
+        height: 199px;
+    }
+    .input-field input {
+        width: 65%;
+    }
+    .header-drop {
+        width: 50px;
+        right: -17px;
+        height: 50px !important;
+    }
+    .sidebarIconToggle {
+        top: 18px;
+        right: 15px;
+    }
+    .listing-map-inner .btn {
+        padding: 10px 31px;
+    }
+    .listing-slide-wrap-2 .card .which-name {
+        top: 19px;
+        left: 8px;
+    }
+    .listing-slide-wrap-2 .card .card-body .listing-inner-info ul li {
+        font-size: 13px;
+    }
+    .rating-foodie .btn-primary-2 {
+        padding: 14px 13px;
+        font-size: 14px;
+    }
+    .listing-detail-contact-info .card .card-body {
+        margin-left: 10px;
+    }
+    .login-other-ways a.btn-primary {
+        padding: 14px 21px;
+        font-size: 14px;
+    }
+    .wordbest-market .card .card-img-overlay h1 {
+        font-size: 52px;
+    }
+    .signup-page .login-inputer .form-control {
+        margin-bottom: 4px;
+    }
+    .signup-page .welcome p {
+        margin-bottom: 10px;
+        font-size: 26px;
+    }
+    .signup-page .orBlock {
+        margin: 14px 0;
+    }
+    .signup-page .login-inputer .form-control {
+        padding: 10px 10px 10px 60px;
+    }
+    .login-sig-detailer.card .card-img-overlay {
+        padding: 0 20px;
+    }
+    .ads-detail p {
+        font-size: 14px;
+    }
+    .all-in-one-categories p {
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+    .header-categories .all-in-one-categories ul li a {
+        font-size: 14px;
+    }
+    .header-categories .all-in-one-categories ul li {
+        line-height: 38px;
+    }
+    .business-directory-left .pagination .page-link {
+        width: 40px;
+        height: 40px;
+    }
+    .current-status,
+    .loading {
+        font-size: 25px;
+    }
+    .dasboard-listing-map-header .signin .btn {
+        padding: 8px 26px;
+        height: 100%;
+    }
+    .signup-page .login-other-ways a.btn-primary {
+        padding: 10px 17px;
+    }
+    .client-img-review {
+        width: 174px;
+    }
+    .listing-map-header .serach-cover {
+        width: 45%;
+    }
+    .listing-map-header .signin {
+        width: 27%;
+    }
 }
 @media (max-width: 1200px) {
-
     .header-logo {
         width: 80%;
     }
@@ -149,303 +154,305 @@ h1 {
     .signin span {
         padding-right: 6px;
     }
-    .signin  .btn {
+    .signin .btn {
         padding: 8px 8px;
         font-size: 14px;
-}
-.navbar-brand{
-    margin-right: 0px;
-}
-.navbar-menus li.active a::after {
-    bottom: -29px;
-}
-.signin a {
-    font-size: 14px;
-}
-.search-million h1 {
-    font-size: 47px;
-}
-.banner-content .input-field.second-wrap {
-    width: 71%;
-}
-.banner-content .input-field input {
-    width: 71%;
-}
-.home-list {
-    padding: 30px;
+    }
+    .navbar-brand {
+        margin-right: 0px;
+    }
+    .navbar-menus li.active a::after {
+        bottom: -29px;
+    }
+    .signin a {
+        font-size: 14px;
+    }
+    .search-million h1 {
+        font-size: 47px;
+    }
+    .banner-content .input-field.second-wrap {
+        width: 71%;
+    }
+    .banner-content .input-field input {
+        width: 71%;
+    }
+    .home-list {
+        padding: 30px;
+    }
+    .home-list h4 {
+        font-size: 23px;
+    }
+    .home-list {
+        height: 336px;
+    }
+    .top-listing h2 {
+        font-weight: 600;
+    }
+    .top-listing {
+        right: 109%;
+    }
+    .see-work .card {
+        padding: 40px 3px;
+    }
+    .find-what-you-want .card .card-img-overlay {
+        padding: 20px 20px;
+    }
+    .find-what-you-want .card .card-img-overlay h3 {
+        font-size: 31px;
+    }
+    .best-place-to-post {
+        padding: 60px 36px;
+    }
+    footer {
+        padding: 200px 20px 30px 20px;
+    }
+    .footer-social-icon ul li a span {
+        width: 29px;
+        height: 29px;
+    }
 
-}
-.home-list h4 {
-    font-size: 23px;
-}
-.home-list {
-    height: 336px;
-}
-.top-listing h2 {
-    font-weight: 600;
-}
-.top-listing {   
-    right: 109%;
-}
-.see-work .card {
-    padding: 40px 3px;
-}
-.find-what-you-want .card .card-img-overlay {
-    padding: 20px 20px;
-}
-.find-what-you-want .card .card-img-overlay h3 {
-    font-size: 31px;
-}
-.best-place-to-post {
-    padding: 60px 36px;
-}
-footer {
-    padding: 200px 20px 30px 20px;
-}
-.footer-social-icon ul li a span {
-    width: 29px;
-    height: 29px;
-}
+    .navbar-menus ul li {
+        line-height: 40px;
+    }
 
-.navbar-menus ul li {
-    line-height: 40px;
-}
-
-.banner-all-content-cover {
-    padding-top: 170px;
-}
-.banner-content {
-    height: 598px;
-}
-.navbar-menus li.active a::after {
-    bottom: -19px;
-}
-.listing-slide-wrap .card .card-body h5 {
-    font-size: 16px;
-}
-.listing-slide-wrap .card .card-body .listing-inner-info ul li span {
-    margin-right: 6px !important;
-    font-size: 11px;
-    width: 25px;
-    height: 25px;
-}
-.listing-slide-wrap .card .card-body {
-    padding: 14px 6px;
-}
-.listinslide-img {
-    height: 231px;
-}
-.search-button {
-    padding: 2px 20px;
-}
-.select-category .form-select {
-    font-size: 13px;
-}
-.header-drop {
-    width: 42px;
-    height: 42px!important;
-}
-.sidebarIconToggle {
-    top: 14px;
-    right: 10px;
-}
-.listing-map-header {
-    height: 173px;
-}
-.header-categories  ul li {
-    padding: 0 0px !important;
-}
-.type-icon {
-    width: 64px;
-}
-.new-style-categories .card .card-img-overlay h5 {
-    font-size: 18px;
-}
-.many-listing .many-inner {
-    background-color: rgba(144, 144, 144, 0.6);
-    padding: 11px 23px;
-}
-.new-style-img {
-    height: 225px;
-}
-.effective-button a span {
-    padding: 4px 12px;
-}
-.effective-button {
-    /* right: 9px; */
-    bottom: 9px;
-}
-.new-style-categories .card {
-    border-radius: 24px;
-}
-.new-style-categories .card::before {
-    border-radius: 19px;
-}
-.many-listing .many-inner {
-    padding: 7px 23px;
-}
-.which-page-show {
-    margin-top: 20px;
-}
-.pagination li {
-    margin-right: 5px;
-}
-.pagination .page-link:hover {
-    width: 41px;
-    height: 41px;
-}
-.listing-map-filters-btn a:first-child {
-    margin-right: 6px;
-}
-.listing-map-inner .btn {
-    padding: 5px 20px;
-}
-.search-result {
-    width: 59%;
-}
-.listing-slide-wrap-2 .card {
-    padding: 10px 10px;
-}
-.listing-slide-wrap-2 .card .which-name h5 {
-    font-size: 13px;
-}
-.listing-slide-wrap .card .card-body .listing-inner-info ul li {
-    font-size: 11px;
-}
-.client-img-review {
-    width: 118px;
-}
-.listing-detail-page-recent-list-img {
-    width: 54px;
-    height: 57px;
-}
-.rating-foodie {
-    width: 124%;
-}
-.back-pad {
-    padding: 20px;
-}
-.comment-picture {
-    position: absolute;
-    top: 14px;
-    left: -7px;
-}
-.listing-search {
-    padding: 40px 20px;
-}
-.wordbest-market.card .card-img-overlay {
-    padding: 0 23px;
-}
-.login-sig-detailer.card .card-img-overlay {
-    padding: 0 12px;
-}
-.welcome p {
-    font-size: 29px;
-}
-.signup-page .welcome p {
-    font-size: 27px;
-}
-.signup-page  .sign-up-stage p {
-    padding-top: 9px;
-    font-size: 18px;
-}
-.signup-page  .login-inputer .btn-primary {
-    padding: 10px 43px;
-}
-.signup-page  .login-other-ways a.btn-primary {
-    padding: 9px 21px;
-}
-.signup-page .login-inputer .form-control {
-    padding: 8px 10px 8px 60px;
-}
-.signup-page .welcome h2 {
-    color: #dc422f;
-    font-weight: 700;
-    font-size: 48px;
-}
-.navbar-menus li a:hover::after {
-    bottom: -19px;
-}
-.dasboard-apperense-wrap .card {
-    padding: 20px 10px;
-}
-.dasboard-apperense {
-    width: 44px;
-}
-.dasboard-apperense-wrap .card .card-body{
-    padding-right: 0;
-    padding-left: 10px;
-}
-.dasboard-apperense-wrap .card .card-body p{
-    font-size: 13px;
-}
-.dasboard-apperense-wrap .card .card-body h5 {
-    font-size: 27px;
-}
-.recent-aprovel-wrap-cole {
-    padding: 40px 0 40px 20px;
-}
-.recent-approvel-scrool-wrap .card .card-body span{
-    font-size: 13px;
-}
-.recent-activities-wrap-cole {
-    padding: 40px 0 40px 20px;
-}
-.some-bookmark .card .card-body p {
-    font-size: 12px;
-    margin-left: 10px;
-}
-.message-scroller-wrap {
-    padding: 40px 0 40px 20px;
-}
-.message-spacer .card .card-body {
-    margin-left: 14px;
-}
-.login-client-img-dasbord {
-    padding-right: 30px !important;
-}
-.dasboard-listing-map-header .signin .btn {
-    padding: 0px 11px;
-    font-size: 13px;
-    border-radius: 40px !important;
-    height: 39px;
-    margin-top: 6px;
-}
-.dasboard-leftside .nav-pills .nav-link {
-    font-size: 16px;
-}
-.p-image {
-    left: 58%;
-}
-.my-listing-Dashboard {
-    padding: 40px 18px;
-}
-.table td, .table th {
-    font-size: 14px;
-}
-.ads-detail h4 {
-    font-size: 17px;
-}
-.table.add-manage-table > tbody > tr > td {
-    padding: 26px 15px;
-}
-.editser-optins p a {
-    font-size: 14px;
-}
-.dasboard-leftside .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    font-size: 15px;
-}
-.business-directory-left .pagination .page-link {
-    width: 27px;
-    height: 27px;
-    padding: 0;
-}
-.current-status, .loading {
-    font-size: 21px;
-}
-.dasboard-listing-map-header .signin .btn {
-    padding: 8px 13px;
-}
+    .banner-all-content-cover {
+        padding-top: 170px;
+    }
+    .banner-content {
+        height: 598px;
+    }
+    .navbar-menus li.active a::after {
+        bottom: -19px;
+    }
+    .listing-slide-wrap .card .card-body h5 {
+        font-size: 16px;
+    }
+    .listing-slide-wrap .card .card-body .listing-inner-info ul li span {
+        margin-right: 6px !important;
+        font-size: 11px;
+        width: 25px;
+        height: 25px;
+    }
+    .listing-slide-wrap .card .card-body {
+        padding: 14px 6px;
+    }
+    .listinslide-img {
+        height: 231px;
+    }
+    .search-button {
+        padding: 2px 20px;
+    }
+    .select-category .form-select {
+        font-size: 13px;
+    }
+    .header-drop {
+        width: 42px;
+        height: 42px !important;
+    }
+    .sidebarIconToggle {
+        top: 14px;
+        right: 10px;
+    }
+    .listing-map-header {
+        height: 173px;
+    }
+    .header-categories ul li {
+        padding: 0 0px !important;
+    }
+    .type-icon {
+        width: 64px;
+    }
+    .new-style-categories .card .card-img-overlay h5 {
+        font-size: 18px;
+    }
+    .many-listing .many-inner {
+        background-color: rgba(144, 144, 144, 0.6);
+        padding: 11px 23px;
+    }
+    .new-style-img {
+        height: 225px;
+    }
+    .effective-button a span {
+        padding: 4px 12px;
+    }
+    .effective-button {
+        /* right: 9px; */
+        bottom: 9px;
+    }
+    .new-style-categories .card {
+        border-radius: 24px;
+    }
+    .new-style-categories .card::before {
+        border-radius: 19px;
+    }
+    .many-listing .many-inner {
+        padding: 7px 23px;
+    }
+    .which-page-show {
+        margin-top: 20px;
+    }
+    .pagination li {
+        margin-right: 5px;
+    }
+    .pagination .page-link:hover {
+        width: 41px;
+        height: 41px;
+    }
+    .listing-map-filters-btn a:first-child {
+        margin-right: 6px;
+    }
+    .listing-map-inner .btn {
+        padding: 5px 20px;
+    }
+    .search-result {
+        width: 59%;
+    }
+    .listing-slide-wrap-2 .card {
+        padding: 10px 10px;
+    }
+    .listing-slide-wrap-2 .card .which-name h5 {
+        font-size: 13px;
+    }
+    .listing-slide-wrap .card .card-body .listing-inner-info ul li {
+        font-size: 11px;
+    }
+    .client-img-review {
+        width: 118px;
+    }
+    .listing-detail-page-recent-list-img {
+        width: 54px;
+        height: 57px;
+    }
+    .rating-foodie {
+        width: 124%;
+    }
+    .back-pad {
+        padding: 20px;
+    }
+    .comment-picture {
+        position: absolute;
+        top: 14px;
+        left: -7px;
+    }
+    .listing-search {
+        padding: 40px 20px;
+    }
+    .wordbest-market.card .card-img-overlay {
+        padding: 0 23px;
+    }
+    .login-sig-detailer.card .card-img-overlay {
+        padding: 0 12px;
+    }
+    .welcome p {
+        font-size: 29px;
+    }
+    .signup-page .welcome p {
+        font-size: 27px;
+    }
+    .signup-page .sign-up-stage p {
+        padding-top: 9px;
+        font-size: 18px;
+    }
+    .signup-page .login-inputer .btn-primary {
+        padding: 10px 43px;
+    }
+    .signup-page .login-other-ways a.btn-primary {
+        padding: 9px 21px;
+    }
+    .signup-page .login-inputer .form-control {
+        padding: 8px 10px 8px 60px;
+    }
+    .signup-page .welcome h2 {
+        color: #dc422f;
+        font-weight: 700;
+        font-size: 48px;
+    }
+    .navbar-menus li a:hover::after {
+        bottom: -19px;
+    }
+    .dasboard-apperense-wrap .card {
+        padding: 20px 10px;
+    }
+    .dasboard-apperense {
+        width: 44px;
+    }
+    .dasboard-apperense-wrap .card .card-body {
+        padding-right: 0;
+        padding-left: 10px;
+    }
+    .dasboard-apperense-wrap .card .card-body p {
+        font-size: 13px;
+    }
+    .dasboard-apperense-wrap .card .card-body h5 {
+        font-size: 27px;
+    }
+    .recent-aprovel-wrap-cole {
+        padding: 40px 0 40px 20px;
+    }
+    .recent-approvel-scrool-wrap .card .card-body span {
+        font-size: 13px;
+    }
+    .recent-activities-wrap-cole {
+        padding: 40px 0 40px 20px;
+    }
+    .some-bookmark .card .card-body p {
+        font-size: 12px;
+        margin-left: 10px;
+    }
+    .message-scroller-wrap {
+        padding: 40px 0 40px 20px;
+    }
+    .message-spacer .card .card-body {
+        margin-left: 14px;
+    }
+    .login-client-img-dasbord {
+        padding-right: 30px !important;
+    }
+    .dasboard-listing-map-header .signin .btn {
+        padding: 0px 11px;
+        font-size: 13px;
+        border-radius: 40px !important;
+        height: 39px;
+        margin-top: 6px;
+    }
+    .dasboard-leftside .nav-pills .nav-link {
+        font-size: 16px;
+    }
+    .p-image {
+        left: 58%;
+    }
+    .my-listing-Dashboard {
+        padding: 40px 18px;
+    }
+    .table td,
+    .table th {
+        font-size: 14px;
+    }
+    .ads-detail h4 {
+        font-size: 17px;
+    }
+    .table.add-manage-table > tbody > tr > td {
+        padding: 26px 15px;
+    }
+    .editser-optins p a {
+        font-size: 14px;
+    }
+    .dasboard-leftside .nav-pills .nav-link.active,
+    .nav-pills .show > .nav-link {
+        font-size: 15px;
+    }
+    .business-directory-left .pagination .page-link {
+        width: 27px;
+        height: 27px;
+        padding: 0;
+    }
+    .current-status,
+    .loading {
+        font-size: 21px;
+    }
+    .dasboard-listing-map-header .signin .btn {
+        padding: 8px 13px;
+    }
 }
 @media (max-width: 1024px) {
     .footer-social-icon ul li a span {
@@ -463,92 +470,95 @@ footer {
     }
     .welcome p {
         font-size: 27px;
-}
-.login-other-ways a.btn-primary {
-    padding: 14px 16px;
-    font-size: 13px;
-}
-.wordbest-market.card .card-img-overlay h1 {
-    font-size: 45px;
-}
-.signup-page .login-inputer .form-control {
-    padding: 9px 43px;
-}
-.passworder-icon {
-    left: 20px;
-}
-.signup-page .orBlock {
-    margin: 11px 0;
-}
-.signup-page .welcome p {
-    font-size: 27px;
-    margin-bottom: 9px;
-}
-.signup-page .sign-up-stage p {
-    padding-top: 6px;
-}
-.signup-page .login-other-ways a.btn-primary {
-    padding: 7px 16px;
-}
-.signup-page .welcome h2 {
-    font-size: 49px;
-}
-.signup-page .login-inputer .btn-primary {
-    padding: 9px 43px;
-}
-.table td, .table th i {
-    width: 100%;
-    text-align: center;
-}
-.table td, .table th {
-    text-align: center;
-}
-.ads-detail{
-    text-align: left;
-}
-.ads-detail p {
-    font-size: 12px;
-}
-.ads-detail p span i{
-    padding-right: 2px !important;
-}
-.recent-approvel-scrool .card .card-body{
-    padding-right: 0 !important;
-}
-.bookmark-icon {
-    width: 33px;
-    height: 33px;
-}
-.dasboard-leftside .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    font-size: 14px;
-}
-.dasboard-leftside .nav-pills .nav-link {
-    font-size: 15px;
-}
-.Dashboard-in-dashboard {
-    padding: 40px 20px;
-}
-.profile-settings-users-wrap {
-    padding: 40px 20px;
-}
-.post-ad-user-form-iner {
-    padding: 30px 20px;
-}
-.vistory-review {
-    padding: 40px 20px;
-}
-.privacy-form-inner {
-    padding: 30px 20px;
-}
-.business-directory-left {
-    padding-left: 0px;
-}
-.dasboard-listing-map-header .signin .btn {
-    padding: 8px 9px;
-}
-.login-sig-detailer {
-    padding: 50px 28px;
-}
+    }
+    .login-other-ways a.btn-primary {
+        padding: 14px 16px;
+        font-size: 13px;
+    }
+    .wordbest-market.card .card-img-overlay h1 {
+        font-size: 45px;
+    }
+    .signup-page .login-inputer .form-control {
+        padding: 9px 43px;
+    }
+    .passworder-icon {
+        left: 20px;
+    }
+    .signup-page .orBlock {
+        margin: 11px 0;
+    }
+    .signup-page .welcome p {
+        font-size: 27px;
+        margin-bottom: 9px;
+    }
+    .signup-page .sign-up-stage p {
+        padding-top: 6px;
+    }
+    .signup-page .login-other-ways a.btn-primary {
+        padding: 7px 16px;
+    }
+    .signup-page .welcome h2 {
+        font-size: 49px;
+    }
+    .signup-page .login-inputer .btn-primary {
+        padding: 9px 43px;
+    }
+    .table td,
+    .table th i {
+        width: 100%;
+        text-align: center;
+    }
+    .table td,
+    .table th {
+        text-align: center;
+    }
+    .ads-detail {
+        text-align: left;
+    }
+    .ads-detail p {
+        font-size: 12px;
+    }
+    .ads-detail p span i {
+        padding-right: 2px !important;
+    }
+    .recent-approvel-scrool .card .card-body {
+        padding-right: 0 !important;
+    }
+    .bookmark-icon {
+        width: 33px;
+        height: 33px;
+    }
+    .dasboard-leftside .nav-pills .nav-link.active,
+    .nav-pills .show > .nav-link {
+        font-size: 14px;
+    }
+    .dasboard-leftside .nav-pills .nav-link {
+        font-size: 15px;
+    }
+    .Dashboard-in-dashboard {
+        padding: 40px 20px;
+    }
+    .profile-settings-users-wrap {
+        padding: 40px 20px;
+    }
+    .post-ad-user-form-iner {
+        padding: 30px 20px;
+    }
+    .vistory-review {
+        padding: 40px 20px;
+    }
+    .privacy-form-inner {
+        padding: 30px 20px;
+    }
+    .business-directory-left {
+        padding-left: 0px;
+    }
+    .dasboard-listing-map-header .signin .btn {
+        padding: 8px 9px;
+    }
+    .login-sig-detailer {
+        padding: 50px 28px;
+    }
 }
 @media (max-width: 992px) {
     .navbar-menus ul li a {
@@ -558,265 +568,266 @@ footer {
     .small-head-wrap h3 {
         padding: 32px 0 !important;
         font-size: 43px !important;
-}
-.all-styles{
-    left: 20px;
-    right: 20px;
-}
-.home-list{
-    padding: 40px 10px;
-}
-.home-list h4 {
-    font-size: 21px;
-}
-.home-list p {
-    font-size: 14px;
-}
-.top-listing h2 {
-    display: none;
-}
-.left-side-bar {
-    padding-left: 13px;
-}
-.right-side-slide {
-    padding: 80px 14px 50px 14px;
-}
-.see-work .card .card-body h5 {
-    font-size: 17px;
-}
-.see-work .card .card-body p{
-    font-size: 13px;
-}
-.see-work-img {
-    height: 100px;
-    width: 100px;
-}
-.footer-headers h4 {
-    font-size: 20px;
-}
-.side-spacer {
-    padding-left: 26px;
-}
-.menus-list {
-    padding-top: 0px
-}
-.footer-headers {
-    padding-top: 29px;
-}
-.side-spacer {
-    padding-left: 0px;
-}
-.header {
-    position: relative;
-    background-color: #000;
-}
-.navbar-menus li.active a::after {
-    bottom: -2px;
-}
-.listing-slide-wrap .card .card-body {
-    padding: 14px 14px;
-}
-.listing-slide-wrap .card .card-body .listing-inner-info ul li span {
-    margin-right: 6px !important;
-    font-size: 12px;
-    width: 30px;
-    height: 30px;
-}
-.many-listing .many-inner {
-    padding: 7px 23px;
-}
-.listing-map-header .serach-cover {
-    width: 70%;
-}
-.listing-map-header .navbar-brand {
-    width: 100%;
-    padding-bottom: 9px;
-}
-.input-field input {
-    width: 66%;
-}
-.listing-map-header .input-field input {
-    width: 60%;
-}
-.listing-map-header .signin {
-    width: 29%;
-}
-.header-drop {
-    right: -5px;
-    top: 9px;
-}
-.header-categories ul li {
-    padding: 0 0px !important;
-}
-.header-categories .navbar-expand .navbar-nav .nav-link {
-    padding: 0 4px;
-    font-size: 11px;
-}
-.listing-map-header {
-    height: 267px;
-}
-.which-page-show {
-    margin-top: 0px;
-}
-.listing-detail-contact-info .card .card-body {
-    position: relative;
-    left: -59px;
-    top: 11px;
-}
-.listing-slide-wrap .card .card-body .listing-inner-info ul li {
-    font-size: 10px;
-}
-.rating-foodie h3{
-    font-size: 20px;
-    padding: 6px 0;
-}
-.rating-foodie .btn-primary{
-    font-size: 12px;
-    padding: 12px 5px;
-}
-.rating-foodie a i {
-    font-size: 13px;
-}
-.start-frome p {
-    font-size: 27px;
-
-}
-.listing-detail-slider-content .which-name{
-    width: 29%;
-}
-.listing-detail-slider-content .which-name .resto-name {
-    padding: 5px 20px;
-}
-.listing-detail-page-recent-list-img {
-    width: 62px;
-    height: 62px;
-}
-.wordbest-market.card .card-img-overlay h1 {
-    font-size: 38px;
-}
-.welcome p {
-    font-size: 22px;
-}
-.welcome h2 {
-    font-size: 41px;
-}
-.login-other-ways a.btn-primary {
-    padding: 11px 11px;
-    font-size: 10px;
-}
-.signup-page .sign-up-stage p {
-    font-size: 16px;
-}
-.signup-page .welcome p {
-    font-size: 21px;
-}
-.signup-page .login-inputer .form-control {
-    padding: 7px 43px;
-}
-.signup-page .welcome h2 {
-    font-size: 45px;
-}
-.signup-page .login-other-ways a.btn-primary {
-    padding: 7px 10px;
-}
-.signup-page .login-inputer .form-control::placeholder{
-   font-size: 13px;
-}
-.navbar-menus li a:hover::after {
-    bottom: -2px;
-}
-.Dashboard {
-    padding: 50px 7px;
-}
-.dasboard-leftside .nav-pills .nav-link .oval {
-    margin-right: 15px;
-}
-.dasboard-content-side {
-    padding: 0px;
-}
-.dasboard-leftside .nav {
-    padding: 45px 0px 10px 24px;
-    background-color: #fff;
-    margin-bottom: 30px;
-}
-.dasboard-listing-map-header .listing-map-header {
-    height: 122px;
-}
-.some-bookmark .card .bookmark-icon {
-    width: 32px;
-    height: 32px;
-}
-.some-bookmark .card .bookmark-icon span i {
-    font-size: 13px;
-}
-.btn-primary {
-    padding: 9px 32px;
-    font-size: 15px;
-}
-.dasboard-content-side .headings-listing-page h5 {
-    font-size: 19px;
-}
-.recent-approvel-scrool .card .recent-approvel-img {
-    width: 101px;
-    height: 103px;
-}
-.table.add-manage-table > tbody > tr > td {
-    padding: 26px 10px;
-}
-.dasboard-listing-map-header .input-field input {
-    width: 72%;
-}
-.dasboard-listing-map-header .listing-map-header .signin {
-    width: 29%;
-    position: absolute;
-    right: 57px;
-    top: 8px;
-}
-.dasboard-leftside .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    font-size: 17px;
-}
-.Dashboard .collapse:not(.show) {
-    display: none  !important;
-}
-.dasboard-leftside .navbar-toggler-icon i {
-    color: #000;
-    border-color: #dc422f;
-}
-.dasboard-leftside {
-    padding-top: 0px;
-    background-color: transparent;
-    position: relative;
-}
-.dasboard-leftside::before {
-    position: absolute;
-    content: 'MENU';
-    left: 70px;
-    top: 10px;
-    bottom: 0;
-    font-weight: 800;
-    font-size: 17px;
-    color: #dc422f;
-}
-.dasboard-leftside .collapse.show {
-    height: 100% !important;
-}
-#navbarTogglerDemo03 {
-    background: #000;
-    border-radius: 12px;
-}
-.business-directory-left .pagination .page-link {
-    width: 43px;
-    height: 43px;
-}
-.current-status, .loading {
-    font-size: 27px;
-}
-.login-sig-detailer {
-    padding: 50px 16px;
-}
+    }
+    .all-styles {
+        left: 20px;
+        right: 20px;
+    }
+    .home-list {
+        padding: 40px 10px;
+    }
+    .home-list h4 {
+        font-size: 21px;
+    }
+    .home-list p {
+        font-size: 14px;
+    }
+    .top-listing h2 {
+        display: none;
+    }
+    .left-side-bar {
+        padding-left: 13px;
+    }
+    .right-side-slide {
+        padding: 80px 14px 50px 14px;
+    }
+    .see-work .card .card-body h5 {
+        font-size: 17px;
+    }
+    .see-work .card .card-body p {
+        font-size: 13px;
+    }
+    .see-work-img {
+        height: 100px;
+        width: 100px;
+    }
+    .footer-headers h4 {
+        font-size: 20px;
+    }
+    .side-spacer {
+        padding-left: 26px;
+    }
+    .menus-list {
+        padding-top: 0px;
+    }
+    .footer-headers {
+        padding-top: 29px;
+    }
+    .side-spacer {
+        padding-left: 0px;
+    }
+    .header {
+        position: relative;
+        background-color: #000;
+    }
+    .navbar-menus li.active a::after {
+        bottom: -2px;
+    }
+    .listing-slide-wrap .card .card-body {
+        padding: 14px 14px;
+    }
+    .listing-slide-wrap .card .card-body .listing-inner-info ul li span {
+        margin-right: 6px !important;
+        font-size: 12px;
+        width: 30px;
+        height: 30px;
+    }
+    .many-listing .many-inner {
+        padding: 7px 23px;
+    }
+    .listing-map-header .serach-cover {
+        width: 70%;
+    }
+    .listing-map-header .navbar-brand {
+        width: 100%;
+        padding-bottom: 9px;
+    }
+    .input-field input {
+        width: 66%;
+    }
+    .listing-map-header .input-field input {
+        width: 60%;
+    }
+    .listing-map-header .signin {
+        width: 29%;
+    }
+    .header-drop {
+        right: -5px;
+        top: 9px;
+    }
+    .header-categories ul li {
+        padding: 0 0px !important;
+    }
+    .header-categories .navbar-expand .navbar-nav .nav-link {
+        padding: 0 4px;
+        font-size: 11px;
+    }
+    .listing-map-header {
+        height: 267px;
+    }
+    .which-page-show {
+        margin-top: 0px;
+    }
+    .listing-detail-contact-info .card .card-body {
+        position: relative;
+        left: -59px;
+        top: 11px;
+    }
+    .listing-slide-wrap .card .card-body .listing-inner-info ul li {
+        font-size: 10px;
+    }
+    .rating-foodie h3 {
+        font-size: 20px;
+        padding: 6px 0;
+    }
+    .rating-foodie .btn-primary {
+        font-size: 12px;
+        padding: 12px 5px;
+    }
+    .rating-foodie a i {
+        font-size: 13px;
+    }
+    .start-frome p {
+        font-size: 27px;
+    }
+    .listing-detail-slider-content .which-name {
+        width: 29%;
+    }
+    .listing-detail-slider-content .which-name .resto-name {
+        padding: 5px 20px;
+    }
+    .listing-detail-page-recent-list-img {
+        width: 62px;
+        height: 62px;
+    }
+    .wordbest-market.card .card-img-overlay h1 {
+        font-size: 38px;
+    }
+    .welcome p {
+        font-size: 22px;
+    }
+    .welcome h2 {
+        font-size: 41px;
+    }
+    .login-other-ways a.btn-primary {
+        padding: 11px 11px;
+        font-size: 10px;
+    }
+    .signup-page .sign-up-stage p {
+        font-size: 16px;
+    }
+    .signup-page .welcome p {
+        font-size: 21px;
+    }
+    .signup-page .login-inputer .form-control {
+        padding: 7px 43px;
+    }
+    .signup-page .welcome h2 {
+        font-size: 45px;
+    }
+    .signup-page .login-other-ways a.btn-primary {
+        padding: 7px 10px;
+    }
+    .signup-page .login-inputer .form-control::placeholder {
+        font-size: 13px;
+    }
+    .navbar-menus li a:hover::after {
+        bottom: -2px;
+    }
+    .Dashboard {
+        padding: 50px 7px;
+    }
+    .dasboard-leftside .nav-pills .nav-link .oval {
+        margin-right: 15px;
+    }
+    .dasboard-content-side {
+        padding: 0px;
+    }
+    .dasboard-leftside .nav {
+        padding: 45px 0px 10px 24px;
+        background-color: #fff;
+        margin-bottom: 30px;
+    }
+    .dasboard-listing-map-header .listing-map-header {
+        height: 122px;
+    }
+    .some-bookmark .card .bookmark-icon {
+        width: 32px;
+        height: 32px;
+    }
+    .some-bookmark .card .bookmark-icon span i {
+        font-size: 13px;
+    }
+    .btn-primary {
+        padding: 9px 32px;
+        font-size: 15px;
+    }
+    .dasboard-content-side .headings-listing-page h5 {
+        font-size: 19px;
+    }
+    .recent-approvel-scrool .card .recent-approvel-img {
+        width: 101px;
+        height: 103px;
+    }
+    .table.add-manage-table > tbody > tr > td {
+        padding: 26px 10px;
+    }
+    .dasboard-listing-map-header .input-field input {
+        width: 72%;
+    }
+    .dasboard-listing-map-header .listing-map-header .signin {
+        width: 29%;
+        position: absolute;
+        right: 57px;
+        top: 8px;
+    }
+    .dasboard-leftside .nav-pills .nav-link.active,
+    .nav-pills .show > .nav-link {
+        font-size: 17px;
+    }
+    .Dashboard .collapse:not(.show) {
+        display: none !important;
+    }
+    .dasboard-leftside .navbar-toggler-icon i {
+        color: #000;
+        border-color: #dc422f;
+    }
+    .dasboard-leftside {
+        padding-top: 0px;
+        background-color: transparent;
+        position: relative;
+    }
+    .dasboard-leftside::before {
+        position: absolute;
+        content: "MENU";
+        left: 70px;
+        top: 10px;
+        bottom: 0;
+        font-weight: 800;
+        font-size: 17px;
+        color: #dc422f;
+    }
+    .dasboard-leftside .collapse.show {
+        height: 100% !important;
+    }
+    #navbarTogglerDemo03 {
+        background: #000;
+        border-radius: 12px;
+    }
+    .business-directory-left .pagination .page-link {
+        width: 43px;
+        height: 43px;
+    }
+    .current-status,
+    .loading {
+        font-size: 27px;
+    }
+    .login-sig-detailer {
+        padding: 50px 16px;
+    }
 }
 @media (max-width: 768px) {
-    .all-styles{
+    .all-styles {
         position: relative;
         left: 0;
         right: 0;
@@ -828,228 +839,228 @@ footer {
     }
     .all-styles-wrap {
         padding-bottom: 30px;
-}
-.search-million h1 {
-    font-size: 36px;
-}
-.banner-content .input-field input {
-    width: 59%;
-}
-.banner-content .input-field.first-wrap {
-    width: 36%;
-}
-.banner-content .input-field.second-wrap {
-    width: 61%;
-}
-.banner-content {
-    height: 516px;
-}
-.banner-all-content-cover {
-    padding-top: 130px;
-}
-.top-listing-wrap {
-    padding: 31px 0 0 0;
-}
-.sec-2{
-    display: none;
-}
-.mobile-slider .card{
-    border: 1px solid #ededed !important;
-    margin: 10px;
-    margin-top: 30px;
-}
-.mobile-respose{
-    background-color: #f9f9f9;
-}
-.sec-3{
-    padding-top: 70px;
-}
-.small-head-wrap h3 {
-    font-size: 37px !important;
-}
-.see-work .card .card-body h5 {
-    font-size: 20px;
-}
-.listing-slide-wrap .card .card-body .listing-inner-info ul li span {
-    margin-right: 9px !important;
-}
-.find-what-you-want .card .card-img-overlay h3 {
-    font-size: 22px;
-}
-.find-what-img {
-    height: 411px;
-}
-.best-place-to-post {
-    padding: 60px 10px;
-}
-.best-place-to-post h3 {
-    font-size: 30px;
-}
-.footer-logo {
-    width: 222px;
-}
-.footer-social-icon ul li a span {
-    width: 32px;
-    height: 32px;
-}
-.top-space{
-    padding-top: 40px;
-}
-.bottom-space{
-    padding-bottom: 40px;
-}
-.listing-map-header .serach-cover {
-    width: 100%;
-}
-.input-field input {
-    width: 72%;
-}
+    }
+    .search-million h1 {
+        font-size: 36px;
+    }
+    .banner-content .input-field input {
+        width: 59%;
+    }
+    .banner-content .input-field.first-wrap {
+        width: 36%;
+    }
+    .banner-content .input-field.second-wrap {
+        width: 61%;
+    }
+    .banner-content {
+        height: 516px;
+    }
+    .banner-all-content-cover {
+        padding-top: 130px;
+    }
+    .top-listing-wrap {
+        padding: 31px 0 0 0;
+    }
+    .sec-2 {
+        display: none;
+    }
+    .mobile-slider .card {
+        border: 1px solid #ededed !important;
+        margin: 10px;
+        margin-top: 30px;
+    }
+    .mobile-respose {
+        background-color: #f9f9f9;
+    }
+    .sec-3 {
+        padding-top: 70px;
+    }
+    .small-head-wrap h3 {
+        font-size: 37px !important;
+    }
+    .see-work .card .card-body h5 {
+        font-size: 20px;
+    }
+    .listing-slide-wrap .card .card-body .listing-inner-info ul li span {
+        margin-right: 9px !important;
+    }
+    .find-what-you-want .card .card-img-overlay h3 {
+        font-size: 22px;
+    }
+    .find-what-img {
+        height: 411px;
+    }
+    .best-place-to-post {
+        padding: 60px 10px;
+    }
+    .best-place-to-post h3 {
+        font-size: 30px;
+    }
+    .footer-logo {
+        width: 222px;
+    }
+    .footer-social-icon ul li a span {
+        width: 32px;
+        height: 32px;
+    }
+    .top-space {
+        padding-top: 40px;
+    }
+    .bottom-space {
+        padding-bottom: 40px;
+    }
+    .listing-map-header .serach-cover {
+        width: 100%;
+    }
+    .input-field input {
+        width: 72%;
+    }
 
-.header-categories ul li:first-child {
-    display: block;
-}
-.header-categories ul li{
-    display: none;
-}
-.header-categories .navbar-expand .navbar-nav .nav-link {
-    font-size: 17px;
-    color: #fff;
-    opacity: 1;
-}
-.header-drop {
-    right: -5px;
-    top: 0px;
-    box-shadow: 0 0 6px #ffffffe8;
-}
-.listing-map-header .signin {
-    width: 45%;
-    position: absolute;
-    top: 18px;
-    right: 38px;
-}
-.signin .btn {
-    padding: 5px 9px;
-    font-size: 10px;
-}
-.search-button {
-    font-size: 13px;
-    padding: 6px 20px;
-}
-.listing-map-header {
-    background: #000;
-}
-.listing-map-header .header{
-    background-color: #000;
-}
-.listing-map-header .signin a {
-    color: #fff;
-}
-.listing-map-header .signin span i {
-    color: #fff !important;
-}
-.listing-map-header .header-logo {
-    width: 80%;
-    position: relative;
-    top: -16px;
-}
-.listing-map-header {
-    height: 245px;
-}
-.listing-map-header .header {
-    height: 245px;
-}
-.listing-detail-contact-info .card .card-body {
-    left: -30px;
-}
-.listing-detail-slider-content .which-name {
-    width: 39%;
-}
-.foodie-restaurant-wrap {
-    bottom: -30px;
-}
-.start-frome p {
-    display: none;
-}
-.rating-foodie {
-    width: 176%;
-}
-.listing-slider-img i{
-    font-size: 20px;
-}
-.client-img-review {
-    width: 100px;
-}
-.header-categories .dropdown-menu {
-    overflow-y: scroll;
-    height: 410px;
-    max-width: 141%!important;
-    width: 107%!important;
-    left: -20px;
-}
-.listing-search {
-    padding: 20px 20px;
-}
-.login-other-ways{
-    justify-content: center !important;
-}
-.login-other-ways a.btn-primary:first-child {
-    margin-right: 20px;
-}
-.login-other-ways a.btn-primary {
-    padding: 12px 23px;
-    font-size: 13px;
-}
-.dasboard-listing-map-header .listing-map-header .signin {
-    width: 45%;
-    position: absolute;
-    top: 159px;
-    left: 0px;
-}
-.listing-map-header .signin {
-    width: 45%;
-    position: absolute;
-    top: 157px;
-    right: -69px;
-    z-index: 1;
-}
-.dasboard-listing-map-header .listing-map-header .header {
-    height: 128px;
-}
-.dasboard-listing-map-header .listing-map-header .signin {
-    right: 34px;
-    width: 40%;
-    left: unset;
-    top: -19px;
-}
-.dasboard-listing-map-header .listing-map-header .navbar-menus {
-    padding: 20px 10px;
-    margin-top: 20px;
-}
-.dasboard-listing-map-header .header-drop {
-    top: -15px;
-}
-.dasboard-apperense-wrap .card {
-    margin: 10px 0;
-}
-.recent-aprovel-wrap-cole {
-    margin-bottom: 30px;
-}
-.some-bookmark .card .card-body p {
-    font-size: 16px;
-}
-.sub-prper {
-    width: 85px;
-    height: 85px;
-}
-.active-status .btn-primary {
-    padding: 3px 16px;
-}
-.dasboard-listing-map-header .listing-map-header .navbar-menus ul li a {
-    padding: 16px 0;
-}
-.listing-map-header .signin span a {
-    color: #fff;
-}
+    .header-categories ul li:first-child {
+        display: block;
+    }
+    .header-categories ul li {
+        display: none;
+    }
+    .header-categories .navbar-expand .navbar-nav .nav-link {
+        font-size: 17px;
+        color: #fff;
+        opacity: 1;
+    }
+    .header-drop {
+        right: -5px;
+        top: 0px;
+        box-shadow: 0 0 6px #ffffffe8;
+    }
+    .listing-map-header .signin {
+        width: 45%;
+        position: absolute;
+        top: 18px;
+        right: 38px;
+    }
+    .signin .btn {
+        padding: 5px 9px;
+        font-size: 10px;
+    }
+    .search-button {
+        font-size: 13px;
+        padding: 6px 20px;
+    }
+    .listing-map-header {
+        background: #000;
+    }
+    .listing-map-header .header {
+        background-color: #000;
+    }
+    .listing-map-header .signin a {
+        color: #fff;
+    }
+    .listing-map-header .signin span i {
+        color: #fff !important;
+    }
+    .listing-map-header .header-logo {
+        width: 80%;
+        position: relative;
+        top: -16px;
+    }
+    .listing-map-header {
+        height: 245px;
+    }
+    .listing-map-header .header {
+        height: 245px;
+    }
+    .listing-detail-contact-info .card .card-body {
+        left: -30px;
+    }
+    .listing-detail-slider-content .which-name {
+        width: 39%;
+    }
+    .foodie-restaurant-wrap {
+        bottom: -30px;
+    }
+    .start-frome p {
+        display: none;
+    }
+    .rating-foodie {
+        width: 176%;
+    }
+    .listing-slider-img i {
+        font-size: 20px;
+    }
+    .client-img-review {
+        width: 100px;
+    }
+    .header-categories .dropdown-menu {
+        overflow-y: scroll;
+        height: 410px;
+        max-width: 141% !important;
+        width: 107% !important;
+        left: -20px;
+    }
+    .listing-search {
+        padding: 20px 20px;
+    }
+    .login-other-ways {
+        justify-content: center !important;
+    }
+    .login-other-ways a.btn-primary:first-child {
+        margin-right: 20px;
+    }
+    .login-other-ways a.btn-primary {
+        padding: 12px 23px;
+        font-size: 13px;
+    }
+    .dasboard-listing-map-header .listing-map-header .signin {
+        width: 45%;
+        position: absolute;
+        top: 159px;
+        left: 0px;
+    }
+    .listing-map-header .signin {
+        width: 45%;
+        position: absolute;
+        top: 157px;
+        right: -69px;
+        z-index: 1;
+    }
+    .dasboard-listing-map-header .listing-map-header .header {
+        height: 128px;
+    }
+    .dasboard-listing-map-header .listing-map-header .signin {
+        right: 34px;
+        width: 40%;
+        left: unset;
+        top: -19px;
+    }
+    .dasboard-listing-map-header .listing-map-header .navbar-menus {
+        padding: 20px 10px;
+        margin-top: 20px;
+    }
+    .dasboard-listing-map-header .header-drop {
+        top: -15px;
+    }
+    .dasboard-apperense-wrap .card {
+        margin: 10px 0;
+    }
+    .recent-aprovel-wrap-cole {
+        margin-bottom: 30px;
+    }
+    .some-bookmark .card .card-body p {
+        font-size: 16px;
+    }
+    .sub-prper {
+        width: 85px;
+        height: 85px;
+    }
+    .active-status .btn-primary {
+        padding: 3px 16px;
+    }
+    .dasboard-listing-map-header .listing-map-header .navbar-menus ul li a {
+        padding: 16px 0;
+    }
+    .listing-map-header .signin span a {
+        color: #fff;
+    }
 }
 @media (max-width: 578px) {
     .small-head-wrap h3 {
@@ -1083,174 +1094,174 @@ footer {
         height: 31px;
         width: 31px;
     }
-    
-.best-place-to-post h3 {
-    font-size: 26px;
-}
-.best-place-to-post p{
-    margin: 15px 10px;
-    line-height: 24px;
-    font-size: 13px;
-}
-.best-place-to-post {
-    padding: 32px 10px;
-}
-.footer-logo {
-    width: 204px;
-}
-.footer-social-icon ul li a span {
-    width: 42px;
-    height: 42px;
-}
-.copy-right {
-    padding: 20px 0 0 0;
-}
-.copy-right p {
-    font-size: 11px;
-}
-.all-scroller a {
-    right: -34px;
-    padding: 6px 10px;
-    top: -43px;
-}
-.listing-map-header .header-logo {
-    width: 42%;
-}
-.listing-map-header .signin {
-    width: 45%;
-    position: absolute;
-    top: 159px;
-    right: -34px;
-}
-.isting-map-header .search-button {
-    padding: 7px 11px;
-}
-.all-categories-wrap.top-space{
-    padding-top: 40px;
-} 
-.pagination li {
-    margin-right: 0px;
-}
-.listing-detail-contact-info .card .card-body {
-    left: -19px;
-}
-.comment-picture img {
-    width: 62px;
-    height: 62px;
-}
-.field h4 {
-    font-size: 22px;
-}
-.other-listing-slider-img-box {
-    height: 62px !important;
-}
-.listing-detail-slider-content .which-name .resto-name h5 {
-    font-size: 12px;
-}
-.client-img-review {
-    width: 75px;
-    border-radius: 3px;
-}
-.login-other-ways a.btn-primary {
-    padding: 12px 12px;
-}
-.dasboard-listing-map-header .listing-map-header .header-logo {
-    width: 31%;
-}
-.login-client-img {
-    width: 44px;
-    height: 44px;
-}
-.login-client-img img {
-    width: 44px;
-    height: 44px;
-}
-.dasboard-listing-map-header .listing-map-header .signin {
-    right: 54px;
-    width: 45%;
-}
-.dasboard-listing-map-header .signin .btn {
-    height: 100%;
-}
-.recent-approvel-scrool .card .recent-approvel-img {
-    width: 100%;
-    height: 232px;
-}
-.recent-approvel-scrool-wrap .card .card-body span {
-    font-size: 16px;
-}
-.recent-approvel-scrool-wrap .card .card-body span {
-    line-height: 35px;
-}
-.some-bookmark .card .card-body p {
-    margin-left: 0;
-}
-.dasboard-copy-right p {
-    font-size: 10px;
-}
-.message-spacer .card .card-body h5 {
-    font-size: 17px;
-}
-.message-spacer .card .card-body p {
-    font-size: 14px;
-}
-.message-comment-picture {
-    width: 60px;
-    height: 60px;
-}
-.message-spacer .card .card-body span {
-    font-size: 11px;
-}
-.message-comment-picture img {
-    width: 60px;
-    height: 60px;
-}
-.dasboard-copy-right {
-    padding: 40px 0px;
-}
-.message-spacer .card .card-body {
-    margin-left: 0px;
-    margin-top: 15px;
-}
-.editser-optins p a i {
-    width: 100%;
-}
-.sub-prper {
-    width: 100%;
-}
-.table {
-width: 700px;
-overflow-x: scroll;
-}
-.my-listing-Dashboard {
-    padding: 40px 18px;
-    overflow: hidden;
-    overflow-x: scroll;
-}
-.vistory-review .client-img-review-wrapers .client-img-review {
-    width: 86px !important;
-}
-.vistory-review .comment-picture{
-    position: unset;
-}
-.vistory-review .comment-wrap .card .card-body {
-    padding-left: 0;
-}
-.dasboard-listing-map-header .listing-map-header .navbar-menus ul li a {
-    padding: 10px 0;
-}
-.listing-map-header .input-field input {
-    width: 85%;
-}
-.listing-map-header .input-field.first-wrap {
-    width: 35%;
-}
-.header-categories .dropdown-menu {
-    width: 109% !important;
-}
-.new-style-categories .card {
-    margin-right: 0;
-}
+
+    .best-place-to-post h3 {
+        font-size: 26px;
+    }
+    .best-place-to-post p {
+        margin: 15px 10px;
+        line-height: 24px;
+        font-size: 13px;
+    }
+    .best-place-to-post {
+        padding: 32px 10px;
+    }
+    .footer-logo {
+        width: 204px;
+    }
+    .footer-social-icon ul li a span {
+        width: 42px;
+        height: 42px;
+    }
+    .copy-right {
+        padding: 20px 0 0 0;
+    }
+    .copy-right p {
+        font-size: 11px;
+    }
+    .all-scroller a {
+        right: -34px;
+        padding: 6px 10px;
+        top: -43px;
+    }
+    .listing-map-header .header-logo {
+        width: 42%;
+    }
+    .listing-map-header .signin {
+        width: 45%;
+        position: absolute;
+        top: 159px;
+        right: -34px;
+    }
+    .isting-map-header .search-button {
+        padding: 7px 11px;
+    }
+    .all-categories-wrap.top-space {
+        padding-top: 40px;
+    }
+    .pagination li {
+        margin-right: 0px;
+    }
+    .listing-detail-contact-info .card .card-body {
+        left: -19px;
+    }
+    .comment-picture img {
+        width: 62px;
+        height: 62px;
+    }
+    .field h4 {
+        font-size: 22px;
+    }
+    .other-listing-slider-img-box {
+        height: 62px !important;
+    }
+    .listing-detail-slider-content .which-name .resto-name h5 {
+        font-size: 12px;
+    }
+    .client-img-review {
+        width: 75px;
+        border-radius: 3px;
+    }
+    .login-other-ways a.btn-primary {
+        padding: 12px 12px;
+    }
+    .dasboard-listing-map-header .listing-map-header .header-logo {
+        width: 31%;
+    }
+    .login-client-img {
+        width: 44px;
+        height: 44px;
+    }
+    .login-client-img img {
+        width: 44px;
+        height: 44px;
+    }
+    .dasboard-listing-map-header .listing-map-header .signin {
+        right: 54px;
+        width: 45%;
+    }
+    .dasboard-listing-map-header .signin .btn {
+        height: 100%;
+    }
+    .recent-approvel-scrool .card .recent-approvel-img {
+        width: 100%;
+        height: 232px;
+    }
+    .recent-approvel-scrool-wrap .card .card-body span {
+        font-size: 16px;
+    }
+    .recent-approvel-scrool-wrap .card .card-body span {
+        line-height: 35px;
+    }
+    .some-bookmark .card .card-body p {
+        margin-left: 0;
+    }
+    .dasboard-copy-right p {
+        font-size: 10px;
+    }
+    .message-spacer .card .card-body h5 {
+        font-size: 17px;
+    }
+    .message-spacer .card .card-body p {
+        font-size: 14px;
+    }
+    .message-comment-picture {
+        width: 60px;
+        height: 60px;
+    }
+    .message-spacer .card .card-body span {
+        font-size: 11px;
+    }
+    .message-comment-picture img {
+        width: 60px;
+        height: 60px;
+    }
+    .dasboard-copy-right {
+        padding: 40px 0px;
+    }
+    .message-spacer .card .card-body {
+        margin-left: 0px;
+        margin-top: 15px;
+    }
+    .editser-optins p a i {
+        width: 100%;
+    }
+    .sub-prper {
+        width: 100%;
+    }
+    .table {
+        width: 700px;
+        overflow-x: scroll;
+    }
+    .my-listing-Dashboard {
+        padding: 40px 18px;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+    .vistory-review .client-img-review-wrapers .client-img-review {
+        width: 86px !important;
+    }
+    .vistory-review .comment-picture {
+        position: unset;
+    }
+    .vistory-review .comment-wrap .card .card-body {
+        padding-left: 0;
+    }
+    .dasboard-listing-map-header .listing-map-header .navbar-menus ul li a {
+        padding: 10px 0;
+    }
+    .listing-map-header .input-field input {
+        width: 85%;
+    }
+    .listing-map-header .input-field.first-wrap {
+        width: 35%;
+    }
+    .header-categories .dropdown-menu {
+        width: 109% !important;
+    }
+    .new-style-categories .card {
+        margin-right: 0;
+    }
 }
 @media (max-width: 480px) {
     .search-million h1 {
@@ -1259,11 +1270,11 @@ overflow-x: scroll;
     .banner-all-content-cover {
         padding-top: 38px;
     }
-    .inner-form{
+    .inner-form {
         display: block !important;
     }
     .select-category {
-        border-right:none;
+        border-right: none;
         width: 138%;
     }
     .serach-cover {
@@ -1304,193 +1315,193 @@ overflow-x: scroll;
     }
     .header-drop {
         top: -8px;
-}
-#sidebarMenu ul li {
-    padding-left: 20px !important;
-}
-#sidebarMenu ul li a {
-    font-size: 14px;
-}
-.input-field.second-wrap {
-    width: 130%;
-}
-#sidebarMenu {
-    width: 163px;
-}
-.header-categories .navbar-expand .navbar-nav .nav-link {
-    font-size: 14px;
-    left: -17px;
-    position: relative;
-}
-.listing-map-header .signin a {
-    font-size: 11px;
-}
-.listing-map-header .signin {
-    width: 62%;
-    right: -37px;
-    top: 185px;
-}
-.listing-map-header .select-category {
-    border-right: none;
-    width: 221%;
-}
-.listing-map-inner {
-    overflow: hidden;
-}
-.listing-map-inner .select-category .form-select {
-    width: 72% !important;
-}
-.listing-map-inner .form-control {
-    margin-bottom: 20px;
-}
-.listing-map-filters-btn {
-    width: 230%;
-}
-.listing-map-filters-btn a:first-child {
-    margin-right: 6px;
-}
-.listing-map-inner .btn {
-    padding: 5px 37px;
-}
-.Search-result-side {
-    padding: 20px 8px;
-    margin-top: 20px;
-}
-.under-listing-inner ul li .nav-link.active {
-    margin: 10px 0;
-}
-.under-listing-inner ul li {
-    padding-right: 8px;
-}
-.pagination .page-link {
-    width: 28px;
-}
-.pagination .page-link:hover {
-    width: 31px;
-    height: 31px;
-}
-.listing-slide-wrap-2 .card .card-body .listing-inner-info ul li span {
-    margin-right: 8px !important;
-}
-.listing-slide-wrap-2 .card .card-body h5 {
-    font-size: 20px;
-}
-.under-listing-inner ul {
-    width: 11%;
-}
-.listing-slider-img.slick-slider{
-    height: 225px !important;
-}
-.foodie-restaurant-wrap {
-   left: -16px;
-}
-.rating-foodie .btn-primary-2 {
-    padding: 14px 0px;
-    font-size: 12px;
-}
-.share-button {
-    top: 19px;
-    right: -21px;
-}
-.listing-detail-slider-content .which-name {
-    width: 57%;
-}
-.listing-detail-slider-content .which-name .resto-name {
-    padding: 10px 20px;
-}
-.property-discript-inners span{
-    font-size: 11px;
-}
-.listing-detail-page-recent-list .card .card-body{
-    position: relative;
-    left: 16px;
-}
-.header-categories .dropdown-menu {
-    width: 114% !important;
-}
-.login-other-ways a.btn-primary {
-    padding: 8px 10px;
-    font-size: 9px;
-}
-.login-other-ways a.btn-primary:first-child {
-    margin-right: 8px;
-}
-.sign-up-stage p {
-    font-size: 18px;
-}
-.login-inputer .form-control {
-    padding: 16px 10px 16px 40px;
-}
-.passworder-icon {
-    left: 18px;
-}
-.signup-page .sign-up-stage p {
-    font-size: 15px;
-}
-.dasboard-copy-right p {
-    font-size: 9px;
-}
-.dasboard-listing-map-header .listing-map-header .signin {
-    right: -13px;
-    width: auto;
-    top: 55px;
-}
-.dasboard-listing-map-header .listing-map-header .header-logo {
-    width: 41%;
-    top: -27px;
-}
-.dasboard-listing-map-header .listing-map-header .header {
-    height: 145px;
-}
-.post-ad-user-form-iner textarea {
-    height: 216px;
-}
-.vistory-review .client-img-review-wrapers .client-img-review {
-    width: 56px !important;
-    border-radius: 0;
-}
-.vistory-review .comment-wrap .card .card-body p{
-    font-size: 14px;
-    
-}
-.field h4 {
-    font-size: 19px;
-}
-.field p{
-    font-size: 13px;
-}
-.p-image {
-    left: 68%;
-}
-.dasboard-listing-map-header .dropdown-menu.show {
-    left: -97px;
-    border-color: #00000014;
-    background-color: #000;
-}
-.dasboard-listing-map-header .listing-map-header .navbar-menus ul li a {
-    color: #fff !important;
-    opacity: 1;
-    border-color: #fff;
-}
-.listing-map-header .input-field input {
-    width: 68%;
-}
-.business-directory-left .pagination .page-link {
-    width: 31px;
-    height: 31px;
-}
-.business-directory-left .major-button ul {
-    padding: 7px 15px;
-}
-.current-status, .loading {
-    font-size: 23px;
-}
-.dasboard-listing-map-header .signin .btn {
-    padding: 5px 9px;
-}
-.client-img-review {
-    width: 56px;
-}
+    }
+    #sidebarMenu ul li {
+        padding-left: 20px !important;
+    }
+    #sidebarMenu ul li a {
+        font-size: 14px;
+    }
+    .input-field.second-wrap {
+        width: 130%;
+    }
+    #sidebarMenu {
+        width: 163px;
+    }
+    .header-categories .navbar-expand .navbar-nav .nav-link {
+        font-size: 14px;
+        left: -17px;
+        position: relative;
+    }
+    .listing-map-header .signin a {
+        font-size: 11px;
+    }
+    .listing-map-header .signin {
+        width: 62%;
+        right: -37px;
+        top: 185px;
+    }
+    .listing-map-header .select-category {
+        border-right: none;
+        width: 221%;
+    }
+    .listing-map-inner {
+        overflow: hidden;
+    }
+    .listing-map-inner .select-category .form-select {
+        width: 72% !important;
+    }
+    .listing-map-inner .form-control {
+        margin-bottom: 20px;
+    }
+    .listing-map-filters-btn {
+        width: 230%;
+    }
+    .listing-map-filters-btn a:first-child {
+        margin-right: 6px;
+    }
+    .listing-map-inner .btn {
+        padding: 5px 37px;
+    }
+    .Search-result-side {
+        padding: 20px 8px;
+        margin-top: 20px;
+    }
+    .under-listing-inner ul li .nav-link.active {
+        margin: 10px 0;
+    }
+    .under-listing-inner ul li {
+        padding-right: 8px;
+    }
+    .pagination .page-link {
+        width: 28px;
+    }
+    .pagination .page-link:hover {
+        width: 31px;
+        height: 31px;
+    }
+    .listing-slide-wrap-2 .card .card-body .listing-inner-info ul li span {
+        margin-right: 8px !important;
+    }
+    .listing-slide-wrap-2 .card .card-body h5 {
+        font-size: 20px;
+    }
+    .under-listing-inner ul {
+        width: 11%;
+    }
+    .listing-slider-img.slick-slider {
+        height: 225px !important;
+    }
+    .foodie-restaurant-wrap {
+        left: -16px;
+    }
+    .rating-foodie .btn-primary-2 {
+        padding: 14px 0px;
+        font-size: 12px;
+    }
+    .share-button {
+        top: 19px;
+        right: -21px;
+    }
+    .listing-detail-slider-content .which-name {
+        width: 57%;
+    }
+    .listing-detail-slider-content .which-name .resto-name {
+        padding: 10px 20px;
+    }
+    .property-discript-inners span {
+        font-size: 11px;
+    }
+    .listing-detail-page-recent-list .card .card-body {
+        position: relative;
+        left: 16px;
+    }
+    .header-categories .dropdown-menu {
+        width: 114% !important;
+    }
+    .login-other-ways a.btn-primary {
+        padding: 8px 10px;
+        font-size: 9px;
+    }
+    .login-other-ways a.btn-primary:first-child {
+        margin-right: 8px;
+    }
+    .sign-up-stage p {
+        font-size: 18px;
+    }
+    .login-inputer .form-control {
+        padding: 16px 10px 16px 40px;
+    }
+    .passworder-icon {
+        left: 18px;
+    }
+    .signup-page .sign-up-stage p {
+        font-size: 15px;
+    }
+    .dasboard-copy-right p {
+        font-size: 9px;
+    }
+    .dasboard-listing-map-header .listing-map-header .signin {
+        right: -13px;
+        width: auto;
+        top: 55px;
+    }
+    .dasboard-listing-map-header .listing-map-header .header-logo {
+        width: 41%;
+        top: -27px;
+    }
+    .dasboard-listing-map-header .listing-map-header .header {
+        height: 145px;
+    }
+    .post-ad-user-form-iner textarea {
+        height: 216px;
+    }
+    .vistory-review .client-img-review-wrapers .client-img-review {
+        width: 56px !important;
+        border-radius: 0;
+    }
+    .vistory-review .comment-wrap .card .card-body p {
+        font-size: 14px;
+    }
+    .field h4 {
+        font-size: 19px;
+    }
+    .field p {
+        font-size: 13px;
+    }
+    .p-image {
+        left: 68%;
+    }
+    .dasboard-listing-map-header .dropdown-menu.show {
+        left: -97px;
+        border-color: #00000014;
+        background-color: #000;
+    }
+    .dasboard-listing-map-header .listing-map-header .navbar-menus ul li a {
+        color: #fff !important;
+        opacity: 1;
+        border-color: #fff;
+    }
+    .listing-map-header .input-field input {
+        width: 68%;
+    }
+    .business-directory-left .pagination .page-link {
+        width: 31px;
+        height: 31px;
+    }
+    .business-directory-left .major-button ul {
+        padding: 7px 15px;
+    }
+    .current-status,
+    .loading {
+        font-size: 23px;
+    }
+    .dasboard-listing-map-header .signin .btn {
+        padding: 5px 9px;
+    }
+    .client-img-review {
+        width: 56px;
+    }
 }
 @media (max-width: 360px) {
     .banner-content {
@@ -1498,169 +1509,170 @@ overflow-x: scroll;
     }
     .small-head-wrap h3 {
         font-size: 22px !important;
-}
-.head-wrap h5 {
-    font-size: 20px;
-}
-.all-scroller a {
-    right: -2px;
-}
-.copy-right p {
-    font-size: 8px;
-}
-.listing-map-header .signin {
-    width: 70%;
-}
-.input-field input {
-    width: 69%;
-}
-.listing-map-filters-btn {
-    width: 249%;
-}
-.listing-map-inner .btn {
-    padding: 5px 27px;
-}
-.pagination span {
-    padding: 0px 10px 0 10px;
-}
-.listing-slide-wrap-2 .card .card-body h5 {
-    font-size: 17px;
-}
-.listing-slide-wrap-2 .card .card-body .listing-inner-info ul li span {
-    margin-right: 5px !important;
-}
-.listing-slide-wrap-2 .card .card-body{
-    padding: 10px 4px;
-}
-.listing-slide-wrap-2 .card .card-body .listing-inner-info ul li {
-    font-size: 12px;
-}
-.listing-detail-page-recent-list .card .card-body {
-    left: 23px;
-}
-.map-direction-btn .btn-primary {
-    font-size: 16px;
-}
-.listing-detail-contact-info .card .card-body {
-    left: 0px;
-}
-.listing-detail-contact-info .card .card-body p {
-    font-size: 13px;
-}
-.comment-share-side span ul li i {
-    font-size: 10px;
-    padding-right: 2px;
-}
-.comment-share-side a span {
-    font-size: 11px;
-}
-.client-img-review {
-    width: 63px;
-}
-.property-discript-inners i {
-    width: 20px;
-    height: 20px;
-    margin-right: 7px;
-    font-size: 11px;
-}
-.web-menu a {
-    font-size: 12px;
-}
-.listing-slider-img.slick-slider {
-    height: 244px !important;
-}
-.rating-foodie .btn-primary {
-    font-size: 10px;
-}
-.which-page-show {
-    background-color: #f5f5f5;
-    padding: 22px 0px 22px 9px;
-}
-.listing-detail-slider-content .which-name .resto-name {
-    padding: 10px 7px;
-    position: absolute;
-    left: -20px;
-}
-.share-button {
-    top: 16px;
-}
-.rating-foodie .btn-primary-2 {
-    font-size: 10px;
-}
-p {
-    font-size: 14px;
-}
-.header-categories .dropdown-menu {
-    width: 116% !important;
-}
-.welcome h2 {
-    font-size: 38px;
-}
-.welcome p {
-    font-size: 17px;
-}
-.login-other-ways a.btn-primary {
-    padding: 6px 6px;
-    font-size: 8px;
-}
-.login-inputer .form-control {
-    padding: 10px 5px 10px 40px;
-}
-.sign-up-stage p {
-    font-size: 17px;
-}
-.signup-page .welcome p {
-    font-size: 17px;
-}
-.signup-page .welcome h2 {
-    font-size: 40px;
-}
-.signup-page .login-inputer .form-control {
-    padding: 7px 5px 7px 43px;
-    margin-bottom: -3px;
-}
-.signup-page .sign-up-stage p {
-    font-size: 16px;
-}
-.signup-page .login-other-ways a.btn-primary {
-    padding: 7px 7px;
-}
-.dasboard-listing-map-header .listing-map-header .signin {
-    right: -100px;
-    width: 100%;
-}
-.recent-approvel-scrool-wrap .card .card-body span {
-    font-size: 14px;
-}
-.dasboard-copy-right {
-    display: block !important;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0px;
-}
-.dasboard-copy-right p {
-    font-size: 10px;
-}
-.p-image {
-    left: 71%;
-}
-.Dashboard.bottom-space{
-    padding-bottom: 10px;
-}
-.listing-map-header .input-field input {
-    width: 66%;
-}
-.header-categories .navbar-expand .navbar-nav .nav-link {
-    font-size: 12px;
-}
-.listing-map-header .signin {
-    top: 181px;
-}
-.current-status, .loading {
-    font-size: 20px;
-    padding: 36px 15px 33px;
-}
-.client-img-review {
-    width: 46px;
-}
+    }
+    .head-wrap h5 {
+        font-size: 20px;
+    }
+    .all-scroller a {
+        right: -2px;
+    }
+    .copy-right p {
+        font-size: 8px;
+    }
+    .listing-map-header .signin {
+        width: 70%;
+    }
+    .input-field input {
+        width: 69%;
+    }
+    .listing-map-filters-btn {
+        width: 249%;
+    }
+    .listing-map-inner .btn {
+        padding: 5px 27px;
+    }
+    .pagination span {
+        padding: 0px 10px 0 10px;
+    }
+    .listing-slide-wrap-2 .card .card-body h5 {
+        font-size: 17px;
+    }
+    .listing-slide-wrap-2 .card .card-body .listing-inner-info ul li span {
+        margin-right: 5px !important;
+    }
+    .listing-slide-wrap-2 .card .card-body {
+        padding: 10px 4px;
+    }
+    .listing-slide-wrap-2 .card .card-body .listing-inner-info ul li {
+        font-size: 12px;
+    }
+    .listing-detail-page-recent-list .card .card-body {
+        left: 23px;
+    }
+    .map-direction-btn .btn-primary {
+        font-size: 16px;
+    }
+    .listing-detail-contact-info .card .card-body {
+        left: 0px;
+    }
+    .listing-detail-contact-info .card .card-body p {
+        font-size: 13px;
+    }
+    .comment-share-side span ul li i {
+        font-size: 10px;
+        padding-right: 2px;
+    }
+    .comment-share-side a span {
+        font-size: 11px;
+    }
+    .client-img-review {
+        width: 63px;
+    }
+    .property-discript-inners i {
+        width: 20px;
+        height: 20px;
+        margin-right: 7px;
+        font-size: 11px;
+    }
+    .web-menu a {
+        font-size: 12px;
+    }
+    .listing-slider-img.slick-slider {
+        height: 244px !important;
+    }
+    .rating-foodie .btn-primary {
+        font-size: 10px;
+    }
+    .which-page-show {
+        background-color: #f5f5f5;
+        padding: 22px 0px 22px 9px;
+    }
+    .listing-detail-slider-content .which-name .resto-name {
+        padding: 10px 7px;
+        position: absolute;
+        left: -20px;
+    }
+    .share-button {
+        top: 16px;
+    }
+    .rating-foodie .btn-primary-2 {
+        font-size: 10px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .header-categories .dropdown-menu {
+        width: 116% !important;
+    }
+    .welcome h2 {
+        font-size: 38px;
+    }
+    .welcome p {
+        font-size: 17px;
+    }
+    .login-other-ways a.btn-primary {
+        padding: 6px 6px;
+        font-size: 8px;
+    }
+    .login-inputer .form-control {
+        padding: 10px 5px 10px 40px;
+    }
+    .sign-up-stage p {
+        font-size: 17px;
+    }
+    .signup-page .welcome p {
+        font-size: 17px;
+    }
+    .signup-page .welcome h2 {
+        font-size: 40px;
+    }
+    .signup-page .login-inputer .form-control {
+        padding: 7px 5px 7px 43px;
+        margin-bottom: -3px;
+    }
+    .signup-page .sign-up-stage p {
+        font-size: 16px;
+    }
+    .signup-page .login-other-ways a.btn-primary {
+        padding: 7px 7px;
+    }
+    .dasboard-listing-map-header .listing-map-header .signin {
+        right: -100px;
+        width: 100%;
+    }
+    .recent-approvel-scrool-wrap .card .card-body span {
+        font-size: 14px;
+    }
+    .dasboard-copy-right {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0px;
+    }
+    .dasboard-copy-right p {
+        font-size: 10px;
+    }
+    .p-image {
+        left: 71%;
+    }
+    .Dashboard.bottom-space {
+        padding-bottom: 10px;
+    }
+    .listing-map-header .input-field input {
+        width: 66%;
+    }
+    .header-categories .navbar-expand .navbar-nav .nav-link {
+        font-size: 12px;
+    }
+    .listing-map-header .signin {
+        top: 181px;
+    }
+    .current-status,
+    .loading {
+        font-size: 20px;
+        padding: 36px 15px 33px;
+    }
+    .client-img-review {
+        width: 46px;
+    }
 }

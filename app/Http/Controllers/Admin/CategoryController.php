@@ -107,23 +107,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request->name);
-        if ($request->name == Category::findOrFail($id)->name) {
 
-            $this->validate($request, [
-                // 'name' => 'required|max:255',
-                'description' => 'sometimes|max:755',
-                'image' => 'sometimes|image|mimes:jpg,png,jpeg',
-                'iconimage' => 'required|image|mimes:jpg,png,jpeg'
-            ]);
-        } else {
-            $this->validate($request, [
-                // 'name' => 'required|max:255|unique:categories',
-                'description' => 'sometimes|max:755',
-                'image' => 'sometimes|image|mimes:jpg,png,jpeg',
-                'iconimage' => 'required|image|mimes:jpg,png,jpeg'
-            ]);
-        }
 
         $category = Category::findOrFail($id);
         if ($request->image != null) {

@@ -22,7 +22,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                         <div class="new-style-categories">
 
-                            <a href="#">
+                            <a href="{{ route('categorydetail', $category->id) }}">
                                 <div class="card border-0 text-white">
                                     <div class="new-style-img">
                                         <img src="{{ asset('storage/category/' . $category->image) }}"
@@ -45,8 +45,6 @@
                                 </div>
                             </a>
                         </div>
-
-
                     </div>
                 @endforeach
                 <div class="col-12">
@@ -54,23 +52,7 @@
                         <div class="pagination-list">
                             <div class="pagination-list">
                                 {!! $categorys->links() !!}
-                                {{-- <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center">
-                                    <li><a class="# d-flex" href="#" aria-label="Previous"><span><i
-                                                    class="fa fa-angle-left" aria-hidden="true"></i></span></a></li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">7</a></li>
-                                    <li><a class="# d-flex" href="#" aria-label="Next"><span><i
-                                                    class="fa fa-angle-right" aria-hidden="true"></i></span></a></li>
-                                </ul>
-                            </nav> --}}
                             </div>
-
                         </div>
                     </div>
                 </div>

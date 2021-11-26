@@ -1,7 +1,7 @@
 @extends('layouts.backend.app')
 
 @section('content')
-    <div class="col-md-9 col-sm-10 col-10 pe-0">
+    <div class="col-lg-9 col-md-12 col-sm-12 col-12 pe-0">
         <div class="dasboard-content-side">
             <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">

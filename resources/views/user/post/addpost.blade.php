@@ -1,11 +1,10 @@
-@extends('layouts.backend.app')
+@extends('layouts.backend.appuser')
 @push('header')
     <link rel="stylesheet" href="{{ asset('backend/vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet"
         href="{{ asset('backend/vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 @endpush
-
 @section('content')
     <style>
         button#pls {
@@ -102,23 +101,6 @@
                                     <div class="major-button mx-auto text-center">
                                         <div class="pagination-list">
                                             {!! $posts->links() !!}
-                                            {{-- <nav aria-label="Page navigation example">
-                                                <ul class="pagination justify-content-center">
-                                                    <li><a class="# d-flex" href="#" aria-label="Previous"><span><i
-                                                                    class="fa fa-angle-left"
-                                                                    aria-hidden="true"></i></span></a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">...</a>
-                                                    </li>
-                                                    <li><a class="# d-flex" href="#" aria-label="Next"><span><i
-                                                                    class="fa fa-angle-right"
-                                                                    aria-hidden="true"></i></span></a></li>
-                                                </ul>
-                                            </nav> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -138,7 +120,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="{{ route('admin.addpost.store') }}" method="post" id="createPost"
+                                    <form action="{{ route('user.addpost.store') }}" method="post" id="createPost"
                                         enctype="multipart/form-data" class="form-horizontal">
                                         @csrf
                                         <div class="post-ad-user-form-iner">
@@ -433,13 +415,11 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button type="submit" class="btn btn-primary btn-md"
-                                                onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                document.getElementById('createPost').submit();">SAVE
+                                            <button type="submit" class="btn btn-primary btn-md" onclick="event.preventDefault();
+                                                                    document.getElementById('createPost').submit();">SAVE
                                             </button>
                                         </div>
                                     </form>
-
                                 </div>
                             </div>
                         </div>
@@ -459,7 +439,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="{{ route('admin.addpost.update', $postitem->id) }}" method="post"
+                        <form action="{{ route('user.addpost.update', $postitem->id) }}" method="post"
                             id="editcategory-{{ $postitem->id }}" enctype="multipart/form-data" class="form-horizontal">
                             @csrf
                             @method('PUT')
@@ -504,9 +484,6 @@
                                                 <option value="0" disabled="true" selected="true"></option>
                                             </select>
                                         @endif
-
-
-
                                     </div>
                                 </div>
                             </div>
@@ -562,8 +539,6 @@
                                             <option value="Colorado">Colorado</option>
                                             <option value="Tennessee">Tennessee</option>
                                             <option value="Oklahoma">Oklahoma</option>
-
-
                                         </select>
                                     </div>
                                     <div class="col-sm-6 col-12">
@@ -762,7 +737,7 @@
                             </div>
                             <button type="submit" class="btn btn-primary btn-md"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             document.getElementById('editcategory-{{ $postitem->id }}').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     document.getElementById('editcategory-{{ $postitem->id }}').submit();">
                                 <i class="fa fa-dot-circle-o"></i> Submit
                             </button>
                         </form>
@@ -789,8 +764,8 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         <button type="button" class="btn btn-danger"
                             onclick="event.preventDefault();
-                                                                                                                                                                                                                                                             document.getElementById('deletecategory-{{ $postitem->id }}').submit();">Confirm</button>
-                        <form action="{{ route('admin.addpost.destroy', $postitem->id) }}" style="display: none"
+                                                                                                                                                                                                                                                                                                     document.getElementById('deletecategory-{{ $postitem->id }}').submit();">Confirm</button>
+                        <form action="{{ route('user.addpost.destroy', $postitem->id) }}" style="display: none"
                             id="deletecategory-{{ $postitem->id }}" method="POST">
                             @csrf
                             @method('DELETE')

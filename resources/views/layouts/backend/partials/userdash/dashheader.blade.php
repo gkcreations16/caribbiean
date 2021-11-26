@@ -26,7 +26,7 @@
                                         </div>
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <li><a class="dropdown-item" href="{{ route('admin.profile') }}"><span><img
+                                        <li><a class="dropdown-item" href="{{ route('user.profile') }}"><span><img
                                                         src="{{ asset('assets/img/Layer-953.png') }}"
                                                         class="img-fluid"></span>My Profile</a></li>
                                         <li><a class="dropdown-item" href="#"><span><img
@@ -47,7 +47,7 @@
                                     </ul>
                                 </div>
                             </span>
-                            <a href="dashboard.html" class="btn  rounded-pill" type="submit">PLACE AN AD</a>
+                            <a href="#" class="btn  rounded-pill" type="submit">PLACE AN ADs</a>
                         </div>
                         <div class="header-drop">
                             <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
@@ -59,16 +59,17 @@
                             <div id="sidebarMenu">
                                 <ul class="sidebarMenuInner navbar-nav me-auto mb-2 mb-lg-0  mx-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                                        <a class="nav-link" aria-current="page"
+                                            href="{{ route('home') }}">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="category.html">Category</a>
+                                        <a class="nav-link" href="{{ route('category') }}">Category</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="listing.html">Listing</a>
+                                        <a class="nav-link" href="{{ route('listing') }}">Listing</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="busniess-listing.html">Business listing</a>
+                                        <a class="nav-link" href="#">Business listing</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Contact Us</a>

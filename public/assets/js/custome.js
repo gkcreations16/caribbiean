@@ -439,10 +439,20 @@ $(".share-item").on("click", function() {
     }, 2500);
 });
 
-$(document).ready(function() {
-    $("#v-pills-tab a").on("click", function() {
-        $(this)
-            .removeClass("active")
-            .addClass("active");
+// $(document).ready(function() {
+//     $("#v-pills-tab a").on("click", function() {
+//         $(this)
+//             .removeClass("active")
+//             .addClass("active");
+//     });
+// });
+$(function() {
+    var current = location.pathname;
+    $(".nav-pills a").each(function() {
+        var $this = $(this);
+        // if the current path is like this link, make it active
+        if ($this.attr("href").indexOf(current) !== -1) {
+            $this.addClass("active");
+        }
     });
 });

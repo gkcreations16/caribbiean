@@ -16,24 +16,8 @@
             height: 30px;
         }
 
-        button.btn.btn-primary.btnstyle.mb-1 {
-            padding: 7px;
-            width: 50px;
-            height: 38px;
-        }
-
-        button.btn.btn-secondary.btnstyle.mb-1 {
-            width: 47px;
-            height: 35px;
-        }
-
-        button.btn.btn-danger.btnstyle.mb-1 {
-            width: 47px;
-            height: 35px;
-        }
-
     </style>
-    <div class="col-md-9 col-sm-10 col-10 pe-0">
+    <div class="col-lg-9 col-md-12 col-sm-12 col-12 pe-0">
         <div class="dasboard-content-side">
             <div class="content mt-3">
                 <div class="animated fadeIn">
@@ -76,24 +60,23 @@
                                                     <td>{{ $key + 1 }}</td>
                                                     <td>{{ $sub_category->name }}</td>
                                                     <td>{{ $sub_category->slug }}</td>
-                                                    <td>{{ $sub_category->created_at }}</td>
-                                                    <td>{{ $sub_category->updated_at }}</td>
+                                                    <td> {{ date('d M Y - H:i:s', $sub_category->created_at->timestamp) }}
+                                                    </td>
+                                                    <td> {{ date('d M Y - H:i:s', $sub_category->updated_at->timestamp) }}
+                                                    </td>
                                                     <td>
                                                         <!-- Button trigger modal -->
-                                                        <button type="button" class="btn btn-primary btnstyle mb-1"
-                                                            data-toggle="modal"
+                                                        <button type="button" class="" data-toggle="modal"
                                                             data-target="#viewModal-{{ $sub_category->id }}">
                                                             <i class="fa fa-eye pe-1"></i>
                                                         </button>
-                                                        <button type="button" class="btn btn-secondary btnstyle mb-1"
-                                                            data-toggle="modal"
+                                                        <button type="button" class="" data-toggle="modal"
                                                             data-target="#editModal-{{ $sub_category->id }}">
                                                             <i class="fas fa-pen"></i>
                                                         </button>
-                                                        <button type="button" class="btn btn-danger btnstyle mb-1"
-                                                            data-toggle="modal"
+                                                        <button type="button" class="" data-toggle="modal"
                                                             data-target="#deleteModal-{{ $sub_category->id }}">
-                                                            <i class="fa fa-trash-o"></i>
+                                                            <i class="fa fa-trash"></i>
                                                         </button>
                                                     </td>
                                                 </tr>
@@ -148,7 +131,7 @@
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-md"
                                             onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                         document.getElementById('createcategory').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                             document.getElementById('createcategory').submit();">
                                             <i class="fa fa-dot-circle-o"></i> Submit
                                         </button>
                                     </form>
@@ -247,7 +230,7 @@
                                             </div>
                                             <button type="submit" class="btn btn-primary btn-md"
                                                 onclick="event.preventDefault();
-                                                                                                                                                                     document.getElementById('editcategory-{{ $sub_category->id }}').submit();">
+                                                                                                                                                                                                                         document.getElementById('editcategory-{{ $sub_category->id }}').submit();">
                                                 <i class="fa fa-dot-circle-o"></i> Submit
                                             </button>
                                         </form>
@@ -276,7 +259,7 @@
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                         <button type="button" class="btn btn-danger"
                                             onclick="event.preventDefault();
-                                                                                                                                                     document.getElementById('deletecategory-{{ $sub_category->id }}').submit();">Confirm</button>
+                                                                                                                                                                                                         document.getElementById('deletecategory-{{ $sub_category->id }}').submit();">Confirm</button>
                                         <form action="{{ route('admin.subcategory.destroy', $sub_category->id) }}"
                                             style="display: none" id="deletecategory-{{ $sub_category->id }}"
                                             method="POST">

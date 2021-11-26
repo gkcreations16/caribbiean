@@ -6,7 +6,6 @@
                  <div class="container-fluid">
                      <a class="navbar-brand" href="{{ route('home') }}">
                          {{-- {{ asset('assets/img/newlogo.png') }} --}}
-
                          <div class="header-logo"> <img src="{{ asset('assets/img/newlogo.png') }}"
                                  class="img-fluid"></div>
                      </a>
@@ -50,13 +49,20 @@
                                      <span>
                                          <a href="{{ route('login') }}"><i class="fas fa-user pe-2"></i>
                                              Sign in</a>
-                                         <span>
-                                             {{-- @if (Route::has('register'))
+                                     </span>
+                                     {{-- @if (Route::has('register'))
                                          <a href="{{ route('register') }}">Register</a>
                                      @endif --}}
-                                         @endauth
+                                 @endauth
                              @endif
-                             <a href="dashboard.html" class="btn  rounded-pill" type="submit">PLACE AN AD</a>
+                             @if (Route::has('login'))
+                                 <a href="{{ route('admin.dashboard') }}" class="btn  rounded-pill"
+                                     type="submit">PLACE AN
+                                     AD</a>
+                             @else
+                                 <a href="{{ route('login') }}" class="btn  rounded-pill" type="submit">PLACE AN
+                                     AD</a>
+                             @endif
                          </div>
                      </div>
                  </div>

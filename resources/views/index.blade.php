@@ -59,16 +59,18 @@
                 <div class="all-styles">
                     <div class="row">
                         <div class="col-md-4 col-sm-12 col-12 pe-0">
-                            <div class="home-list text-center border-0">
-                                <div class="home-list-icon-img">
-                                    <img src="{{ asset('assets/img/Layer-81.png') }}" class="img-fluid">
+                            <a href="{{ route('listing') }}">
+                                <div class="home-list text-center border-0">
+                                    <div class="home-list-icon-img">
+                                        <img src="{{ asset('assets/img/Layer-81.png') }}" class="img-fluid">
+                                    </div>
+                                    <h4>{{ $pagedata->latest_listingheading }}</h4>
+                                    <p>{{ $pagedata->latest_listingdescription }}</p>
+                                    <a href="{{ route('listing') }}">View Listing<span
+                                            class="fa fa-long-arrow-right ps-3" aria-hidden="true">
+                                        </span></a>
                                 </div>
-                                <h4>{{ $pagedata->latest_listingheading }}</h4>
-                                <p>{{ $pagedata->latest_listingdescription }}</p>
-                                <a href="listing.html">View Listing<span class="fa fa-long-arrow-right ps-3"
-                                        aria-hidden="true">
-                                    </span></a>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-md-4 col-sm-12 col-12 p-0">
                             <div class="home-list text-center bod">
@@ -77,7 +79,7 @@
                                 </div>
                                 <h4>{{ $pagedata->post_addheading }}</h4>
                                 <p>{{ $pagedata->post_adddescription }}</p>
-                                <a href="dashboard.html">Post An Ad<span class="fa fa-long-arrow-right ps-3"
+                                <a href="{{ route('login') }}">Post An Ads<span class="fa fa-long-arrow-right ps-3"
                                         aria-hidden="true">
                                     </span></a>
                             </div>
@@ -89,8 +91,7 @@
                                 </div>
                                 <h4>{{ $pagedata->bussiness_direc_heading }}</h4>
                                 <p>{{ $pagedata->bussiness_direc_description }}</p>
-                                <a href="busniness-directiory.html">View Directory<span class="fa fa-long-arrow-right ps-3"
-                                        aria-hidden="true">
+                                <a href="#">View Directory<span class="fa fa-long-arrow-right ps-3" aria-hidden="true">
                                     </span></a>
                             </div>
                         </div>
@@ -101,7 +102,7 @@
         <!--------------------------styles-end----------------------------->
         <!------------------------sec1-start------------------------>
         <!-- <section class="sec-1 top-space bottom-space">
-                                                                                                                                                                                                                                                                                                                           <!-hhh-----------------------sec1-end------------------------>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <!-hhh-----------------------sec1-end------------------------>
 
         <!------------------------sec1-new-start------------------------>
         <section class="sec-1 top-space bottom-space">
@@ -144,7 +145,7 @@
                     </div>
                     <div class="col-12">
                         <div class="major-button mx-auto text-center top-space">
-                            <a href="listing.html" class="btn btn-primary">VIEW ALL</a>
+                            <a href="{{ route('category') }}" class="btn btn-primary">VIEW ALL</a>
                         </div>
                     </div>
                 </div>
@@ -164,14 +165,16 @@
                                     <div class="under-category">
                                         <h6>Catgory <span><i class="fas fa-chevron-down"></i></span></h6>
                                     </div>
-                                    <div class=" nav nav-pills nav-pills me-3" id="v-pills-tab" role="tablist"
+                                    <div class="nav nav-pills nav-pills me-3" id="v-pills-tab" role="tablist"
                                         aria-orientation="vertical">
                                         @foreach ($categorys as $category)
-                                            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
-                                                data-bs-target="#v-pills-home" type="button" role="tab"
-                                                aria-controls="v-pills-home" aria-selected="true">
-                                                {{ $category->name }}
-                                            </button>
+                                            <a href="{{ route('categorychooselist', $category->id) }}">
+                                                <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
+                                                    data-bs-target="#v-pills-home" type="button" role="tab"
+                                                    aria-controls="v-pills-home" aria-selected="true">
+                                                    {{ $category->name }}
+                                                </button>
+                                            </a>
                                         @endforeach
                                     </div>
                                 </div>
@@ -195,64 +198,124 @@
                                     aria-labelledby="v-pills-home-tab">
                                     <div class="listing-slide-wrap">
                                         <div class="listing-slider">
-                                            @foreach ($posts as $post)
-                                                <div class="card border-0 ">
-                                                    <a href="{{ route('details', $post->id) }}">
-                                                        <div class="listinslide-img">
-                                                            <?php foreach (json_decode($post->image)  as $postimage) {?>
-                                                            <img src=" {{ asset('/image/' . $postimage) }}"
-                                                                class="img-fluid" class="card-img-top" alt="...">
-                                                            <?php } ?>
-                                                            <div class="which-name">
-                                                                <h5><span><i class="fas fa-utensils"></i></span>
-                                                                    {{ $post->category }}
-                                                                </h5>
-                                                            </div>
-                                                            <div class="item-price">
-                                                                <p>
-                                                                    ${{ $post->price }}.00
-                                                                </p>
+                                            @if (isset($categorywise))
+                                                @foreach ($posts as $post)
+                                                    @if ($categorywise->name == $post->category)
+                                                        <div class="card border-0 ">
+                                                            <a href="{{ route('details', $post->id) }}">
+                                                                <div class="listinslide-img">
+                                                                    <?php foreach (json_decode($post->image)  as $postimage) {?>
+                                                                    <img src=" {{ asset('/image/' . $postimage) }}"
+                                                                        class="img-fluid" class="card-img-top"
+                                                                        alt="...">
+                                                                    <?php } ?>
+                                                                    <div class="which-name">
+                                                                        <h5><span><i class="fas fa-utensils"></i></span>
+                                                                            {{ $post->category }}
+                                                                        </h5>
+                                                                    </div>
+                                                                    <div class="item-price">
+                                                                        <p>
+                                                                            ${{ $post->price }}.00
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">{{ $post->title }}</h5>
+                                                                <div class="listing-inner-info">
+                                                                    <ul class="info-list mt-3">
+                                                                        <li><span class="fas fa-map-marker-alt"></span>
+                                                                            {{ $post->address }}</li>
+                                                                        <li><span class="fas fa-phone"></span><a
+                                                                                href="tel:0000000000">{{ $post->telephone }}</a>
+                                                                        </li>
+                                                                        <li><span class="fas fa-calendar-minus"></span>
+                                                                            {{ date('d M Y - H:i:s', $post->created_at->timestamp) }}
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="rating d-flex justify-content-between">
+                                                                    <div>
+                                                                        <ul>
+                                                                            <li><i class="fas fa-star"></i></li>
+                                                                            <li><i class="fas fa-star"></i></li>
+                                                                            <li><i class="fas fa-star"></i></li>
+                                                                            <li><i class="fas fa-star"></i></li>
+                                                                            <li><i class="fas fa-star"></i></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="save">
+                                                                        <span><i class="fa fa-bookmark"
+                                                                                aria-hidden="true"></i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </a>
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">{{ $post->title }}</h5>
-                                                        <div class="listing-inner-info">
-                                                            <ul class="info-list mt-3">
-                                                                <li><span class="fas fa-map-marker-alt"></span>
-                                                                    {{ $post->address }}</li>
-                                                                <li><span class="fas fa-phone"></span><a
-                                                                        href="tel:0000000000">{{ $post->telephone }}</a>
-                                                                </li>
-                                                                <li><span class="fas fa-calendar-minus"></span>
-                                                                    {{ date('d M Y - H:i:s', $post->created_at->timestamp) }}
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="rating d-flex justify-content-between">
-                                                            <div>
-                                                                <ul>
-                                                                    <li><i class="fas fa-star"></i></li>
-                                                                    <li><i class="fas fa-star"></i></li>
-                                                                    <li><i class="fas fa-star"></i></li>
-                                                                    <li><i class="fas fa-star"></i></li>
-                                                                    <li><i class="fas fa-star"></i></li>
+                                                    @endif
+                                                @endforeach
+                                            @else
+                                                @foreach ($posts as $post)
+                                                    <div class="card border-0 ">
+                                                        <a href="{{ route('details', $post->id) }}">
+                                                            <div class="listinslide-img">
+                                                                <?php foreach (json_decode($post->image)  as $postimage) {?>
+                                                                <img src=" {{ asset('/image/' . $postimage) }}"
+                                                                    class="img-fluid" class="card-img-top"
+                                                                    alt="...">
+                                                                <?php } ?>
+                                                                <div class="which-name">
+                                                                    <h5><span><i class="fas fa-utensils"></i></span>
+                                                                        {{ $post->category }}
+                                                                    </h5>
+                                                                </div>
+                                                                <div class="item-price">
+                                                                    <p>
+                                                                        ${{ $post->price }}.00
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">{{ $post->title }}</h5>
+                                                            <div class="listing-inner-info">
+                                                                <ul class="info-list mt-3">
+                                                                    <li><span class="fas fa-map-marker-alt"></span>
+                                                                        {{ $post->address }}</li>
+                                                                    <li><span class="fas fa-phone"></span><a
+                                                                            href="tel:0000000000">{{ $post->telephone }}</a>
+                                                                    </li>
+                                                                    <li><span class="fas fa-calendar-minus"></span>
+                                                                        {{ date('d M Y - H:i:s', $post->created_at->timestamp) }}
+                                                                    </li>
                                                                 </ul>
                                                             </div>
-                                                            <div class="save">
-                                                                <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                                </span>
+                                                            <div class="rating d-flex justify-content-between">
+                                                                <div>
+                                                                    <ul>
+                                                                        <li><i class="fas fa-star"></i></li>
+                                                                        <li><i class="fas fa-star"></i></li>
+                                                                        <li><i class="fas fa-star"></i></li>
+                                                                        <li><i class="fas fa-star"></i></li>
+                                                                        <li><i class="fas fa-star"></i></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="save">
+                                                                    <span><i class="fa fa-bookmark" aria-hidden="true"></i>
+                                                                    </span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            @endforeach
+                                                @endforeach
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="major-button mx-auto text-center">
-                                        <a href="listing.html" class="btn btn-primary">VIEW ALL</a>
+                                        <a href="{{ route('listing') }}" class="btn btn-primary">VIEW ALL</a>
                                     </div>
                                 </div>
                             </div>
@@ -262,324 +325,7 @@
             </div>
         </section>
         <!-- ----------------------sec2-end---------------------- -->
-        <!-- ----------------------mobile-respose popular-ads-start---------------------- -->
-        <section class="mobile-respose top-space  bottom-space d-md-none">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="catergories-in-scrool">
-                        <div class="small-head-wrap">
-                            <div class="mx-auto text-center">
-                                <h5>Listing</h5>
-                                <h3>Popular Featued Ads</h3>
-                                <img src="{{ asset('assets/img/Rounded-Rectangle-3-copy-3.png') }}"
-                                    class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="listing-slide-wrap">
-                    <div class="mobile-slider">
-                        <div class="card border-0 ">
-                            <div class="listinslide-img">
-                                <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}" class="img-fluid"
-                                    class="card-img-top" alt="...">
-                                <div class="which-name">
-                                    <h5><span><i class="fas fa-utensils"></i></span>
-                                        Restaurant
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Favorite Place Food </h5>
-                                <div class="listing-inner-info">
-                                    <ul class="info-list mt-3">
-                                        <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                        <li><span class="fas fa-phone"></span><a href="tel:0000000000">000-000-0000</a>
-                                        </li>
-                                        <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                    </ul>
-                                </div>
-                                <div class="rating d-flex justify-content-between">
-                                    <div>
-                                        <ul>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="save">
-                                        <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card border-0 ">
-                            <div class="listinslide-img">
-                                <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}" class="img-fluid"
-                                    class="card-img-top" alt="...">
-                                <div class="which-name">
-                                    <h5><span><i class="fas fa-utensils"></i></span>
-                                        Restaurant
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Favorite Place Food </h5>
-                                <div class="listing-inner-info">
-                                    <ul class="info-list mt-3">
-                                        <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                        <li><span class="fas fa-phone"></span><a href="tel:0000000000">000-000-0000</a>
-                                        </li>
-                                        <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                    </ul>
-                                </div>
-                                <div class="rating d-flex justify-content-between">
-                                    <div>
-                                        <ul>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="save">
-                                        <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card border-0 ">
-                            <div class="listinslide-img">
-                                <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}" class="img-fluid"
-                                    class="card-img-top" alt="...">
-                                <div class="which-name">
-                                    <h5><span><i class="fas fa-utensils"></i></span>
-                                        Restaurant
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Favorite Place Food </h5>
-                                <div class="listing-inner-info">
-                                    <ul class="info-list mt-3">
-                                        <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                        <li><span class="fas fa-phone"></span><a href="tel:0000000000">000-000-0000</a>
-                                        </li>
-                                        <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                    </ul>
-                                </div>
-                                <div class="rating d-flex justify-content-between">
-                                    <div>
-                                        <ul>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="save">
-                                        <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card border-0 ">
-                            <div class="listinslide-img">
-                                <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}" class="img-fluid"
-                                    class="card-img-top" alt="...">
-                                <div class="which-name">
-                                    <h5><span><i class="fas fa-utensils"></i></span>
-                                        Restaurant
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Favorite Place Food </h5>
-                                <div class="listing-inner-info">
-                                    <ul class="info-list mt-3">
-                                        <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                        <li><span class="fas fa-phone"></span><a href="tel:0000000000">000-000-0000</a>
-                                        </li>
-                                        <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                    </ul>
-                                </div>
-                                <div class="rating d-flex justify-content-between">
-                                    <div>
-                                        <ul>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="save">
-                                        <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card border-0 ">
-                            <div class="listinslide-img">
-                                <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}" class="img-fluid"
-                                    class="card-img-top" alt="...">
-                                <div class="which-name">
-                                    <h5><span><i class="fas fa-utensils"></i></span>
-                                        Restaurant
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Favorite Place Food </h5>
-                                <div class="listing-inner-info">
-                                    <ul class="info-list mt-3">
-                                        <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                        <li><span class="fas fa-phone"></span><a href="tel:0000000000">000-000-0000</a>
-                                        </li>
-                                        <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                    </ul>
-                                </div>
-                                <div class="rating d-flex justify-content-between">
-                                    <div>
-                                        <ul>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="save">
-                                        <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card border-0 ">
-                            <div class="listinslide-img">
-                                <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}" class="img-fluid"
-                                    class="card-img-top" alt="...">
-                                <div class="which-name">
-                                    <h5><span><i class="fas fa-utensils"></i></span>
-                                        Restaurant
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Favorite Place Food </h5>
-                                <div class="listing-inner-info">
-                                    <ul class="info-list mt-3">
-                                        <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                        <li><span class="fas fa-phone"></span><a href="tel:0000000000">000-000-0000</a>
-                                        </li>
-                                        <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                    </ul>
-                                </div>
-                                <div class="rating d-flex justify-content-between">
-                                    <div>
-                                        <ul>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="save">
-                                        <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card border-0 ">
-                            <div class="listinslide-img">
-                                <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}" class="img-fluid"
-                                    class="card-img-top" alt="...">
-                                <div class="which-name">
-                                    <h5><span><i class="fas fa-utensils"></i></span>
-                                        Restaurant
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Favorite Place Food </h5>
-                                <div class="listing-inner-info">
-                                    <ul class="info-list mt-3">
-                                        <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                        <li><span class="fas fa-phone"></span><a href="tel:0000000000">000-000-0000</a>
-                                        </li>
-                                        <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                    </ul>
-                                </div>
-                                <div class="rating d-flex justify-content-between">
-                                    <div>
-                                        <ul>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="save">
-                                        <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card border-0 ">
-                            <div class="listinslide-img">
-                                <img src="{{ asset('assets/img/Layer-38-copy-3.png') }}" class="img-fluid"
-                                    class="card-img-top" alt="...">
-                                <div class="which-name">
-                                    <h5><span><i class="fas fa-utensils"></i></span>
-                                        Restaurant
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Favorite Place Food </h5>
-                                <div class="listing-inner-info">
-                                    <ul class="info-list mt-3">
-                                        <li><span class="fas fa-map-marker-alt"></span> New York Avenue, New York</li>
-                                        <li><span class="fas fa-phone"></span><a href="tel:0000000000">000-000-0000</a>
-                                        </li>
-                                        <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
-                                    </ul>
-                                </div>
-                                <div class="rating d-flex justify-content-between">
-                                    <div>
-                                        <ul>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="save">
-                                        <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ----------------------mobile-respose popular-ads-end---------------------- -->
+
         <!------------------------sec3-start------------------------>
         <section class="sec-3  bottom-space">
             <div class="small-head-wrap">
@@ -593,7 +339,7 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-12">
                         <div class="see-work">
-                            <a href="category.html">
+                            <a href="{{ route('category') }}">
                                 <div class="card text-center">
                                     <div class="see-work-img">
                                         <img src="{{ asset('assets/img/Layer-43.png') }}" class="img-fluid"
@@ -609,7 +355,7 @@
                     </div>
                     <div class="col-md-4 col-sm-6 col-12">
                         <div class="see-work">
-                            <a href="listing.html">
+                            <a href="{{ route('login') }}">
                                 <div class="card text-center">
                                     <div class="see-work-img">
                                         <img src="{{ asset('assets/img/Layer-895.png') }}" class="img-fluid"
@@ -658,22 +404,24 @@
                         <div class=" col-lg-3 col-md-6 col-sm-6 col-12">
                             <div class="listing-slide-wrap">
                                 <div class="card border-0 ">
-                                    <div class="listinslide-img">
-                                        <?php foreach (json_decode($post->image)  as $postimage) {?>
-                                        <img src=" {{ asset('/image/' . $postimage) }}" class="img-fluid"
-                                            class="card-img-top" alt="...">
-                                        <?php } ?>
-                                        <div class="which-name">
-                                            <h5><span><i class="fas fa-utensils"></i></span>
-                                                {{ $post->category }}
-                                            </h5>
+                                    <a href="{{ route('details', $post->id) }}">
+                                        <div class="listinslide-img">
+                                            <?php foreach (json_decode($post->image)  as $postimage) {?>
+                                            <img src=" {{ asset('/image/' . $postimage) }}" class="img-fluid"
+                                                class="card-img-top" alt="...">
+                                            <?php } ?>
+                                            <div class="which-name">
+                                                <h5><span><i class="fas fa-utensils"></i></span>
+                                                    {{ $post->category }}
+                                                </h5>
+                                            </div>
+                                            <div class="item-price">
+                                                <p>
+                                                    ${{ $post->price }}.00
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div class="item-price">
-                                            <p>
-                                                ${{ $post->price }}.00
-                                            </p>
-                                        </div>
-                                    </div>
+                                    </a>
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $post->title }}</h5>
                                         <div class="listing-inner-info">
@@ -710,12 +458,11 @@
                     @endforeach
                     <div class="col-12">
                         <div class="major-button mx-auto text-center">
-                            <a href="busniess-listing.html" class="btn btn-primary">VIEW ALL</a>
+                            <a href="{{ route('listing') }}" class="btn btn-primary">VIEW ALL</a>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
         <!------------------------sec4-start------------------------>
         <!------------------------sec5-start------------------------>
@@ -734,7 +481,7 @@
                                         class="card-img" alt="...">
                                     <h3 class="card-title">{{ $pagedata->find_whatyouwant_heading }}</h3>
                                     <p class="card-text">{{ $pagedata->find_whatyouwant_description }}</p>
-                                    <a href="category.html" class="btn btn-primary">SEARCH</a>
+                                    <a href="{{ route('listing') }}" class="btn btn-primary">SEARCH</a>
                                 </div>
                             </div>
                         </div>
@@ -751,7 +498,7 @@
                                         class="card-img" alt="...">
                                     <h3 class="card-title">{{ $pagedata->explore_amezing_head }}</h3>
                                     <p class="card-text">{{ $pagedata->explore_amezing_description }}</p>
-                                    <a href="busniess-listing.html" class="btn btn-primary-2">EXPLORE</a>
+                                    <a href="#" class="btn btn-primary-2">EXPLORE</a>
                                 </div>
                             </div>
                         </div>
@@ -760,5 +507,8 @@
             </div>
         </section>
     @endforeach
+    <script>
+
+    </script>
     <!------------------------sec5-end------------------------>
 @endsection

@@ -212,7 +212,7 @@ html {
     z-index: 1;
     width: 100%;
     left: 0;
-    bottom: -33px;
+    bottom: -37px;
     border-radius: 10px;
     transition: all 0.7s;
 }
@@ -1441,7 +1441,8 @@ footer p {
 .listing-map-header .header {
     background-color: #fff;
     border-bottom: none;
-    /* position: fixed; */
+    position: fixed;
+    z-index: 999;
 }
 .listing-map-header .navbar-menus li.active a::after {
     bottom: -10px;
@@ -2067,20 +2068,21 @@ input[type="file"] {
     height: 400px;
 }
 .other-listing-slider-img-box {
-    /* height: 200px !important; */
+    height: 200px !important;
     border-radius: 10px;
     overflow: hidden;
     padding: 0px 9px;
     margin: 24px 0;
 }
 .other-listing-slider-img-box img {
-    /* width: 100%;
-    height: 100%; */
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
     object-fit: cover;
 }
-.other-listing-slider-img-box.slick-slide {
+/* .other-listing-slider-img-box.slick-slide {
     height: auto !important;
-}
+} */
 /* listing-detail end */
 
 /* share-button start*/
@@ -2558,7 +2560,8 @@ input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     transform: scale(1);
 }
 .pagination li {
-    margin-right: 16px;
+    margin-right: 12px;
+    margin-left: 12px;
 }
 .pagination span {
     padding: 0px 20px 0 20px;
@@ -2648,8 +2651,7 @@ input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     padding: 0px 0px 25px 20px;
     border-radius: 12px;
 }
-.dasboard-leftside .nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
+.dasboard-leftside a:active.nav-link {
     color: #dc422f;
     background-color: #fbecea !important;
     border-radius: 30px;
@@ -2658,14 +2660,47 @@ input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     border-right: 8px solid #dc422f;
     text-align: left;
 }
-.dasboard-leftside .nav-pills .nav-link.active .oval {
+.dasboard-leftside a.nav-link:active .oval {
     background-color: #dc422f;
 }
-.dasboard-leftside .nav-pills .nav-link.active .oval img {
+.dasboard-leftside a.nav-link:active .oval img {
     filter: brightness(0) invert(1);
     transition: 0.95s ease;
 }
-.dasboard-leftside .nav-pills .nav-link {
+.dasboard-leftside a.nav-link.active {
+    color: #dc422f;
+    background-color: #fbecea !important;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 8px solid #dc422f;
+    text-align: left;
+}
+.dasboard-leftside a.nav-link.active .oval {
+    background-color: #dc422f;
+}
+.dasboard-leftside a.nav-link.active .oval img {
+    filter: brightness(0) invert(1);
+    transition: 0.95s ease;
+}
+.dasboard-leftside a.nav-link:hover {
+    color: #dc422f;
+    background-color: #fbecea !important;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 8px solid #dc422f;
+    text-align: left;
+}
+.dasboard-leftside a.nav-link:hover .oval {
+    background-color: #dc422f;
+}
+.dasboard-leftside a.nav-link:hover .oval img {
+    filter: brightness(0) invert(1);
+    transition: 0.95s ease;
+}
+
+.dasboard-leftside .nav-link {
     color: #c3c3c3;
     background-color: transparent;
     border-radius: 30px;
@@ -2676,11 +2711,11 @@ input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     font-weight: 600;
     font-size: 18px;
 }
-.dasboard-leftside .nav-pills .nav-link .oval img {
+.dasboard-leftside .nav-link .oval img {
     width: 20px;
     height: 20px;
 }
-.dasboard-leftside .nav-pills .nav-link .oval {
+.dasboard-leftside .nav-link .oval {
     background-color: #f1f1f1;
     border-radius: 8px;
     padding: 14px;
@@ -3531,3 +3566,119 @@ img {
     margin-top: 0;
 }
 /* other end */
+.animated .dataTables_wrapper .dataTables_paginate ul.pagination .page-item a {
+    font-weight: 400;
+    border: none;
+    height: 30px;
+    width: 30px;
+}
+.animated
+    .dataTables_wrapper
+    .dataTables_paginate
+    ul.pagination
+    .page-item:first-child
+    a {
+    font-weight: 400;
+    border: none;
+    height: 30px;
+    width: auto;
+}
+.animated
+    .dataTables_wrapper
+    .dataTables_paginate
+    ul.pagination
+    .page-item:last-child
+    a {
+    font-weight: 400;
+    border: none;
+    height: 30px;
+    width: auto;
+}
+#bootstrap-data-table-export button {
+    border: none;
+    background-color: transparent;
+}
+#bootstrap-data-table-export button i {
+    border: 1px solid #dc422f;
+    background-color: #dc422f;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 !important;
+    transition: all 0.8s;
+}
+#bootstrap-data-table-export button i:hover {
+    background-color: transparent;
+    color: #000;
+    transition: all 0.8s;
+}
+.pagination li:first-child .page-link {
+    border: none !important;
+    border-radius: 50%;
+    color: #000;
+}
+.pagination li:last-child .page-link {
+    border: none !important;
+    border-radius: 50%;
+    color: #000;
+}
+.pagination li:last-child a.page-link:hover {
+    border: none !important;
+    background-color: transparent;
+    color: #000;
+}
+.pagination li:first-child a.page-link:hover {
+    border: none !important;
+    background-color: transparent;
+    color: #000;
+}
+.page-item.active .page-link {
+    background-color: #dc422f !important;
+    border-color: #dc422f !important;
+}
+.all-categories-wrap.top-space.bottom-space {
+    position: relative;
+    z-index: -1;
+}
+.dasboard-content-side .hom-mode.modal.show .modal-dialog {
+    border: 15px solid #ffffffc7;
+}
+.dasboard-content-side .modal-content {
+    border: none;
+    border-radius: 0;
+}
+.dasboard-content-side .modal-content button {
+    border: none;
+    background: #dc422f;
+    border-radius: 4px;
+    /* width: 30px;
+    height: 30px; */
+}
+.dasboard-content-side .modal-content button span {
+    color: #fff;
+    opacity: 1;
+    font-size: 18px;
+}
+.login-modal button {
+    border: none;
+    background: #dc422f;
+    border-radius: 4px;
+    /* width: 30px;
+    height: 30px; */
+}
+.login-modal button {
+    color: #fff;
+    opacity: 1;
+    font-size: 18px;
+}
+.login-modal .modal-body h6 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}

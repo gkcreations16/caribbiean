@@ -1,3 +1,4 @@
+</html>
 <!doctype html>
 <html lang="en">
 
@@ -26,6 +27,9 @@
 </head>
 
 <body>
+
+
+
     <!------------------------header-start------------------------>
     @include('layouts.backend.partials.userdash.dashheader')
     <!------------------------header-end------------------------>
@@ -34,6 +38,8 @@
     <!-----------------------------left sidebar----------------------------->
     @include('layouts.backend.partials.userdash.sidenav')
     <!------------------------------left sidebar------------------------>
+
+
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>

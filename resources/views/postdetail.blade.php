@@ -23,22 +23,6 @@
                             <div><img src="{{ asset('/image/' . $postimage) }}" class="img-fluid"
                                     class="card-img" alt="..."></div>
                             <?php } ?>
-
-
-                            {{-- <div><img src="{{ asset('assets/img/Layer-30.jpg') }}" class="img-fluid"
-                                    class="card-img" alt="..."></div>
-                            <div><img src="{{ asset('assets/img/Layer-30.jpg') }}" class="img-fluid"
-                                    class="card-img" alt="..."></div>
-                            <div><img src="{{ asset('assets/img/Layer-30.jpg') }}" class="img-fluid"
-                                    class="card-img" alt="..."></div>
-                            <div><img src="{{ asset('assets/img/Layer-30.jpg') }}" class="img-fluid"
-                                    class="card-img" alt="..."></div>
-                            <div><img src="{{ asset('assets/img/Layer-30.jpg') }}" class="img-fluid"
-                                    class="card-img" alt="..."></div>
-                            <div><img src="{{ asset('assets/img/Layer-30.jpg') }}" class="img-fluid"
-                                    class="card-img" alt="..."></div>
-                            <div><img src="{{ asset('assets/img/Layer-30.jpg') }}" class="img-fluid"
-                                    class="card-img" alt="..."></div> --}}
                         </div>
                         <div class="listing-detail-slider-content">
                             <div class="which-name d-flex justify-content-between">

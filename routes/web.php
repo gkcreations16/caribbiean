@@ -20,14 +20,13 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('category', 'HomeController@categorypage')->name('category');
 Route::get('navbar2', 'HomeController@navbarfront')->name('navbar2');
 Route::get('listing', 'HomeController@listingpage')->name('listing');
+// Route::get('bussiness-detail', 'HomeController@bussiness-detail')->name('bussiness-detail');
 Route::post('/product/search', 'HomeController@searchProduct');
 Route::get('GetAdvanceSerchData/{id}', 'AdvanceSearchController@GetAdvanceSerchData');
 Route::get('details/{id}', 'HomeController@postdetails')->name('details');
 Route::get('categorydetail/{id}', 'HomeController@categorydetails')->name('categorydetail');
-
+Route::get('categorychooselist/{id}', 'HomeController@categorychooselist')->name('categorychooselist');
 /// end front pages
-
-
 
 //admin///////////////////////////////////////////////////////
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
@@ -49,5 +48,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
 //user///////////////////////////////////////////////////////
 Route::group(['prefix' => 'user', 'as' => 'user.', 'namespace' => 'User', 'middleware' => ['auth', 'user']], function () {
-    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('dashboard', 'UserDashboardController@index')->name('dashboard');
+    Route::get('profile', 'UserDashboardController@displyprofile')->name('profile');
+    Route::put('profile', 'UserDashboardController@updateprofile')->name('profile.update');
+    Route::put('profile/password', 'UserDashboardController@changePassword')->name('profile.password');
+
+    //Route::resource('addpost', 'UserPostController')->except(['create', 'show', 'edit']);
 });

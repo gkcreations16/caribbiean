@@ -44,7 +44,7 @@
                             <h3>Add New Listing <span>And Build Your Business</span> With Us</h3>
                             <p>Lorem ipsum dolor sit amet, consetetur adipisicing elit, sed do eiusmod tempor quam
                                 voluptatem.</p>
-                            <a href="dashboard.html" class="btn btn-primary">PLACE AN AD</a>
+                            <a href="{{ route('login') }}" class="btn btn-primary">PLACE AN AD</a>
                         </div>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
                                             <li><a href="{{ route('category') }}">Category</a></li>
                                             <li><a href="{{ route('listing') }}">Listing</a></li>
                                             <li><a href="#">Search</a></li>
-                                            <li><a href="dashboard.html">Post Add</a></li>
+                                            <li><a href="{{ route('login') }}">Post Add</a></li>
                                             <li><a href="#">Terms & Conditions</a></li>
                                         </ul>
                                     </div>
@@ -151,7 +151,7 @@
                                     </div>
                                     <div class="menus-list">
                                         <ul>
-                                            <li><a href="sign-up.html">Login / Register</a></li>
+                                            <li><a href="{{ route('login') }}">Login / Register</a></li>
                                             <li><a href="#">Live Chat</a></li>
                                             <li><a href="#">My Ads</a></li>
                                             <li><a href="#">My Profile</a></li>

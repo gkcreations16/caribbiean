@@ -36,12 +36,13 @@
                                                         class="img-fluid"></span>Reviews</a></li>
                                         <li data-toggle="modal" data-target="#modalTC"><a class="dropdown-item"
                                                 href="#"><span><img src="{{ asset('assets/img/Layer-919.png') }}"
-                                                        class="img-fluid">Logout</a></li>
+                                                        class="img-fluid"></spaN>Logout</a></li>
                                         </li>
                                     </ul>
                                 </div>
                             </span>
-                            <a href="dashboard.html" class="btn  rounded-pill" type="submit">PLACE AN AD</a>
+                            <a href="{{ route('admin.addpost.index') }}" class="btn  rounded-pill"
+                                type="submit">PLACE AN AD</a>
                         </div>
                         <div class="header-drop">
                             <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
@@ -53,16 +54,17 @@
                             <div id="sidebarMenu">
                                 <ul class="sidebarMenuInner navbar-nav me-auto mb-2 mb-lg-0  mx-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                                        <a class="nav-link" aria-current="page"
+                                            href="{{ route('home') }}">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="category.html">Category</a>
+                                        <a class="nav-link" href="{{ route('category') }}">Category</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="listing.html">Listing</a>
+                                        <a class="nav-link" href="{{ route('listing') }}">Listing</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="busniess-listing.html">Business listing</a>
+                                        <a class="nav-link" href="#">Business listing</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Contact Us</a>
@@ -80,16 +82,18 @@
 <div class="modal fade" id="modalTC" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
-        <div class="modal-content">
+        <div class=" login-modal modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times; </button>
-                <h4 class="modal-title">LogOut</h4>
+                {{-- <h4 class="modal-title ">LogOut</h4> --}}
             </div>
             <div class="modal-body">
-                <p>Want To log In Again<a href="{{ route('logout') }}">Login </a></p>
+                <h6>Want To log In Again </h6>
+                <a class="nav-link btn btn-primary-1 d-inline-block" href="{{ route('logout') }}">Login </a>
+
             </div>
             <div class="modal-footer">
-                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                <a class="nav-link btn btn-primary-1 d-inline-block" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"
                     id="logout_pop">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

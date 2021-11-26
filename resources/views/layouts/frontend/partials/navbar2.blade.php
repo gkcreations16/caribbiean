@@ -83,13 +83,21 @@
                                  <span>
                                      <a href="{{ route('login') }}"><i class="fas fa-user pe-2"></i>
                                          Sign in</a>
-                                     <span>
-                                         {{-- @if (Route::has('register'))
+                                 </span>
+                                 {{-- @if (Route::has('register'))
 <a href="{{ route('register') }}">Register</a>
 @endif --}}
-                                     @endauth
+                             @endauth
                          @endif
-                         <a href="dashboard.html" class="btn  rounded-pill" type="submit">PLACE AN AD</a>
+                         @if (Route::has('login'))
+                             <a href="{{ route('admin.dashboard') }}" class="btn  rounded-pill" type="submit">PLACE
+                                 AN
+                                 AD</a>
+                         @else
+                             <a href="{{ route('login') }}" class="btn  rounded-pill" type="submit">PLACE AN
+                                 AD</a>
+
+                         @endif
                      </div>
                      <div class="header-drop">
                          <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
@@ -136,7 +144,7 @@
                                                          aria-hidden="true"></i>
                                                  </span>
                                              </a>
-                                             <div class="dropdown-menu rounded-0 w-100 border-0 m-0 p-0 shadow-sm"
+                                             <div class="asde dropdown-menu rounded-0 w-100 border-0 m-0 p-0 shadow-sm"
                                                  aria-labelledby="navbarDropdown">
                                                  <div class="container-fluid">
                                                      <div class="col-12">
@@ -153,14 +161,16 @@
                                                                                          class="img-fluid">
                                                                                      <ul>
                                                                                          <li><a
-                                                                                                 href="#">{{ $data->name }}</a>
+                                                                                                 href="{{ route('categorydetail', $category->id) }}">{{ $data->name }}</a>
                                                                                          </li>
                                                                                      </ul>
                                                                                  </div>
+                                                                             </div>
                                                                          @endif
                                                                      @endforeach
+                                                                 @endforeach
                                                              </div>
-                                                             @endforeach
+
                                                          </div>
                                                      </div>
                                                  </div>

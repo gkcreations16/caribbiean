@@ -19,7 +19,7 @@
                          <ul>
                              <li>
                                  <div class="search-select-category text-start ">
-                                     <select class="form-select common_selector category" name="category"
+                                     <select class="form-select category" name="category"
                                          aria-label="Default select example">
                                          <option selected>Select Category</option>
                                          @foreach ($categorys as $category)
@@ -32,8 +32,7 @@
                              </li>
                              <li>
                                  <div class="search-select-category text-start ">
-                                     <select class="form-select common_selector subcategory"
-                                         aria-label="Default select example">
+                                     <select class="form-select subcategory" aria-label="Default select example">
                                          <option value="0" disabled="true" selected="true">Select SubCategory
                                          </option>
                                      </select>
@@ -41,12 +40,11 @@
                              </li>
                              <li>
                                  <div class="search-select-category text-start ">
-                                     <select class="form-select common_selector location "
-                                         aria-label="Default select example">
+                                     <select class="form-select" aria-label="Default select example">
                                          <option selected>Location</option>
-                                         <option value="Delhi">Delhi</option>
-                                         <option value="mumbai">mumbai</option>
-                                         <option value="Calcuta">Calcuta</option>
+                                         <option value="1">One</option>
+                                         <option value="2">Two</option>
+                                         <option value="3">Three</option>
                                      </select>
                                  </div>
                              </li>
@@ -144,50 +142,48 @@ class="img-fluid">
                              @foreach ($posts as $postitem)
                                  <div class="col-md-4 col-sm-6 col-12">
                                      <div class="listing-slide-wrap">
-                                         <a href="{{ route('details', $postitem->id) }}">
-                                             <div class="card border-0 ">
-                                                 <div class="listinslide-img">
-                                                     <?php foreach (json_decode($postitem->image)  as $postimage) {?>
-                                                     <img src=" {{ asset('/image/' . $postimage) }}"
-                                                         class="img-fluid" class="card-img-top" alt="...">
-                                                     <?php } ?>
-                                                     <div class="which-name">
-                                                         <h5><span><i class="fas fa-utensils"></i></span>
-                                                             {{ $postitem->category }}
-                                                         </h5>
-                                                     </div>
+                                         <div class="card border-0 ">
+                                             <div class="listinslide-img">
+                                                 <?php foreach (json_decode($postitem->image)  as $postimage) {?>
+                                                 <img src=" {{ asset('/image/' . $postimage) }}"
+                                                     class="img-fluid" class="card-img-top" alt="...">
+                                                 <?php } ?>
+                                                 <div class="which-name">
+                                                     <h5><span><i class="fas fa-utensils"></i></span>
+                                                         {{ $postitem->category }}
+                                                     </h5>
                                                  </div>
-                                                 <div class="card-body">
-                                                     <h5 class="card-title">{{ $postitem->title }} </h5>
-                                                     <div class="listing-inner-info">
-                                                         <ul class="info-list mt-3">
-                                                             <li><span class="fas fa-map-marker-alt"></span>
-                                                                 {{ $postitem->address }}</li>
-                                                             <li><span class="fas fa-phone"></span><a
-                                                                     href="tel:0000000000">000-000-0000</a></li>
-                                                             <li><span class="fas fa-calendar-minus"></span>
-                                                                 {{ date('d M Y - H:i:s', $postitem->created_at->timestamp) }}
-                                                             </li>
+                                             </div>
+                                             <div class="card-body">
+                                                 <h5 class="card-title">{{ $postitem->title }} </h5>
+                                                 <div class="listing-inner-info">
+                                                     <ul class="info-list mt-3">
+                                                         <li><span class="fas fa-map-marker-alt"></span>
+                                                             {{ $postitem->address }}</li>
+                                                         <li><span class="fas fa-phone"></span><a
+                                                                 href="tel:0000000000">000-000-0000</a></li>
+                                                         <li><span class="fas fa-calendar-minus"></span>
+                                                             {{ date('d M Y - H:i:s', $postitem->created_at->timestamp) }}
+                                                         </li>
+                                                     </ul>
+                                                 </div>
+                                                 <div class="rating d-flex justify-content-between">
+                                                     <div>
+                                                         <ul>
+                                                             <li><i class="fas fa-star"></i></li>
+                                                             <li><i class="fas fa-star"></i></li>
+                                                             <li><i class="fas fa-star"></i></li>
+                                                             <li><i class="fas fa-star"></i></li>
+                                                             <li><i class="fas fa-star"></i></li>
                                                          </ul>
                                                      </div>
-                                                     <div class="rating d-flex justify-content-between">
-                                                         <div>
-                                                             <ul>
-                                                                 <li><i class="fas fa-star"></i></li>
-                                                                 <li><i class="fas fa-star"></i></li>
-                                                                 <li><i class="fas fa-star"></i></li>
-                                                                 <li><i class="fas fa-star"></i></li>
-                                                                 <li><i class="fas fa-star"></i></li>
-                                                             </ul>
-                                                         </div>
-                                                         <div class="save">
-                                                             <span><i class="fa fa-bookmark" aria-hidden="true"></i>
-                                                             </span>
-                                                         </div>
+                                                     <div class="save">
+                                                         <span><i class="fa fa-bookmark" aria-hidden="true"></i>
+                                                         </span>
                                                      </div>
                                                  </div>
                                              </div>
-                                         </a>
+                                         </div>
                                      </div>
                                  </div>
                              @endforeach
@@ -279,39 +275,3 @@ class="img-fluid">
          </div>
      </div>
  </div>
- <script>
-     $(document).ready(function() {
-
-         filter_data();
-
-         function filter_data() {
-             $('.filter_data').html('<div id="loading" style="" ></div>');
-             var action = 'fetch_data';
-             var minimum_price = $('#hidden_minimum_price').val();
-             var maximum_price = $('#hidden_maximum_price').val();
-             var brand = get_filter('brand');
-             var ram = get_filter('ram');
-             var storage = get_filter('storage');
-             $.ajax({
-                 url: "fetch_data.php",
-                 method: "POST",
-                 data: {
-                     action: action,
-                     minimum_price: minimum_price,
-                     maximum_price: maximum_price,
-                     brand: brand,
-                     ram: ram,
-                     storage: storage
-                 },
-                 success: function(data) {
-                     $('.filter_data').html(data);
-                 }
-             });
-         }
-
-
-
-
-
-     });
- </script>
