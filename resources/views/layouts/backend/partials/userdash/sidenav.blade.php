@@ -12,8 +12,9 @@
                         <a href="{{ route('user.profile') }}" class="nav-link"><span class="oval"><img
                                     src="{{ asset('assets/img/Layer-953.png') }}"
                                     class="img-fluid"></span>Profile Setting</a>
-                        <a href="#" class="nav-link"><span class="oval"><img
-                                    src="{{ asset('assets/img/Layer-1301.png') }}" class="img-fluid"></span>Post
+                        <a href="{{ route('user.addpost.index') }}" class="nav-link"><span
+                                class="oval"><img src="{{ asset('assets/img/Layer-1301.png') }}"
+                                    class="img-fluid"></span>Post
                             An
                             Ad</a>
 

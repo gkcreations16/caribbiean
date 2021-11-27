@@ -15,7 +15,7 @@ use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class UserDashboardController extends Controller
+class DashboardController extends Controller
 {
     public function index()
     {
@@ -24,19 +24,16 @@ class UserDashboardController extends Controller
     public function displyprofile()
     {
         $user = User::find(Auth::user()->id);
-        return view('user.dashboard.profile', compact('user'));
+        return view('user.profile', compact('user'));
     }
     public function displypassword()
     {
         $userpass = User::find(Auth::user()->id);
-        return view('user.dashboard.privacysetting', compact('userpass'));
+        return view('user.privacysetting', compact('userpass'));
     }
 
     public function updateprofile(Request $request)
     {
-
-        dd($request->all());
-        // dd($request->all());
         $this->validate($request, [
             'name' => 'required|max:255',
             'email' => 'required|max:255',

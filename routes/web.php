@@ -48,10 +48,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
 //user///////////////////////////////////////////////////////
 Route::group(['prefix' => 'user', 'as' => 'user.', 'namespace' => 'User', 'middleware' => ['auth', 'user']], function () {
-    Route::get('dashboard', 'UserDashboardController@index')->name('dashboard');
-    Route::get('profile', 'UserDashboardController@displyprofile')->name('profile');
-    Route::put('profile', 'UserDashboardController@updateprofile')->name('profile.update');
-    Route::put('profile/password', 'UserDashboardController@changePassword')->name('profile.password');
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('profile', 'DashboardController@displyprofile')->name('profile');
+    Route::put('profile', 'DashboardController@updateprofile')->name('profile.update');
+    Route::put('profile/password', 'DashboardController@changePassword')->name('profile.password');
+    Route::resource('addpost', 'PostController')->except(['create', 'show', 'edit']);
+    Route::get('GetSubCatAgainstMainCat/{id}', 'PostController@GetSubCatAgainstMainCat');
 
     //Route::resource('addpost', 'UserPostController')->except(['create', 'show', 'edit']);
 });

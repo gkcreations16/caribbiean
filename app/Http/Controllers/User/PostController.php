@@ -10,7 +10,7 @@ use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-class UserPostController extends Controller
+class PostController extends Controller
 {
     public function index()
     {

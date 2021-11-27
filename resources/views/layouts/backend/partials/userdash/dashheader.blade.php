@@ -47,7 +47,8 @@
                                     </ul>
                                 </div>
                             </span>
-                            <a href="#" class="btn  rounded-pill" type="submit">PLACE AN ADs</a>
+                            <a href="{{ route('user.addpost.index') }}" class="btn  rounded-pill" type="submit">PLACE
+                                AN AD</a>
                         </div>
                         <div class="header-drop">
                             <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">

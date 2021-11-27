@@ -19,8 +19,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-
         // $results = DB::table('posts')
         //     ->join('categories', 'posts.category', '=', 'categories.name')
         //     ->select('posts.*', 'categories.name')
@@ -31,16 +29,7 @@ class HomeController extends Controller
         //     ->select('categories.*', 'posts.category')
         //     ->get();
 
-
-
         // dd($results);
-
-
-
-
-
-
-
         $posts = Post::all();
         $Homepagecontant = Home::all();
         $category = Category::all();

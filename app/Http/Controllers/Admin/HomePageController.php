@@ -38,6 +38,41 @@ class HomePageController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->hasfile('banner_image')) {
+            $bannerimage = $request->file('banner_image');
+            $banner_imge_name = $bannerimage->getClientOriginalName();
+            $bannerimage->move(public_path() . '/home_imag/', $banner_imge_name);
+        }
+
+        if ($request->hasfile('latestlist_image')) {
+            $latestlistimage = $request->file('latestlist_image');
+            $latest_imagename = $latestlistimage->getClientOriginalName();
+            $latestlistimage->move(public_path() . '/home_imag/', $latest_imagename);
+        }
+        if ($request->hasfile('addpost_image')) {
+            $addpost_img = $request->file('addpost_image');
+            $addpostname = $addpost_img->getClientOriginalName();
+            $addpost_img->move(public_path() . '/home_imag/', $addpostname);
+        }
+
+        if ($request->hasfile('bussiness_image')) {
+            $bussiness_img = $request->file('bussiness_image');
+            $buss_name = $bussiness_img->getClientOriginalName();
+            $bussiness_img->move(public_path() . '/home_imag/', $buss_name);
+        }
+
+
+        if ($request->hasfile('find_whatyou_image')) {
+            $find_whatyou_img = $request->file('find_whatyou_image');
+            $find_whatyouname = $find_whatyou_img->getClientOriginalName();
+            $find_whatyou_img->move(public_path() . '/home_imag/', $find_whatyouname);
+        }
+        if ($request->hasfile('explore_amezing')) {
+            $explore_amezing_img = $request->file('explore_amezing');
+            $explore_amezingname = $explore_amezing_img->getClientOriginalName();
+            $explore_amezing_img->move(public_path() . '/home_imag/', $explore_amezingname);
+        }
+
         $data = new Home();
         $data->banner_heading = $request->banner_heading;
         $data->banner_content = $request->banner_content;
@@ -67,6 +102,12 @@ class HomePageController extends Controller
         $data->explore_amezing_description = $request->explore_amezing_description;
         $data->bottom_content_heading = $request->bottom_content_heading;
         $data->bottom_content_description = $request->bottom_content_description;
+        $data->banner_image = $banner_imge_name;
+        $data->latestlist_image = $latest_imagename;
+        $data->addpost_image = $addpostname;
+        $data->bussiness_image = $buss_name;
+        $data->find_whatyou_image = $find_whatyouname;
+        $data->explore_amezing = $explore_amezingname;
         $data->save();
         Toastr::success('Form Field Created successfully');
         return redirect()->back();
@@ -103,7 +144,44 @@ class HomePageController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        // dd($request->all());
         $data = Home::findOrFail($id);
+        if ($request->hasfile('banner_image')) {
+            $bannerimage = $request->file('banner_image');
+            $banner_imge_name = $bannerimage->getClientOriginalName();
+            $bannerimage->move(public_path() . '/home_imag/', $banner_imge_name);
+        }
+
+        if ($request->hasfile('latestlist_image')) {
+            $latestlistimage = $request->file('latestlist_image');
+            $latest_imagename = $latestlistimage->getClientOriginalName();
+            $latestlistimage->move(public_path() . '/home_imag/', $latest_imagename);
+        }
+        if ($request->hasfile('addpost_image')) {
+            $addpost_img = $request->file('addpost_image');
+            $addpostname = $addpost_img->getClientOriginalName();
+            $addpost_img->move(public_path() . '/home_imag/', $addpostname);
+        }
+
+        if ($request->hasfile('bussiness_image')) {
+            $bussiness_img = $request->file('bussiness_image');
+            $buss_name = $bussiness_img->getClientOriginalName();
+            $bussiness_img->move(public_path() . '/home_imag/', $buss_name);
+        }
+
+
+        if ($request->hasfile('find_whatyou_image')) {
+            $find_whatyou_img = $request->file('find_whatyou_image');
+            $find_whatyouname = $find_whatyou_img->getClientOriginalName();
+            $find_whatyou_img->move(public_path() . '/home_imag/', $find_whatyouname);
+        }
+        if ($request->hasfile('explore_amezing')) {
+            $explore_amezing_img = $request->file('explore_amezing');
+            $explore_amezingname = $explore_amezing_img->getClientOriginalName();
+            $explore_amezing_img->move(public_path() . '/home_imag/', $explore_amezingname);
+        }
+
         $data->banner_heading = $request->banner_heading;
         $data->banner_content = $request->banner_content;
         $data->latest_listingheading = $request->latest_listingheading;
@@ -132,6 +210,12 @@ class HomePageController extends Controller
         $data->explore_amezing_description = $request->explore_amezing_description;
         $data->bottom_content_heading = $request->bottom_content_heading;
         $data->bottom_content_description = $request->bottom_content_description;
+        $data->banner_image = $banner_imge_name;
+        $data->latestlist_image = $latest_imagename;
+        $data->addpost_image = $addpostname;
+        $data->bussiness_image = $buss_name;
+        $data->find_whatyou_image = $find_whatyouname;
+        $data->explore_amezing = $explore_amezingname;
         $data->save();
         Toastr::success('Updated successfully');
         return redirect()->back();
