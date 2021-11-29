@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Home;
+use App\Footer;
 use App\Category;
 use App\SubCategory;
 use Illuminate\Http\Request;
@@ -100,5 +101,11 @@ class HomeController extends Controller
         $category = Category::all();
         $posts = Post::paginate(8);
         return view('index', ['categorys' => $category, 'categorywise' => $categorywise, 'Homepagedata' => $Homepagecontant, 'posts' => $posts]);
+    }
+
+    public function footerhome()
+    {
+        $footerhome = Footer::all();
+        return view('footer', ['footerdata' => $footerhome]);
     }
 }

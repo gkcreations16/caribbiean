@@ -102,7 +102,7 @@
         <!--------------------------styles-end----------------------------->
         <!------------------------sec1-start------------------------>
         <!-- <section class="sec-1 top-space bottom-space">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <!-hhh-----------------------sec1-end------------------------>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <!-hhh-----------------------sec1-end------------------------>
 
         <!------------------------sec1-new-start------------------------>
         <section class="sec-1 top-space bottom-space">
@@ -506,9 +506,9 @@
                 </div>
             </div>
         </section>
-    @endforeach
-    <script>
 
-    </script>
+    @endforeach
+    {{-- @include('footer') --}}
+
     <!------------------------sec5-end------------------------>
 @endsection

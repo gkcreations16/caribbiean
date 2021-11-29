@@ -20,6 +20,8 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('category', 'HomeController@categorypage')->name('category');
 Route::get('navbar2', 'HomeController@navbarfront')->name('navbar2');
 Route::get('listing', 'HomeController@listingpage')->name('listing');
+Route::get('footer', 'HomeController@footerhome')->name('footer');
+
 // Route::get('bussiness-detail', 'HomeController@bussiness-detail')->name('bussiness-detail');
 Route::post('/product/search', 'HomeController@searchProduct');
 Route::get('GetAdvanceSerchData/{id}', 'AdvanceSearchController@GetAdvanceSerchData');
@@ -43,6 +45,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('subcategory', 'SubCategoryController')->except(['create', 'show', 'edit']);
     Route::resource('addpost', 'PostController')->except(['create', 'show', 'edit']);
     Route::get('GetSubCatAgainstMainCat/{id}', 'PostController@GetSubCatAgainstMainCat');
+    Route::resource('footer', 'FooterController')->except(['create', 'show', 'edit']);
     // Route::resource('listings', 'ListingController')->except(['create', 'show', 'edit']);
 });
 

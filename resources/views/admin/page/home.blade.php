@@ -21,14 +21,19 @@
                                     <div calss="recent-aprovel-wrap-cole">
                                         <div class="headings-listing-page">
                                             <h5>Banner Section</h5>
-                                            <img src="http://127.0.0.1:8000/assets/img/Rounded-Rectangle-3-copy-7.png"
+
+                                            <img src=" {{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
                                                 class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-sm-12 col-12">
+                                    <img src=" {{ asset('/home_imag/' . $data->banner_image) }}" height="20px"
+                                        width="10%">
+                                </div>
                                 <div class="col-sm-6 col-12">
-                                    <img src=" {{ asset('/home_imag/' . $data->banner_image) }}" height="50px"
-                                        width="30%">
+
+                                    <label>Banner image</label>
                                     <input type="file" name="banner_image" class="form-control">
                                 </div>
                                 <div class="col-sm-6 col-12">
@@ -36,6 +41,7 @@
                                     <input type="text" value="{{ $data->banner_heading }}" name="banner_heading"
                                         class="form-control">
                                 </div>
+
                                 <div class="col-sm-12 col-12">
                                     <label>Banner Description</label>
                                     <input type="text" class="form-control" name="banner_content"
@@ -45,22 +51,26 @@
                                     <div calss="recent-aprovel-wrap-cole">
                                         <div class="headings-listing-page">
                                             <h5>Latest Listing Section</h5>
-                                            <img src="http://127.0.0.1:8000/assets/img/Rounded-Rectangle-3-copy-7.png"
+                                            <img src=" {{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
                                                 class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="col-sm-12 col-12">
+                                    <img src=" {{ asset('/home_imag/' . $data->latestlist_image) }}" height="20px"
+                                        width="10%">
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <label>Latest Listing Image</label>
+                                    <input type="file" name="latestlist_image" class="form-control">
+                                </div>
                                 <div class="col-sm-6 col-12">
                                     <label>Latest Listing</label>
                                     <input type="text" value="{{ $data->latest_listingheading }}"
                                         name="latest_listingheading" class="form-control">
                                 </div>
 
-                                <div class="col-sm-6 col-12">
-                                    <label>Latest Listing Image</label>
-                                    <input type="file" name="latestlist_image" class="form-control">
-                                </div>
+
                                 <div class="col-sm-12 col-12">
                                     <label>Latest Listing Description</label>
                                     <input type="text" class="form-control"
@@ -70,10 +80,18 @@
                                     <div calss="recent-aprovel-wrap-cole">
                                         <div class="headings-listing-page">
                                             <h5>Post An Ads Section</h5>
-                                            <img src="http://127.0.0.1:8000/assets/img/Rounded-Rectangle-3-copy-7.png"
+                                            <img src=" {{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
                                                 class="img-fluid">
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col-sm-12 col-12">
+                                    <img src=" {{ asset('/home_imag/' . $data->addpost_image) }}" height="20px"
+                                        width="10%">
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <label>Post An Ad Image</label>
+                                    <input type="file" name="addpost_image" class="form-control">
                                 </div>
                                 <div class="col-6">
                                     <label>Post An Ad Here</label>
@@ -81,10 +99,7 @@
                                         value="{{ $data->post_addheading }}">
                                 </div>
 
-                                <div class="col-sm-6 col-12">
-                                    <label>Post An Ad Image</label>
-                                    <input type="file" name="addpost_image" class="form-control">
-                                </div>
+
                                 <div class="col-sm-12 col-12">
                                     <label>Post An Ad Here Description</label>
                                     <input type="text" class="form-control" name="post_adddescription"
@@ -94,10 +109,18 @@
                                     <div calss="recent-aprovel-wrap-cole">
                                         <div class="headings-listing-page">
                                             <h5>Business Directory Section</h5>
-                                            <img src="http://127.0.0.1:8000/assets/img/Rounded-Rectangle-3-copy-7.png"
+                                            <img src=" {{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
                                                 class="img-fluid">
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col-sm-12 col-12">
+                                    <img src=" {{ asset('/home_imag/' . $data->bussiness_image) }}" height="20px"
+                                        width="10%">
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <label>Business Directory Image</label>
+                                    <input type="file" name="bussiness_image" class="form-control">
                                 </div>
                                 <div class="col-sm-6 col-12">
                                     <label>Business Directory</label>
@@ -105,10 +128,7 @@
                                         value="{{ $data->bussiness_direc_heading }}">
                                 </div>
 
-                                <div class="col-sm-6 col-12">
-                                    <label>Business Directory Image</label>
-                                    <input type="file" name="bussiness_image" class="form-control">
-                                </div>
+
                                 <div class="col-sm-12 col-12">
                                     <label>Business Directory Description</label>
                                     <input type="text" class="form-control" name="bussiness_direc_description"
@@ -118,7 +138,7 @@
                                     <div calss="recent-aprovel-wrap-cole">
                                         <div class="headings-listing-page">
                                             <h5>Most Popular Categories</h5>
-                                            <img src="http://127.0.0.1:8000/assets/img/Rounded-Rectangle-3-copy-7.png"
+                                            <img src=" {{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
                                                 class="img-fluid">
                                         </div>
                                     </div>
@@ -137,7 +157,7 @@
                                     <div calss="recent-aprovel-wrap-cole">
                                         <div class="headings-listing-page">
                                             <h5>Popular Featued Ads</h5>
-                                            <img src="http://127.0.0.1:8000/assets/img/Rounded-Rectangle-3-copy-7.png"
+                                            <img src=" {{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
                                                 class="img-fluid">
                                         </div>
                                     </div>
@@ -158,7 +178,7 @@
                                     <div calss="recent-aprovel-wrap-cole">
                                         <div class="headings-listing-page">
                                             <h5>Why We Are Most Popular</h5>
-                                            <img src="http://127.0.0.1:8000/assets/img/Rounded-Rectangle-3-copy-7.png"
+                                            <img src=" {{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
                                                 class="img-fluid">
                                         </div>
                                     </div>
@@ -178,7 +198,7 @@
                                     <div calss="recent-aprovel-wrap-cole">
                                         <div class="headings-listing-page">
                                             <h5>top cat</h5>
-                                            <img src="http://127.0.0.1:8000/assets/img/Rounded-Rectangle-3-copy-7.png"
+                                            <img src=" {{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
                                                 class="img-fluid">
                                         </div>
                                     </div>
@@ -199,7 +219,7 @@
                                     <div calss="recent-aprovel-wrap-cole">
                                         <div class="headings-listing-page">
                                             <h5>Trust & Quality Ads Section</h5>
-                                            <img src="http://127.0.0.1:8000/assets/img/Rounded-Rectangle-3-copy-7.png"
+                                            <img src=" {{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
                                                 class="img-fluid">
                                         </div>
                                     </div>
@@ -220,7 +240,7 @@
                                     <div calss="recent-aprovel-wrap-cole">
                                         <div class="headings-listing-page">
                                             <h5>Top Best Location </h5>
-                                            <img src="http://127.0.0.1:8000/assets/img/Rounded-Rectangle-3-copy-7.png"
+                                            <img src=" {{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
                                                 class="img-fluid">
                                         </div>
                                     </div>
@@ -241,7 +261,7 @@
                                     <div calss="recent-aprovel-wrap-cole">
                                         <div class="headings-listing-page">
                                             <h5>New busssiness Directory</h5>
-                                            <img src="http://127.0.0.1:8000/assets/img/Rounded-Rectangle-3-copy-7.png"
+                                            <img src=" {{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
                                                 class="img-fluid">
                                         </div>
                                     </div>
@@ -262,11 +282,20 @@
                                 <div class="col-12">
                                     <div calss="recent-aprovel-wrap-cole">
                                         <div class="headings-listing-page">
-                                            <h5>>Find What You Want Section</h5>
-                                            <img src="http://127.0.0.1:8000/assets/img/Rounded-Rectangle-3-copy-7.png"
+                                            <h5>Find What You Want Section</h5>
+                                            <img src=" {{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
                                                 class="img-fluid">
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col-sm-12 col-12">
+                                    <img src=" {{ asset('/home_imag/' . $data->find_whatyou_image) }}" height="20px"
+                                        width="10%">
+                                </div>
+
+                                <div class="col-sm-6 col-12">
+                                    <label>Find What You Want Image</label>
+                                    <input type="file" name="find_whatyou_image" class="form-control">
                                 </div>
                                 <div class="col-sm-6 col-12">
                                     <label>Find What You Want
@@ -275,10 +304,6 @@
                                         value="{{ $data->find_whatyouwant_heading }}">
                                 </div>
 
-                                <div class="col-sm-6 col-12">
-                                    <label>Find What You Want Image</label>
-                                    <input type="file" name="find_whatyou_image" class="form-control">
-                                </div>
 
                                 <div class="col-sm-12 col-12">
                                     <label>Find What You Want description
@@ -292,10 +317,18 @@
                                     <div calss="recent-aprovel-wrap-cole">
                                         <div class="headings-listing-page">
                                             <h5>Explore Amzing Ads Section</h5>
-                                            <img src="http://127.0.0.1:8000/assets/img/Rounded-Rectangle-3-copy-7.png"
+                                            <img src=" {{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
                                                 class="img-fluid">
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col-sm-12 col-12">
+                                    <img src=" {{ asset('/home_imag/' . $data->explore_amezing) }}" height="20px"
+                                        width="10%">
+                                </div>
+                                <div class="col-sm-6 col-12">
+                                    <label>Explore Amzing Image</label>
+                                    <input type="file" name="explore_amezing" class="form-control">
                                 </div>
                                 <div class="col-sm-6 col-12">
                                     <label>Explore Amzing Ads
@@ -304,10 +337,7 @@
                                         value="{{ $data->explore_amezing_head }}">
                                 </div>
 
-                                <div class="col-sm-6 col-12">
-                                    <label>Explore Amzing Image</label>
-                                    <input type="file" name="explore_amezing" class="form-control">
-                                </div>
+
                                 <div class="col-sm-12 col-12">
                                     <label>Explore Amzing Ads description
                                     </label>
@@ -319,7 +349,7 @@
                                     <div calss="recent-aprovel-wrap-cole">
                                         <div class="headings-listing-page">
                                             <h5>Add New Listing And Build Your Business</h5>
-                                            <img src="http://127.0.0.1:8000/assets/img/Rounded-Rectangle-3-copy-7.png"
+                                            <img src=" {{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
                                                 class="img-fluid">
                                         </div>
                                     </div>
@@ -341,7 +371,7 @@
         </div>
         <button type="submit" class="btn btn-primary btn-md"
             onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                             document.getElementById('editcategory-{{ $data->id }}').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         document.getElementById('editcategory-{{ $data->id }}').submit();">
             <i class="fa fa-dot-circle-o"></i> Submit
         </button>
         </form>
