@@ -252,7 +252,21 @@
         <!------------------------footer-end-start------------------------>
     </div>
 
+    {{-- @include('layouts.backend.partials.footer') --}}
 
+    {{-- chat bot start --}}
+    <script>
+        var botmanWidget = {
+            title: 'Caribbean Support',
+            aboutText: 'Write Something',
+            mainColor: '#dc422f',
+            headerTextColor: '#fff',
+            bubbleBackground: '#dc422f',
+            introMessage: "✋ Hi! I'm form Caribbean Support Team "
+        };
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+    {{-- chat bot end --}}
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -261,6 +275,9 @@
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src=" {{ asset('assets/js/custome.js') }}"></script>
+    <style>
+
+    </style>
 </body>
 
 </html>

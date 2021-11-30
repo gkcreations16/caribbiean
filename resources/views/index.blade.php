@@ -2,6 +2,9 @@
 @section('content')
     <!----------------------banner-content-end------------------------>
     {{-- {{ asset('assets/img/Layer-7.jpg') }} --}}
+    {{-- <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css"> --}}
+
     @foreach ($Homepagedata as $pagedata)
         <div class="banner-content" style="background-image:url('{{ asset('/home_imag/' . $pagedata->banner_image) }}');">
             <div class="container">
@@ -102,7 +105,7 @@
         <!--------------------------styles-end----------------------------->
         <!------------------------sec1-start------------------------>
         <!-- <section class="sec-1 top-space bottom-space">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <!-hhh-----------------------sec1-end------------------------>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <!-hhh-----------------------sec1-end------------------------>
 
         <!------------------------sec1-new-start------------------------>
         <section class="sec-1 top-space bottom-space">
@@ -508,7 +511,6 @@
         </section>
 
     @endforeach
-    {{-- @include('footer') --}}
 
     <!------------------------sec5-end------------------------>
 @endsection

@@ -38,8 +38,6 @@ class FooterController extends Controller
      */
     public function store(Request $request)
     {
-
-
         if ($request->hasfile('footer_bgimage')) {
             $footer_image = $request->file('footer_bgimage');
             $footer_bgimgname = $footer_image->getClientOriginalName();

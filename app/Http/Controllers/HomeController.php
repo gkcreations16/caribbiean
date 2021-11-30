@@ -103,9 +103,9 @@ class HomeController extends Controller
         return view('index', ['categorys' => $category, 'categorywise' => $categorywise, 'Homepagedata' => $Homepagecontant, 'posts' => $posts]);
     }
 
-    public function footerhome()
-    {
-        $footerhome = Footer::all();
-        return view('footer', ['footerdata' => $footerhome]);
-    }
+    // public function footerhome()
+    // {
+    //     $footerhome = Footer::all();
+    //     return view('layouts.frontend.partials.footer', ['footerdata' => $footerhome]);
+    // }
 }

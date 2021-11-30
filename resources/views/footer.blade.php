@@ -1,3 +1,4 @@
+
      <!------------------------footer-start------------------------>
      @if (isset($footerdata))
          @foreach ($footerdata as $data)

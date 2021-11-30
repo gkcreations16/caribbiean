@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BotManController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,7 @@ Route::get('GetAdvanceSerchData/{id}', 'AdvanceSearchController@GetAdvanceSerchD
 Route::get('details/{id}', 'HomeController@postdetails')->name('details');
 Route::get('categorydetail/{id}', 'HomeController@categorydetails')->name('categorydetail');
 Route::get('categorychooselist/{id}', 'HomeController@categorychooselist')->name('categorychooselist');
+Route::match(['get', 'post'], 'botman', [BotManController::class, 'handle']);
 /// end front pages
 
 //admin///////////////////////////////////////////////////////
@@ -57,6 +60,5 @@ Route::group(['prefix' => 'user', 'as' => 'user.', 'namespace' => 'User', 'middl
     Route::put('profile/password', 'DashboardController@changePassword')->name('profile.password');
     Route::resource('addpost', 'PostController')->except(['create', 'show', 'edit']);
     Route::get('GetSubCatAgainstMainCat/{id}', 'PostController@GetSubCatAgainstMainCat');
-
     //Route::resource('addpost', 'UserPostController')->except(['create', 'show', 'edit']);
 });
