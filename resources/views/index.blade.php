@@ -6,7 +6,8 @@
         href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css"> --}}
 
     @foreach ($Homepagedata as $pagedata)
-        <div class="banner-content" style="background-image:url('{{ asset('/home_imag/' . $pagedata->banner_image) }}');">
+        <div class="banner-content"
+            style="background-image:url('{{ url('storage/homepg_img/' . $pagedata->banner_image) }}');">
             <div class="container">
                 <div class="col-lg-9 mx-auto text-center">
                     <div class="banner-all-content-cover">
@@ -105,7 +106,7 @@
         <!--------------------------styles-end----------------------------->
         <!------------------------sec1-start------------------------>
         <!-- <section class="sec-1 top-space bottom-space">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <!-hhh-----------------------sec1-end------------------------>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <!-hhh-----------------------sec1-end------------------------>
 
         <!------------------------sec1-new-start------------------------>
         <section class="sec-1 top-space bottom-space">
@@ -476,7 +477,7 @@
                         <div class="find-what-you-want">
                             <div class="card  text-white mx-auto text-center">
                                 <div class="find-what-img">
-                                    <img src="{{ asset('/home_imag/' . $pagedata->find_whatyou_image) }}"
+                                    <img src="{{ url('storage/homepg_img/' . $pagedata->find_whatyou_image) }}"
                                         class="img-fluid" class="card-img" alt="...">
                                 </div>
                                 <div class="card-img-overlay">
@@ -493,7 +494,8 @@
                         <div class="find-what-you-want">
                             <div class="card  text-white mx-auto text-center">
                                 <div class="find-what-img">
-                                    <img src="{{ asset('/home_imag/' . $pagedata->explore_amezing) }}"
+
+                                    <img src="{{ url('storage/homepg_img/' . $pagedata->explore_amezing) }}"
                                         class="img-fluid" class="card-img" alt="...">
                                 </div>
                                 <div class="card-img-overlay">

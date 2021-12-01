@@ -6,6 +6,7 @@ use App\Footer;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FooterController extends Controller
 {
@@ -38,16 +39,28 @@ class FooterController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasfile('footer_bgimage')) {
-            $footer_image = $request->file('footer_bgimage');
-            $footer_bgimgname = $footer_image->getClientOriginalName();
-            $footer_image->move(public_path() . '/home_imag/', $footer_bgimgname);
-        }
-        if ($request->hasfile('logoimage')) {
-            $footer_logimage = $request->file('logoimage');
-            $footer_logoimgname = $footer_logimage->getClientOriginalName();
-            $footer_logimage->move(public_path() . '/home_imag/', $footer_logoimgname);
-        }
+        // if ($request->hasfile('footer_bgimage')) {
+        //     $footer_image = $request->file('footer_bgimage');
+        //     $footer_bgimgname = $footer_image->getClientOriginalName();
+        //     $footer_image->move(public_path() . '/home_imag/', $footer_bgimgname);
+        // }
+        // if ($request->hasfile('logoimage')) {
+        //     $footer_logimage = $request->file('logoimage');
+        //     $footer_logoimgname = $footer_logimage->getClientOriginalName();
+        //     $footer_logimage->move(public_path() . '/home_imag/', $footer_logoimgname);
+        // }
+
+        $footer_bgimage = $request->footer_bgimage;
+        $footer_bg_name = $footer_bgimage->getClientOriginalName();
+        //store image
+        $footer_bgimage->storeAs('homepg_img', $footer_bg_name, 'public');
+
+        $logoimage = $request->logoimage;
+        $logoimage_name = $logoimage->getClientOriginalName();
+        //store image
+        $logoimage->storeAs('homepg_img', $logoimage_name, 'public');
+
+
         $data = new Footer();
         $data->short_note = $request->short_note;
         $data->foot_address = $request->foot_address;
@@ -61,8 +74,8 @@ class FooterController extends Controller
         $data->foot_insatalink = $request->foot_insatalink;
         $data->foot_twitterlink = $request->foot_twitterlink;
         $data->foot_Linkinlink = $request->foot_Linkinlink;
-        $data->footer_bgimage = $footer_bgimgname;
-        $data->logoimage = $footer_logoimgname;
+        $data->footer_bgimage = $footer_bg_name;
+        $data->logoimage = $logoimage_name;
         $data->save();
         Toastr::success('Footer Created successfully');
         return redirect()->back();
@@ -103,15 +116,51 @@ class FooterController extends Controller
         // dd($request->all());
         $data = Footer::findOrFail($id);
 
-        if ($request->hasfile('footer_bgimage')) {
-            $footer_bgimg = $request->file('footer_bgimage');
-            $footer_bgname = $footer_bgimg->getClientOriginalName();
-            $footer_bgimg->move(public_path() . '/home_imag/', $footer_bgname);
+        // if ($request->hasfile('footer_bgimage')) {
+        //     $footer_bgimg = $request->file('footer_bgimage');
+        //     $footer_bgname = $footer_bgimg->getClientOriginalName();
+        //     $footer_bgimg->move(public_path() . '/home_imag/', $footer_bgname);
+        // }
+        // if ($request->hasfile('logoimage')) {
+        //     $logoimage_img = $request->file('logoimage');
+        //     $logoimage_imgname = $logoimage_img->getClientOriginalName();
+        //     $logoimage_img->move(public_path() . '/home_imag/', $logoimage_imgname);
+        // }
+
+        if ($request->footer_bgimage != null) {
+            //image
+            $footer_bgimage = $request->footer_bgimage;
+            $footer_bg_name = $footer_bgimage->getClientOriginalName();
+
+            if (!Storage::disk('public')->exists('homepg_img')) {
+                Storage::disk('public')->makeDirectory('homepg_img');
+            }
+            //delete image
+            if (Storage::disk('public')->exists('homepg_img/' . $data->footer_bgimage)) {
+                Storage::disk('public')->delete('homepg_img/' . $data->footer_bgimage);
+            }
+            //store image
+            $footer_bgimage->storeAs('homepg_img', $footer_bg_name, 'public');
+        } else {
+            $footer_bg_name = $data->footer_bgimage;
         }
-        if ($request->hasfile('logoimage')) {
-            $logoimage_img = $request->file('logoimage');
-            $logoimage_imgname = $logoimage_img->getClientOriginalName();
-            $logoimage_img->move(public_path() . '/home_imag/', $logoimage_imgname);
+
+        if ($request->logoimage != null) {
+            //image
+            $logoimage = $request->logoimage;
+            $logoimage_name = $logoimage->getClientOriginalName();
+
+            if (!Storage::disk('public')->exists('homepg_img')) {
+                Storage::disk('public')->makeDirectory('homepg_img');
+            }
+            //delete image
+            if (Storage::disk('public')->exists('homepg_img/' . $data->logoimage)) {
+                Storage::disk('public')->delete('homepg_img/' . $data->logoimage);
+            }
+            //store image
+            $logoimage->storeAs('homepg_img', $logoimage_name, 'public');
+        } else {
+            $logoimage_name = $data->logoimage;
         }
 
         $data->short_note = $request->short_note;
@@ -126,8 +175,8 @@ class FooterController extends Controller
         $data->foot_insatalink = $request->foot_insatalink;
         $data->foot_twitterlink = $request->foot_twitterlink;
         $data->foot_Linkinlink = $request->foot_Linkinlink;
-        $data->footer_bgimage = $footer_bgname;
-        $data->logoimage = $logoimage_imgname;
+        $data->footer_bgimage = $footer_bg_name;
+        $data->logoimage = $logoimage_name;
         $data->save();
         Toastr::success('Footer update successfully');
         return redirect()->back();

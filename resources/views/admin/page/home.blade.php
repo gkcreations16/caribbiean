@@ -28,7 +28,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-12">
-                                    <img src=" {{ asset('/home_imag/' . $data->banner_image) }}" height="20px"
+                                    <img src="{{ url('storage/homepg_img/' . $data->banner_image) }}" height="20px"
                                         width="10%">
                                 </div>
                                 <div class="col-sm-6 col-12">
@@ -57,7 +57,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-12">
-                                    <img src=" {{ asset('/home_imag/' . $data->latestlist_image) }}" height="20px"
+                                    <img src="{{ url('storage/homepg_img/' . $data->latestlist_image) }}" height="20px"
                                         width="10%">
                                 </div>
                                 <div class="col-sm-6 col-12">
@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-12">
-                                    <img src=" {{ asset('/home_imag/' . $data->addpost_image) }}" height="20px"
+                                    <img src="{{ url('storage/homepg_img/' . $data->addpost_image) }}" height="20px"
                                         width="10%">
                                 </div>
                                 <div class="col-sm-6 col-12">
@@ -115,7 +115,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-12">
-                                    <img src=" {{ asset('/home_imag/' . $data->bussiness_image) }}" height="20px"
+                                    <img src=" {{ url('storage/homepg_img/' . $data->bussiness_image) }}" height="20px"
                                         width="10%">
                                 </div>
                                 <div class="col-sm-6 col-12">
@@ -289,7 +289,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-12">
-                                    <img src=" {{ asset('/home_imag/' . $data->find_whatyou_image) }}" height="20px"
+                                    <img src="{{ url('storage/homepg_img/' . $data->find_whatyou_image) }}" height="20px"
                                         width="10%">
                                 </div>
 
@@ -323,7 +323,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-12">
-                                    <img src=" {{ asset('/home_imag/' . $data->explore_amezing) }}" height="20px"
+                                    <img src=" {{ url('storage/homepg_img/' . $data->explore_amezing) }}" height="20px"
                                         width="10%">
                                 </div>
                                 <div class="col-sm-6 col-12">
@@ -371,7 +371,7 @@
         </div>
         <button type="submit" class="btn btn-primary btn-md"
             onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         document.getElementById('editcategory-{{ $data->id }}').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         document.getElementById('editcategory-{{ $data->id }}').submit();">
             <i class="fa fa-dot-circle-o"></i> Submit
         </button>
         </form>
