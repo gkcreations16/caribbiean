@@ -106,7 +106,7 @@
         <!--------------------------styles-end----------------------------->
         <!------------------------sec1-start------------------------>
         <!-- <section class="sec-1 top-space bottom-space">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <!-hhh-----------------------sec1-end------------------------>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <!-hhh-----------------------sec1-end------------------------>
 
         <!------------------------sec1-new-start------------------------>
         <section class="sec-1 top-space bottom-space">
@@ -327,9 +327,8 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> 
         <!-- ----------------------sec2-end---------------------- -->
-
         <!------------------------sec3-start------------------------>
         <section class="sec-3  bottom-space">
             <div class="small-head-wrap">
@@ -456,7 +455,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     @endforeach
@@ -494,7 +492,6 @@
                         <div class="find-what-you-want">
                             <div class="card  text-white mx-auto text-center">
                                 <div class="find-what-img">
-
                                     <img src="{{ url('storage/homepg_img/' . $pagedata->explore_amezing) }}"
                                         class="img-fluid" class="card-img" alt="...">
                                 </div>
@@ -511,8 +508,6 @@
                 </div>
             </div>
         </section>
-
     @endforeach
-
     <!------------------------sec5-end------------------------>
 @endsection

@@ -143,8 +143,6 @@ class="img-fluid">
                          <div class="row">
                              @foreach ($posts as $postitem)
                                  @if ($categorybase->name == $postitem->category)
-
-
                                      <div class="col-md-4 col-sm-6 col-12">
                                          <div class="listing-slide-wrap">
                                              <div class="card border-0 ">
@@ -191,6 +189,8 @@ class="img-fluid">
                                              </div>
                                          </div>
                                      </div>
+                                     {{-- @else
+                                     <h3>Search Results: Not Found</h3> --}}
                                  @endif
                              @endforeach
                              <div class="col-12">
