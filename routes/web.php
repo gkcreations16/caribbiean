@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BotManController;
+use Laravel\Socialite\Facades\Socialite;
+
 
 
 /*
@@ -18,6 +20,11 @@ use App\Http\Controllers\BotManController;
 
 /// front pages
 Auth::routes();
+
+///social routes
+Route::get('login/google', 'Auth\LoginController@redirectToProvider');
+Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
+
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('category', 'HomeController@categorypage')->name('category');
 Route::get('navbar2', 'HomeController@navbarfront')->name('navbar2');
