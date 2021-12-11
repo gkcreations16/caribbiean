@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
@@ -71,7 +72,22 @@ class LoginController extends Controller
     public function handleProviderCallback()
     {
         $user = Socialite::driver('google')->user();
-        dd($user);
-        // $user->token;
+
+        $authUser = User::where('email', $user->email)->first();
+        if ($authUser) {
+            Auth::login($authUser);
+            return redirect()->route('home');
+        } else {
+            $newUser = new User();
+            $newUser->email = $user->email;
+            $newUser->name = $user->name;
+            $newUser->userid = $user->id;
+            $newUser->password = uniqid();
+            $newUser->save();
+
+            //login 
+            Auth::login($newUser);
+            return redirect()->route('home');
+        }
     }
 }
