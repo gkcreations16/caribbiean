@@ -71,6 +71,7 @@ class LoginController extends Controller
      */
     public function handleProviderCallback()
     {
+        // $user = Socialite::driver('google')->stateless()->user();
         $user = Socialite::driver('google')->user();
 
         $authUser = User::where('email', $user->email)->first();
@@ -87,7 +88,7 @@ class LoginController extends Controller
 
             //login 
             Auth::login($newUser);
-            return redirect()->route('home');
+            //return redirect()->route('home');
         }
     }
 }

@@ -51,8 +51,8 @@
                                 <p>Sign In To Caribbean Connector</p>
                             </div>
                             <div class="login-other-ways d-flex justify-content-between">
-                                <a href="#" class="btn btn-primary"><span class="pe-2"><img
-                                            src="{{ asset('assets/img/Layer-4.png') }}"
+                                <a href="{{ url('/login/google') }}" class="btn btn-primary"><span
+                                        class="pe-2"><img src="{{ asset('assets/img/Layer-4.png') }}"
                                             class="img-fluid"></span>Continue With
                                     Google</span></a>
                                 <a href="#" class="btn btn-primary"><span class="pe-2"><img
