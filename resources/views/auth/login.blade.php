@@ -32,7 +32,7 @@
                     <div class="wordbest-market card border-0 text-white">
                         <div class="card-img-overlay">
                             <div class="login-logon">
-                                <a href="index.html"><img src="{{ asset('assets/img/Layer-14-yycopy.png') }}"
+                                <a href="{{ url('/') }}"><img src="{{ asset('assets/img/Layer-14-yycopy.png') }}"
                                         class="img-fluid"></a>
                             </div>
                             <h1 class="card-title">World's Biggest
@@ -55,8 +55,8 @@
                                         class="pe-2"><img src="{{ asset('assets/img/Layer-4.png') }}"
                                             class="img-fluid"></span>Continue With
                                     Google</span></a>
-                                <a href="#" class="btn btn-primary"><span class="pe-2"><img
-                                            src="{{ asset('assets/img/Layer-5.png') }}"
+                                <a href="{{ url('/login/facebook') }}" class="btn btn-primary"><span
+                                        class="pe-2"><img src="{{ asset('assets/img/Layer-5.png') }}"
                                             class="img-fluid"></span>Continue With
                                     Facebook</span></a>
                             </div>

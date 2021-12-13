@@ -59,7 +59,9 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function redirectToProvider()
+
+    ///Google 
+    public function redirectToGoogle()
     {
         return Socialite::driver('google')->redirect();
     }
@@ -69,7 +71,9 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function handleProviderCallback()
+
+    ///Google  redirect
+    public function handleGoogleCallback()
     {
         // $user = Socialite::driver('google')->stateless()->user();
         $user = Socialite::driver('google')->user();
@@ -88,6 +92,45 @@ class LoginController extends Controller
 
             //login 
             Auth::login($newUser);
+            //return redirect()->route('home');
+        }
+    }
+
+
+
+
+    ///FACEBOOK 
+    public function redirectToFACEBOOK()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    ///FACEBOOK  redirect
+    public function handleFACEBOOKCallback()
+    {
+        // $user = Socialite::driver('google')->stateless()->user();
+        $fbuser = Socialite::driver('facebook')->user();
+
+        $authFbUser = User::where('email', $fbuser->email)->first();
+        if ($authFbUser) {
+            Auth::login($authFbUser);
+            return redirect()->route('home');
+        } else {
+            $newFBUser = new User();
+            $newFBUser->email = $fbuser->email;
+            $newFBUser->name = $fbuser->name;
+            $newFBUser->userid = $fbuser->id;
+            $newFBUser->password = uniqid();
+            $newFBUser->save();
+
+            //login 
+            Auth::login($newFBUser);
             //return redirect()->route('home');
         }
     }

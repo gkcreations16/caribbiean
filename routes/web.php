@@ -22,8 +22,11 @@ use Laravel\Socialite\Facades\Socialite;
 Auth::routes();
 
 ///social routes
-Route::get('login/google', 'Auth\LoginController@redirectToProvider');
-Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
+
+Route::get('login/facebook', 'Auth\LoginController@redirectToFACEBOOK');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleFACEBOOKCallback');
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('category', 'HomeController@categorypage')->name('category');
