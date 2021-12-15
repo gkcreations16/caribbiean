@@ -45,6 +45,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-6 col-sm-12 ps-0">
                     <div class="login-sig-detailer card border-0 text-white text-center">
                         <div class="card-img-overlays">
