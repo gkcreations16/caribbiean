@@ -18,6 +18,7 @@ use Laravel\Socialite\Facades\Socialite;
 |
 */
 
+
 /// front pages
 Auth::routes();
 

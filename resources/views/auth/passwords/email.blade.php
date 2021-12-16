@@ -68,8 +68,8 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-primary d-block " Style="margin-top: 20px;
-    margin-left: 150px;">
+                                        <button type="submit" class="btn btn-primary d-block "
+                                            Style="margin-top: 20px; margin-left: 150px;">
                                             {{ __('Send Password Reset Link') }}
                                         </button>
                                     </div>
