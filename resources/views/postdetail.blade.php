@@ -485,7 +485,7 @@
                                             class="img-fluid">
                                     </div>
                                     <div class="listing-left-form">
-                                        <formclass="form" action="#" method="post" id="form">
+                                        <form class="form" action="#" method="post" id="form">
                                             <div class="row">
                                                 <div class="col-sm-6 col-12">
                                                     <label>First Name</label>
@@ -554,7 +554,7 @@
                                             <div class="form-submit">
                                                 <a href="#" class="btn btn-primary">SUBMIT</a>
                                             </div>
-                                            </form>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -593,21 +593,35 @@
                                             <li><span class="fas fa-calendar-minus"></span> 2 Days Ago Posted</li>
                                         </ul>
                                     </div>
-                                    <div class="listing-detail-contact-info-formee">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <input type="text" class="form-control" placeholder="Subject"
-                                                    aria-label="First name">
-                                            </div>
-                                            <div class="col-12">
-                                                <textarea class="form-control" id="validationDefault05" required=""
-                                                    placeholder="Message"></textarea>
-                                            </div>
-                                            <div class="col-12">
-                                                <a href="#" class="btn-primary text-center d-block">SEND MESSAGE</a>
-                                            </div>
+                                    @guest
+                                        <h4>Please logIn First</h4>
+                                    @else
+                                        <div class="listing-detail-contact-info-formee">
+                                            <form action="{{ route('massage.store') }}" method="POST">
+                                                @csrf
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <input type="hidden" name="post_id" value="{{ $postdetail->id }}">
+                                                        <input type="text" name="massage" class="form-control"
+                                                            placeholder="Subject" aria-label="First name">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        {{-- <textarea class="form-control" id="validationDefault05" required=""
+                                                        placeholder="Message"></textarea> --}}
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <button type="submit" class="btn-primary text-center d-block">SEND
+                                                            MESSAGE</button>
+                                                        {{-- <a href="#" class="btn-primary text-center d-block">SEND MESSAGE</a> --}}
+                                                    </div>
+
+                                                </div>
+                                            </form>
+
                                         </div>
-                                    </div>
+                                    @endguest
+
+
                                 </div>
                             </div>
                             <div class="back-pad">

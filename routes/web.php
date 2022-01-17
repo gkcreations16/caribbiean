@@ -35,6 +35,8 @@ Route::get('navbar2', 'HomeController@navbarfront')->name('navbar2');
 Route::get('listing', 'HomeController@listingpage')->name('listing');
 Route::get('footer', 'HomeController@footerhome')->name('footer');
 
+Route::post('/massage', 'MassageController@store')->name('massage.store');
+
 // Route::get('bussiness-detail', 'HomeController@bussiness-detail')->name('bussiness-detail');
 Route::post('/product/search', 'HomeController@searchProduct');
 Route::get('GetAdvanceSerchData/{id}', 'AdvanceSearchController@GetAdvanceSerchData');
@@ -61,6 +63,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('GetSubCatAgainstMainCat/{id}', 'PostController@GetSubCatAgainstMainCat');
     Route::resource('footer', 'FooterController')->except(['create', 'show', 'edit']);
     // Route::resource('listings', 'ListingController')->except(['create', 'show', 'edit']);
+    Route::get('/massages', 'MassageController@index')->name('massage.index');
+    Route::delete('/massage/{id}', 'MassageController@destroy')->name('massage.destroy');
 });
 
 //user///////////////////////////////////////////////////////
@@ -70,6 +74,8 @@ Route::group(['prefix' => 'user', 'as' => 'user.', 'namespace' => 'User', 'middl
     Route::put('profile', 'DashboardController@updateprofile')->name('profile.update');
     Route::put('profile/password', 'DashboardController@changePassword')->name('profile.password');
     Route::resource('addpost', 'PostController')->except(['create', 'show', 'edit']);
+    Route::resource('businesspost', 'BusinessaddController')->except(['create', 'show', 'edit']);
+
     Route::get('GetSubCatAgainstMainCat/{id}', 'PostController@GetSubCatAgainstMainCat');
     //Route::resource('addpost', 'UserPostController')->except(['create', 'show', 'edit']);
 });

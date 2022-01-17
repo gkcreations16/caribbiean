@@ -143,7 +143,7 @@
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-md"
                                             onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                 document.getElementById('createcategory').submit();">
+                                                                                                                                                                                                                                                                                                                                                         document.getElementById('createcategory').submit();">
                                             <i class="fa fa-dot-circle-o"></i> Submit
                                         </button>
                                     </form>
@@ -280,7 +280,7 @@
                                             </div>
                                             <button type="submit" class="btn btn-primary btn-md"
                                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                    document.getElementById('editcategory-{{ $category->id }}').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                            document.getElementById('editcategory-{{ $category->id }}').submit();">
                                                 <i class="fa fa-dot-circle-o"></i> Submit
                                             </button>
                                         </form>
@@ -310,7 +310,7 @@
                                             data-dismiss="modal">Cancel</button>
                                         <button type="button" class="btn btn-danger"
                                             onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                document.getElementById('deletecategory-{{ $category->id }}').submit();">Confirm</button>
+                                                                                                                                                                                                                                                                                                                                                                                                        document.getElementById('deletecategory-{{ $category->id }}').submit();">Confirm</button>
                                         <form action="{{ route('admin.category.destroy', $category->id) }}"
                                             style="display: none" id="deletecategory-{{ $category->id }}" method="POST">
                                             @csrf

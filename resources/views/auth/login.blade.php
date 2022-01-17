@@ -115,6 +115,7 @@
                                             {{ __('SIGN IN') }}
                                         </button>
                                     </div>
+                                    
                                     <div class="col-12">
                                         <div class="sign-up-stage">
                                             <p>Don't have an account? click on the<br>

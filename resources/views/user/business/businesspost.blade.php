@@ -18,6 +18,7 @@
 
     </style>
     <div class="col-lg-9 col-md-12 col-sm-12 col-12 pe-0">
+        <h1>My Postttt</h1>
         <div class="dasboard-content-side">
             <div class="content mt-3">
                 <div class="animated fadeIn">
@@ -49,7 +50,7 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($posts as $postitem)
-                                                @if ($postitem->userid === 2)
+                                                @if ($postitem->userid == 2)
                                                     <tr>
                                                         <td style="width:20%" class="add-img-td">
                                                             <div class="sub-prper">
@@ -98,7 +99,7 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                @elseif ($postitem->userid === 3)
+                                                @else
                                                     <tr>
                                                         <td style="width:20%" class="add-img-td">
                                                             <div class="sub-prper">
@@ -147,9 +148,7 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-
                                                 @endif
-
                                             @endforeach
                                         </tbody>
                                     </table>
@@ -190,6 +189,8 @@
                                                     <label>Listing Title</label>
                                                     <input type="text" class="form-control" name="title"
                                                         placeholder="Post Title" aria-label="Post Title">
+                                                    <input type="hidden" class="form-control"
+                                                        value="{{ $post_userid }}" name="userid">
                                                 </div>
                                                 <div class=" col-sm-6 col-12">
                                                     <label>Type / Category</label>
@@ -473,7 +474,7 @@
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-primary btn-md"
                                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                document.getElementById('createPost').submit();">SAVE
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            document.getElementById('createPost').submit();">SAVE
                                             </button>
                                         </div>
                                     </form>
@@ -800,7 +801,7 @@
                             </div>
                             <button type="submit" class="btn btn-primary btn-md"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             document.getElementById('editcategory-{{ $postitem->id }}').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         document.getElementById('editcategory-{{ $postitem->id }}').submit();">
                                 <i class="fa fa-dot-circle-o"></i> Submit
                             </button>
                         </form>
@@ -827,7 +828,7 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         <button type="button" class="btn btn-danger"
                             onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                             document.getElementById('deletecategory-{{ $postitem->id }}').submit();">Confirm</button>
+                                                                                                                                                                                                                                                                                                                         document.getElementById('deletecategory-{{ $postitem->id }}').submit();">Confirm</button>
                         <form action="{{ route('user.addpost.destroy', $postitem->id) }}" style="display: none"
                             id="deletecategory-{{ $postitem->id }}" method="POST">
                             @csrf

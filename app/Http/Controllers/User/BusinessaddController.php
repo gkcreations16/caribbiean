@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class PostController extends Controller
+class BusinessaddController extends Controller
 {
     public function index()
     {
@@ -19,7 +19,7 @@ class PostController extends Controller
         $post_userid = Auth::user()->userid;
         $category = Category::all();
         $subcategory = SubCategory::all();
-        return view('user.post.addpost', ['post_userid' => $post_userid, 'categorys' => $category, 'subcategorys' => $subcategory, 'posts' => $posts]);
+        return view('user.business.businesspost', ['post_userid' => $post_userid, 'categorys' => $category, 'subcategorys' => $subcategory, 'posts' => $posts]);
     }
 
     public function GetSubCatAgainstMainCat($id)
@@ -47,6 +47,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         if ($request->hasfile('image')) {
             foreach ($request->file('image') as $image) {
                 $name = $image->getClientOriginalName();
@@ -156,7 +157,7 @@ class PostController extends Controller
         $post->price = $request->price;
         // $post->image = json_encode($data);
         $post->save();
-        Toastr::success('Post Updated successfully');
+        Toastr::success('Post created successfully');
         return redirect()->back();
     }
     public function destroy($id)

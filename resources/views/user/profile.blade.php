@@ -145,8 +145,34 @@
                                         value="{{ isset($user->whatsapp_link) ? $user->whatsapp_link : old('whatsapp_link') }}">
                                 </div>
 
+                                @if ($user->userid == 3)
+                                    <div class="headings-listing-page">
+                                        <h5>Business Information</h5>
+                                        <img src="{{ asset('assets/img/Rounded-Rectangle-3-copy-7.png') }}"
+                                            class="img-fluid">
+                                    </div>
+                                    <div class="col-sm-6 col-12">
+                                        <label>Business Name </label>
+                                        <input type="text" class="form-control" name="business_name"
+                                            value="{{ isset($user->business_name) ? $user->business_name : old('business_name') }}">
+                                    </div>
+                                    <div class="col-sm-6 col-12">
+                                        <label>Business License </label>
+                                        <input type="text" class="form-control" name="business_license"
+                                            value="{{ isset($user->business_license) ? $user->business_license : old('business_license') }}">
+                                    </div>
+                                    <div class="col-sm-6 col-12">
+                                        <label>Business Office Location</label>
+                                        <input type="text" class="form-control" name="business_location"
+                                            value="{{ isset($user->business_location) ? $user->business_location : old('business_location') }}">
+                                    </div>
+                                    <div class="col-sm-6 col-12">
+                                        <label>Business Type </label>
+                                        <input type="text" class="form-control" name="business_type"
+                                            value="{{ isset($user->business_type) ? $user->business_type : old('business_type') }}">
+                                    </div>
+                                @endif
                                 <input type="hidden" class="form-control" name="userid" value="{{ $user->userid }}">
-
                                 <input type="hidden" class="form-control" name="password"
                                     value="{{ isset($user->password) ? $user->password : old('password') }}">
                                 <div class="form-submit">

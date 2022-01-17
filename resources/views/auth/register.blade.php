@@ -27,6 +27,7 @@
 </head>
 
 <body>
+
     <div class="login-sign-up-wrap signup-page">
         <div class="container-fluid pl-0">
             <div class="row">
@@ -68,8 +69,18 @@
                                 <form class="row g-3" method="POST" action="{{ route('register') }}">
                                     @csrf
                                     <input type="hidden" class="form-control" name="role_id" value="2">
-
                                     <div class="col-md-12">
+                                        <div class="passworderr">
+                                            <select class="form-control" id="exampleFormControlSelect1" name="userid"
+                                                required>
+                                                <option>Select Ad type </option>
+                                                <option value="2">Private Ad</option>
+                                                <option value="3">Business Ad</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    {{-- <div class="col-md-12">
                                         <div class="passworderr">
                                             <input id="userid" type="text"
                                                 class="form-control @error('userid') is-invalid @enderror" name="userid"
@@ -83,7 +94,7 @@
                                             <div class="passworder-icon"><span><i class="fas fa-user"></i></span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-md-12">
                                         <div class="passworderr">
                                             <input id="name" type="text"
@@ -147,7 +158,7 @@
                                     <div class="col-12 mt-0">
                                         <div class="sign-up-stage">
                                             <p>Already on Caribbean Connector ? <a href="{{ route('login') }}">(Sign
-                                                    Up )</a></p>
+                                                    In )</a></p>
                                         </div>
                                     </div>
                                 </form>

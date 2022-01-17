@@ -1,11 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Business;
 
 use App\User;
-use App\Post;
-use App\Category;
-use App\SubCategory;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Hash;
@@ -19,22 +16,21 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('user.dashboard.index');
+        return view('business.dashboard.index');
     }
     public function displyprofile()
     {
         $user = User::find(Auth::user()->id);
-        return view('user.profile', compact('user'));
+        return view('business.profile', compact('user'));
     }
     public function displypassword()
     {
         $userpass = User::find(Auth::user()->id);
-        return view('user.privacysetting', compact('userpass'));
+        return view('business.privacysetting', compact('userpass'));
     }
 
     public function updateprofile(Request $request)
     {
-
         $this->validate($request, [
             'name' => 'required|max:255',
             'email' => 'required|max:255',
@@ -78,10 +74,6 @@ class DashboardController extends Controller
         $user->linkind_link = $request->linkind_link;
         $user->twitter_link = $request->twitter_link;
         $user->whatsapp_link = $request->whatsapp_link;
-        $user->business_name = $request->business_name;
-        $user->business_license = $request->business_license;
-        $user->business_location = $request->business_location;
-        $user->business_type = $request->business_type;
         $user->image = $imagename;
         $user->save();
         Toastr::success('User updated successfully');
