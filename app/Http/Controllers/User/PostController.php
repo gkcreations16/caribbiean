@@ -163,7 +163,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $post->delete();
-        Toastr::success('Post Deleted successfully');
+        Toastr::Error('Post Deleted successfully');
         return redirect()->back();
     }
 }

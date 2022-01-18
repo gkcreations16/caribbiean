@@ -49,7 +49,7 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($posts as $postitem)
-                                                @if ($postitem->userid === 2)
+                                                @if ($postitem->userid == $post_userid)
                                                     <tr>
                                                         <td style="width:20%" class="add-img-td">
                                                             <div class="sub-prper">
@@ -98,55 +98,7 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                @elseif ($postitem->userid === 3)
-                                                    <tr>
-                                                        <td style="width:20%" class="add-img-td">
-                                                            <div class="sub-prper">
-                                                                <?php foreach (json_decode($postitem->image)  as $postimage) {?>
-                                                                <img src=" {{ asset('/image/' . $postimage) }}"
-                                                                    height="50px" width="30%">
-                                                                <?php } ?>
-                                                            </div>
-                                                        </td>
-                                                        <td style="width:40%" class="ads-details-td">
-                                                            <div class="ads-detail">
-                                                                <h4 title="Sony Xperia TX ">{{ $postitem->title }}</h4>
-                                                                <p><span><i class="fa fa-calendar pe-2"
-                                                                            aria-hidden="true"></i>
-                                                                    </span>
-                                                                    {{ date('d M Y - H:i:s', $postitem->created_at->timestamp) }}
-                                                                </p>
-                                                                <p><span><i class="fa fa-map-marker pe-2"
-                                                                            aria-hidden="true"></i>
-                                                                    </span>{{ $postitem->address }}</p>
-                                                            </div>
-                                                        </td>
-                                                        <td style="width:10%" class="price-td">
-                                                            <div>
-                                                                <p>${{ $postitem->price }}
-                                                            </div>
-                                                        </td>
-                                                        <td style="width:14%;" class="active-status">
-                                                            <div><a href="#" class="btn btn-primary">Active</a></div>
-                                                        </td>
-                                                        <td style="width: 16%;" class="action-td">
-                                                            <div class="editser-optins">
-                                                                <p>
-                                                                    <a href="{{ $postitem->id }}" data-toggle="modal"
-                                                                        data-target="#editModal-{{ $postitem->id }}"> <i
-                                                                            class="fas fa-pen"></i> Edit </a>
-                                                                </p>
-                                                                <p><a href="{{ route('details', $postitem->id) }}"
-                                                                        class="edits-in"> <i class="fa fa-eye pe-1"
-                                                                            aria-hidden="true"></i>
-                                                                        View </a></p>
-                                                                <p><a href="" data-toggle="modal"
-                                                                        data-target="#deleteModal-{{ $postitem->id }}">
-                                                                        <i class="fa fa-times pe-1" aria-hidden="true"></i>
-                                                                        Delete </a></p>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
+
 
                                                 @endif
 
@@ -190,6 +142,8 @@
                                                     <label>Listing Title</label>
                                                     <input type="text" class="form-control" name="title"
                                                         placeholder="Post Title" aria-label="Post Title">
+                                                    <input type="hidden" class="form-control"
+                                                        value="{{ $post_userid }}" name="userid">
                                                 </div>
                                                 <div class=" col-sm-6 col-12">
                                                     <label>Type / Category</label>
@@ -473,7 +427,7 @@
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-primary btn-md"
                                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                document.getElementById('createPost').submit();">SAVE
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        document.getElementById('createPost').submit();">SAVE
                                             </button>
                                         </div>
                                     </form>
@@ -800,7 +754,7 @@
                             </div>
                             <button type="submit" class="btn btn-primary btn-md"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             document.getElementById('editcategory-{{ $postitem->id }}').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     document.getElementById('editcategory-{{ $postitem->id }}').submit();">
                                 <i class="fa fa-dot-circle-o"></i> Submit
                             </button>
                         </form>
@@ -827,7 +781,7 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         <button type="button" class="btn btn-danger"
                             onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                             document.getElementById('deletecategory-{{ $postitem->id }}').submit();">Confirm</button>
+                                                                                                                                                                                                                                                                                                                                     document.getElementById('deletecategory-{{ $postitem->id }}').submit();">Confirm</button>
                         <form action="{{ route('user.addpost.destroy', $postitem->id) }}" style="display: none"
                             id="deletecategory-{{ $postitem->id }}" method="POST">
                             @csrf
