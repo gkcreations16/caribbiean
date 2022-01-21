@@ -21,13 +21,11 @@ class PostController extends Controller
         $subcategory = SubCategory::all();
         return view('user.post.addpost', ['post_userid' => $post_userid, 'categorys' => $category, 'subcategorys' => $subcategory, 'posts' => $posts]);
     }
-
     public function GetSubCatAgainstMainCat($id)
     {
 
         echo json_encode(DB::table('sub_categories')->where('category', $id)->get());
     }
-
 
     /**
      * Show the form for creating a new resource.

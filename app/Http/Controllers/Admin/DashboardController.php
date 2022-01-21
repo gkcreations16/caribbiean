@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Post;
+use App\Massage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Brian2694\Toastr\Facades\Toastr;
@@ -16,7 +18,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('admin.index');
+        $count_msg = Massage::all()->count();
+        $count_post = Post::all()->count();
+        return view('admin.index', ['count_post' => $count_post, 'count_msg' => $count_msg]);
     }
 
     public function displyprofile()

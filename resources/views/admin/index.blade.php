@@ -19,7 +19,7 @@
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">562</h5>
+                                                    <h5 class="card-title">{{ $count_post }}</h5>
                                                     <p class="card-text">Total Posted Ads</p>
                                                 </div>
                                             </div>
@@ -39,7 +39,7 @@
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">56</h5>
+                                                    <h5 class="card-title">{{ $count_post }}</h5>
                                                     <p class="card-text">Active Listing</p>
                                                 </div>
                                             </div>
@@ -59,7 +59,7 @@
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">201</h5>
+                                                    <h5 class="card-title">{{ $count_msg }}</h5>
                                                     <p class="card-text">Message</p>
                                                 </div>
                                             </div>

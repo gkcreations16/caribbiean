@@ -428,7 +428,7 @@
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-primary btn-md"
                                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    document.getElementById('createPost').submit();">SAVE
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        document.getElementById('createPost').submit();">SAVE
                                             </button>
                                         </div>
                                     </form>
@@ -755,7 +755,7 @@
                             </div>
                             <button type="submit" class="btn btn-primary btn-md"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 document.getElementById('editcategory-{{ $postitem->id }}').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     document.getElementById('editcategory-{{ $postitem->id }}').submit();">
                                 <i class="fa fa-dot-circle-o"></i> Submit
                             </button>
                         </form>
@@ -782,7 +782,7 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         <button type="button" class="btn btn-danger"
                             onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                 document.getElementById('deletecategory-{{ $postitem->id }}').submit();">Confirm</button>
+                                                                                                                                                                                                                                                                                                                                     document.getElementById('deletecategory-{{ $postitem->id }}').submit();">Confirm</button>
                         <form action="{{ route('user.addpost.destroy', $postitem->id) }}" style="display: none"
                             id="deletecategory-{{ $postitem->id }}" method="POST">
                             @csrf

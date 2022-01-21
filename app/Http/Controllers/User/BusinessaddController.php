@@ -47,7 +47,7 @@ class BusinessaddController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+
         if ($request->hasfile('image')) {
             foreach ($request->file('image') as $image) {
                 $name = $image->getClientOriginalName();
